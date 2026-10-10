@@ -469,13 +469,14 @@
           <span class="badge badge-primary">Fasa 1: Penilaian Sahsiah &amp; Integriti</span>
           <h2>Simulator Ujian Psikometrik (MyPersonaliti MARA)</h2>
           <p>
-            Simulasi komprehensif menguji 4 domain utama: <strong>Integriti Perkhidmatan Awam</strong>, 
-            <strong>Kestabilan Emosi &amp; Tekanan</strong>, <strong>Kepimpinan &amp; Kerjasama Pasukan</strong>, 
-            dan <strong>Ketekalan Jawapan (Lie Scale / Anti-Hipokrit)</strong>.
+            Simulasi komprehensif menguji 5 domain utama: <strong>Integriti &amp; Amanah</strong>, 
+            <strong>Kestabilan Emosi &amp; Kawalan Stres</strong>, <strong>Kepimpinan &amp; Inisiatif PJPK</strong>, 
+            <strong>Hubungan Interpersonal &amp; Kerja Berpasukan</strong>, serta <strong>Kebolehsuaian &amp; Ketahanan Mental</strong> 
+            berserta <strong>Pengesanan Ketekalan Jawapan (Lie Scale / Trap Questions)</strong>.
           </p>
         </div>
         <div class="module-header-actions">
-          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-psychometric">Panduan Soalan</button>
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-psychometric" onclick="if(window.MACApp) MACApp.openGuideModal();">Panduan Soalan</button>
           <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Analisis</button>
         </div>
       </div>
@@ -838,6 +839,7 @@
   </footer>
 
   <!-- Skrip Aplikasi -->
+  <script src="js/psychometric.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

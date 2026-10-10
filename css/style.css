@@ -1318,6 +1318,385 @@ code, pre {
 }
 
 /* --------------------------------------------------------------------------
+   Modul Simulator Psikometrik (Task 3 Styles)
+   -------------------------------------------------------------------------- */
+.psycho-intro-card, .psycho-question-card, .psycho-result-card {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background-color: #FFFFFF;
+}
+
+.psycho-intro-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.psycho-intro-icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--mara-red-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.psycho-domain-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-subtle);
+}
+
+.pill-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-red { background-color: var(--mara-red); }
+.dot-navy { background-color: var(--mara-navy); }
+.dot-gold { background-color: var(--mara-gold); }
+.dot-emerald { background-color: var(--color-success); }
+.dot-blue { background-color: #2563EB; }
+
+.time-selection-wrap {
+  background-color: var(--bg-subtle);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.time-options {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-time-opt {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* Question Card Styles */
+.psycho-q-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.psycho-q-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.psycho-timer-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--mara-navy-subtle);
+  border: 1px solid var(--border-medium);
+  color: var(--mara-navy);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.psycho-timer-box.timer-warning {
+  background-color: var(--color-warning-bg);
+  border-color: #FCD34D;
+  color: #B45309;
+  animation: pulse-warning 1.5s infinite;
+}
+
+.psycho-timer-box.timer-danger {
+  background-color: var(--color-danger-bg);
+  border-color: #FCA5A5;
+  color: #DC2626;
+  animation: pulse-danger 0.8s infinite;
+}
+
+@keyframes pulse-warning {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-danger {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.psycho-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.psycho-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--mara-navy) 0%, var(--mara-red) 100%);
+  transition: width 0.3s ease;
+}
+
+.psycho-q-body {
+  padding: 1.75rem;
+}
+
+.psycho-question-prompt {
+  margin-bottom: 1.75rem;
+}
+
+.psycho-scenario-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--mara-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.psycho-question-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--mara-navy);
+}
+
+.psycho-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.psycho-opt-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.15rem;
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.psycho-opt-card:hover {
+  border-color: var(--mara-navy-light);
+  background-color: var(--bg-subtle);
+  transform: translateY(-2px);
+}
+
+.psycho-opt-card.selected {
+  border-color: var(--mara-red);
+  background-color: var(--mara-red-subtle);
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+.opt-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-subtle);
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.psycho-opt-card.selected .opt-indicator {
+  background-color: var(--mara-red);
+  border-color: var(--mara-red);
+  color: #FFFFFF;
+}
+
+.opt-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--mara-navy);
+  margin-bottom: 0.2rem;
+}
+
+.opt-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.psycho-jump-bar {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+}
+
+.psycho-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 0.35rem;
+}
+
+.num-btn {
+  aspect-ratio: 1;
+  border: 1px solid var(--border-light);
+  background-color: #FFFFFF;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.num-btn:hover {
+  border-color: var(--mara-navy);
+  color: var(--mara-navy);
+}
+
+.num-btn.answered {
+  background-color: var(--color-success-bg);
+  border-color: #A7F3D0;
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.num-btn.current {
+  outline: 2px solid var(--mara-navy);
+  font-weight: 800;
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.psycho-q-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Result Screen Styles */
+.psycho-result-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, var(--bg-subtle) 0%, #FFFFFF 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--mara-red);
+}
+
+.result-score-block {
+  text-align: right;
+}
+
+.result-score-val {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.result-score-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.psycho-consistency-box {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.psycho-consistency-box.box-success {
+  background-color: var(--color-success-bg);
+  border-color: #A7F3D0;
+}
+
+.psycho-consistency-box.box-danger {
+  background-color: var(--color-danger-bg);
+  border-color: #FECDD3;
+}
+
+.psycho-domains-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.psycho-domain-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 140px;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.psycho-bar-track {
+  width: 100%;
+  height: 10px;
+  background-color: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.psycho-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+.domain-score-col {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .psycho-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .psycho-domain-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .psycho-numbers-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF
    -------------------------------------------------------------------------- */
 @media print {
@@ -1343,7 +1722,11 @@ code, pre {
   .stat-arrow,
   .footer-links,
   .candidate-input-wrap button,
-  .placeholder-card button {
+  .placeholder-card button,
+  .psycho-jump-bar,
+  .psycho-timer-box,
+  .psycho-q-footer,
+  .time-selection-wrap {
     display: none !important;
   }
 

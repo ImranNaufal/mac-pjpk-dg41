@@ -419,7 +419,15 @@ const MACApp = (function () {
       fitnessEl.style.color = '#059669';
     }
 
-    // 3. Temu Duga
+    // 3. Microteaching
+    const microScore = localStorage.getItem('mac_microteaching_last_score');
+    const microEl = document.getElementById('kpi-microteaching-status');
+    if (microEl && microScore) {
+      microEl.textContent = `Skor: ${microScore}%`;
+      microEl.style.color = '#059669';
+    }
+
+    // 4. Temu Duga
     const interviewCount = localStorage.getItem(STORAGE_KEYS.LAST_INTERVIEW_COUNT);
     const interviewEl = document.getElementById('kpi-interview-status');
     if (interviewEl && interviewCount) {
@@ -510,7 +518,14 @@ const MACApp = (function () {
     const btnGuideFitness = document.getElementById('btn-guide-fitness');
     if (btnGuideFitness) {
       btnGuideFitness.addEventListener('click', () => {
-        openDocModal(2);
+        showDocModal(2);
+      });
+    }
+
+    const btnGuideMicro = document.getElementById('btn-guide-microteaching');
+    if (btnGuideMicro) {
+      btnGuideMicro.addEventListener('click', () => {
+        showDocModal(3);
       });
     }
 

@@ -2044,10 +2044,412 @@ code, pre {
   }
 }
 
+}
+
 @media (max-width: 768px) {
   .bleep-telemetry-grid, .segak-battery-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* --------------------------------------------------------------------------
+   HAB MICRO-TEACHING PJPK MRSM & PENJANA RPH (TASK 5)
+   -------------------------------------------------------------------------- */
+.sub-nav-bar {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.sub-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.sub-nav-btn:hover {
+  background: var(--mara-navy-subtle);
+  color: var(--mara-navy);
+  border-color: var(--mara-navy);
+}
+
+.sub-nav-btn.active {
+  background: var(--mara-red);
+  color: #FFFFFF;
+  border-color: var(--mara-red);
+  box-shadow: 0 2px 4px rgba(139, 0, 0, 0.25);
+}
+
+.sub-nav-btn.active svg {
+  color: #FFFFFF;
+}
+
+.active-tpl-btn {
+  background: var(--mara-red) !important;
+  color: #FFFFFF !important;
+  border-color: var(--mara-red) !important;
+}
+
+/* RPH Document Layout (A4 Format) */
+.rph-container {
+  background: #FFFFFF;
+  color: #1E293B;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.rph-doc-header {
+  border-bottom: 2px solid var(--mara-red);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rph-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.rph-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--mara-red);
+  background: var(--mara-red-subtle);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.rph-meta-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.rph-doc-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--mara-navy);
+  margin: 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.rph-doc-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.rph-meta-table-wrap {
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.rph-meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.825rem;
+}
+
+.rph-meta-table th,
+.rph-meta-table td {
+  border: 1px solid var(--border-light);
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+
+.rph-meta-table th {
+  background: var(--mara-navy-subtle);
+  color: var(--mara-navy);
+  font-weight: 700;
+  width: 18%;
+}
+
+.rph-meta-table td {
+  background: #FFFFFF;
+}
+
+.rph-section {
+  margin-bottom: 1rem;
+}
+
+.rph-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--mara-red);
+  border-left: 3px solid var(--mara-red);
+  padding-left: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.rph-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.rph-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+}
+
+.rph-box-title {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--mara-navy);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.03em;
+}
+
+.rph-list, .rph-obj-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.825rem;
+}
+
+.rph-list li, .rph-obj-list li {
+  margin-bottom: 0.25rem;
+}
+
+.rph-lead-text {
+  font-weight: 600;
+  font-size: 0.825rem;
+  margin-bottom: 0.35rem;
+}
+
+.rph-success-criteria-callout {
+  margin-top: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  background: #FFFBEB;
+  border-left: 3px solid #D97706;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  color: #92400E;
+}
+
+.rph-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.rph-phases-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.rph-phases-table th,
+.rph-phases-table td {
+  border: 1px solid var(--border-light);
+  padding: 0.5rem 0.65rem;
+  vertical-align: top;
+}
+
+.rph-phases-table th {
+  background: var(--mara-navy);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.rph-phase-col {
+  background: #F8FAFC;
+}
+
+.rph-safe-tag {
+  font-size: 0.75rem;
+  color: #B91C1C;
+  background: #FEF2F2;
+  padding: 0.25rem 0.4rem;
+  border-radius: 3px;
+}
+
+.rph-notes-tag {
+  font-size: 0.75rem;
+  color: #1E40AF;
+  background: #EFF6FF;
+  padding: 0.25rem 0.4rem;
+  border-radius: 3px;
+}
+
+.rph-doc-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+.rph-sign-box {
+  width: 42%;
+}
+
+.rph-sign-line {
+  border-bottom: 1px solid #64748B;
+  padding-bottom: 2.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.rph-sign-meta {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Star Rating Group */
+.star-rating-group {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #CBD5E1;
+  cursor: pointer;
+  padding: 0 0.1rem;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.star-btn:hover {
+  transform: scale(1.2);
+  color: #F59E0B;
+}
+
+.star-btn.active {
+  color: #D97706;
+}
+
+/* Phase Timer Components */
+.timer-display-box {
+  background: #0F172A;
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1rem;
+  border: 2px solid var(--border-light);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.timer-digits {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.timer-sub-digits {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.progress-bar-wrap {
+  width: 100%;
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.border-l-crimson {
+  border-left: 4px solid var(--mara-red);
+}
+
+.phase-timeline-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.timeline-step .step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: #E2E8F0;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-step.step-active {
+  border-color: var(--mara-red);
+  background: var(--mara-red-subtle);
+}
+
+.timeline-step.step-active .step-num {
+  background: var(--mara-red);
+  color: #FFFFFF;
+}
+
+.timeline-step.step-completed {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.timeline-step.step-completed .step-num {
+  background: var(--color-success);
+  color: #FFFFFF;
+}
+
+.score-circle-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-percent {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
 }
 
 /* --------------------------------------------------------------------------

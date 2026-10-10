@@ -2044,8 +2044,6 @@ code, pre {
   }
 }
 
-}
-
 @media (max-width: 768px) {
   .bleep-telemetry-grid, .segak-battery-grid {
     grid-template-columns: 1fr;

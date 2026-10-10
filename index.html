@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Platform Persediaan MARA Assessment Centre (MAC) Skim Pegawai Perkhidmatan Pendidikan DG41 Pendidikan Jasmani dan Pendidikan Kesihatan (PJPK)">
+  <meta name="theme-color" content="#8B0000">
+  <title>MARA Assessment Centre (MAC) | Calon Pegawai Pendidikan DG41 PJPK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header Korporat MARA -->
+  <header class="corp-header" role="banner">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="brand-crest" aria-hidden="true">
+          <svg viewBox="0 0 48 48" class="crest-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#8B0000" stroke="#D4AF37" stroke-width="2"/>
+            <path d="M24 8L34 16V28C34 34.5 29.5 39.5 24 41C18.5 39.5 14 34.5 14 28V16L24 8Z" fill="#0A2540" stroke="#D4AF37" stroke-width="1.5"/>
+            <path d="M24 13L30 18V26C30 30.5 27 34 24 35C21 34 18 30.5 18 26V18L24 13Z" fill="#8B0000"/>
+            <circle cx="24" cy="22" r="3" fill="#D4AF37"/>
+            <path d="M20 29C20 27.5 21.8 26.5 24 26.5C26.2 26.5 28 27.5 28 29" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-sup">MAJLIS AMANAH RAKYAT (MARA) &bull; BAHAGIAN PENDIDIKAN MENENGAH (BPM)</div>
+          <h1 class="brand-title">MARA Assessment Centre (MAC)</h1>
+          <div class="brand-sub">Platform Persediaan Calon DG41 Pendidikan Jasmani &amp; Pendidikan Kesihatan (PJPK) MRSM</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <span class="offline-pill" title="Sistem beroperasi sepenuhnya di komputer anda tanpa internet">
+          <span class="pulse-dot"></span> 100% Luar Talian
+        </span>
+        <button type="button" class="btn btn-outline-light btn-sm" id="btn-open-guide" aria-label="Buka Panduan MAC">
+          <svg class="icon-inline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          Panduan MAC
+        </button>
+        <button type="button" class="btn btn-gold btn-sm btn-print" id="btn-global-print" aria-label="Cetak Halaman Aktif">
+          <svg class="icon-inline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"/>
+          </svg>
+          Cetak Modul
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bar Navigasi Tab -->
+  <nav class="main-nav" role="tablist" aria-label="Navigasi Modul Utama">
+    <div class="nav-container">
+      <button type="button" role="tab" class="nav-tab active" data-tab="dashboard" id="tab-btn-dashboard" aria-selected="true" aria-controls="tab-dashboard">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+        </svg>
+        <span>Dashboard</span>
+      </button>
+
+      <button type="button" role="tab" class="nav-tab" data-tab="psychometric" id="tab-btn-psychometric" aria-selected="false" aria-controls="tab-psychometric">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+        </svg>
+        <span>Psikometrik</span>
+      </button>
+
+      <button type="button" role="tab" class="nav-tab" data-tab="fitness" id="tab-btn-fitness" aria-selected="false" aria-controls="tab-fitness">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+        </svg>
+        <span>Hab Kecergasan</span>
+      </button>
+
+      <button type="button" role="tab" class="nav-tab" data-tab="microteaching" id="tab-btn-microteaching" aria-selected="false" aria-controls="tab-microteaching">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a10.942 10.942 0 015.75-2.051v-.005a10.942 10.942 0 015.75 2.051l2.644-1.131a1 1 0 000-1.84l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.69-.222z"/>
+          <path d="M15 14.222V10.12l1.69-.723a1 1 0 011.31.92v3.742a1 1 0 01-.658.94l-2 .857a1 1 0 01-.342.063z"/>
+          <path d="M7 11.237v4.615c0 .356.126.702.358.974A5.968 5.968 0 0010 18c1.037 0 2-.266 2.642-.714.232-.272.358-.618.358-.974v-4.615A12.924 12.924 0 0010 11c-1.076 0-2.096.1-3 .237z"/>
+        </svg>
+        <span>Micro-Teaching</span>
+      </button>
+
+      <button type="button" role="tab" class="nav-tab" data-tab="interview" id="tab-btn-interview" aria-selected="false" aria-controls="tab-interview">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-5 0H8v2h2V9z" clip-rule="evenodd"/>
+        </svg>
+        <span>Temu Duga (STAR)</span>
+      </button>
+
+      <button type="button" role="tab" class="nav-tab" data-tab="docs" id="tab-btn-docs" aria-selected="false" aria-controls="tab-docs">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+        </svg>
+        <span>Kit Nota &amp; Rujukan</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Kandungan Utama (Tab Panes) -->
+  <main class="main-content" id="main-content">
+
+    <!-- TAB 1: DASHBOARD -->
+    <section id="tab-dashboard" class="tab-pane active" role="tabpanel" aria-labelledby="tab-btn-dashboard">
+      <div class="dashboard-grid">
+        <!-- Hero Calon Card -->
+        <div class="card hero-card">
+          <div class="hero-body">
+            <div class="hero-info">
+              <span class="badge badge-gold">Calon Rasmi MAC MARA 2026</span>
+              <h2 class="hero-heading">Selamat Datang ke Platform Persediaan MAC DG41 PJPK</h2>
+              <p class="hero-desc">
+                Sistem simulasi menyeluruh berasaskan piawaian sah <strong>Akta MARA 1966</strong>, <strong>MyPersonaliti</strong>, 
+                <strong>DSKP KSSM PJPK KPM</strong>, <strong>Buku Panduan Ujian SEGAK</strong>, dan <strong>Protokol Luc L&eacute;ger</strong>.
+              </p>
+              <div class="candidate-bar">
+                <label for="candidate-name-input" class="candidate-label">Nama Calon:</label>
+                <div class="candidate-input-wrap">
+                  <input type="text" id="candidate-name-input" class="form-input candidate-input" placeholder="Masukkan Nama Anda (contoh: Muhammad Danial)" maxlength="60">
+                  <button type="button" id="btn-save-name" class="btn btn-primary btn-sm">Simpan</button>
+                </div>
+                <div class="candidate-status-pill">
+                  <span class="status-indicator-dot"></span>
+                  <span id="candidate-display-tag">Calon DG41 PJPK (MRSM)</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-badge-box">
+              <div class="crest-large" aria-hidden="true">
+                <svg viewBox="0 0 100 100" class="crest-svg-lg">
+                  <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" fill="#0A2540" stroke="#D4AF37" stroke-width="3"/>
+                  <polygon points="50,15 80,30 80,70 50,85 20,70 20,30" fill="#8B0000"/>
+                  <text x="50" y="47" font-size="12" font-weight="bold" fill="#D4AF37" text-anchor="middle" font-family="sans-serif">MARA</text>
+                  <text x="50" y="62" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">DG41</text>
+                  <text x="50" y="74" font-size="8" fill="#F8FAFC" text-anchor="middle" font-family="sans-serif">PJPK</text>
+                </svg>
+              </div>
+              <div class="hero-target-box">
+                <div class="target-title">Sasaran Gred</div>
+                <div class="target-val">DG41 (PJPK)</div>
+                <div class="target-sub">Kemasukan MRSM Semalaysia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Ringkasan Persediaan (4 Kad) -->
+        <div class="stats-row">
+          <div class="stat-card" data-action="switch-tab" data-target="psychometric">
+            <div class="stat-icon-wrap stat-icon-red">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Simulator Psikometrik</div>
+              <div class="stat-value" id="kpi-psychometric-status">Sedia Diambil</div>
+              <div class="stat-meta">30 Soalan Integriti &bull; Trap Scale</div>
+            </div>
+            <span class="stat-arrow">&rarr;</span>
+          </div>
+
+          <div class="stat-card" data-action="switch-tab" data-target="fitness">
+            <div class="stat-icon-wrap stat-icon-navy">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Bleep Test &amp; SEGAK</div>
+              <div class="stat-value" id="kpi-fitness-status">Protokol 20m</div>
+              <div class="stat-meta">Web Audio Beeps &bull; Norma KPM</div>
+            </div>
+            <span class="stat-arrow">&rarr;</span>
+          </div>
+
+          <div class="stat-card" data-action="switch-tab" data-target="microteaching">
+            <div class="stat-icon-wrap stat-icon-gold">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a10.942 10.942 0 015.75-2.051v-.005a10.942 10.942 0 015.75 2.051l2.644-1.131a1 1 0 000-1.84l-7-3z"/>
+                <path d="M7 11.237v4.615c0 .356.126.702.358.974A5.968 5.968 0 0010 18c1.037 0 2-.266 2.642-.714.232-.272.358-.618.358-.974v-4.615A12.924 12.924 0 0010 11c-1.076 0-2.096.1-3 .237z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Micro-Teaching MRSM</div>
+              <div class="stat-value" id="kpi-microteaching-status">3 RPH Lengkap</div>
+              <div class="stat-meta">10–15 Minit &bull; DSKP KSSM</div>
+            </div>
+            <span class="stat-arrow">&rarr;</span>
+          </div>
+
+          <div class="stat-card" data-action="switch-tab" data-target="interview">
+            <div class="stat-icon-wrap stat-icon-emerald">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Temu Duga STAR</div>
+              <div class="stat-value" id="kpi-interview-status">25+ Soalan Sahih</div>
+              <div class="stat-meta">Akta MARA &bull; Sistem SPMRSM</div>
+            </div>
+            <span class="stat-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- 6 Modul Pantas Grid -->
+        <div class="section-title-wrap">
+          <h3 class="section-title">Modul Utama Persediaan MAC</h3>
+          <p class="section-subtitle">Pilih mana-mana modul untuk memulakan latihan intensif anda.</p>
+        </div>
+
+        <div class="grid grid-3 module-cards-grid">
+          <!-- Modul 1 -->
+          <div class="card module-card">
+            <div class="card-header border-red">
+              <span class="badge badge-primary">Modul 1</span>
+              <span class="badge badge-outline">60 Minit</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Simulator Ujian Psikometrik (MyPersonaliti)</h4>
+              <p class="card-text">
+                Latihan 30 soalan situasi integriti, sahsiah guru asrama, kestabilan emosi, serta pengesanan soalan perangkap (Lie Scale).
+              </p>
+              <ul class="feature-bullets">
+                <li>Format Skala Likert &amp; Ya/Tidak</li>
+                <li>Pengesanan Ketekalan Jawapan (Consistency Index)</li>
+                <li>Pemasa Undur &amp; Analisis Skor Segera</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-primary btn-block" data-action="switch-tab" data-target="psychometric">
+                Buka Simulator Psikometrik
+              </button>
+            </div>
+          </div>
+
+          <!-- Modul 2 -->
+          <div class="card module-card">
+            <div class="card-header border-navy">
+              <span class="badge badge-secondary">Modul 2</span>
+              <span class="badge badge-outline">Amali Fizikal</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Hab Kecergasan: Bleep Test 20m &amp; SEGAK</h4>
+              <p class="card-text">
+                Enjin audio synthesizer Web Audio API bagi simulasi Bleep Test mengikut protokol Luc L&eacute;ger berserta Kalkulator Norma SEGAK KPM.
+              </p>
+              <ul class="feature-bullets">
+                <li>Beep audio automatik tanpa muat turun fail</li>
+                <li>Kiraan anggaran $VO_2\text{ Max}$ automatik</li>
+                <li>5 Bateri ujian SEGAK &amp; gred KPM kebangsaan</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-secondary btn-block" data-action="switch-tab" data-target="fitness">
+                Buka Hab Kecergasan
+              </button>
+            </div>
+          </div>
+
+          <!-- Modul 3 -->
+          <div class="card module-card">
+            <div class="card-header border-gold">
+              <span class="badge badge-gold">Modul 3</span>
+              <span class="badge badge-outline">10–15 Minit</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Micro-Teaching Hub (RPH MRSM)</h4>
+              <p class="card-text">
+                3 templat lengkap RPH KSSM PJPK MRSM, pemasa sesi mengajar berfasa, dan borang semakan rubrik pemarkahan penilai.
+              </p>
+              <ul class="feature-bullets">
+                <li>Futsal/Bola Sepak, Kapasiti Aerobik &amp; P.R.I.C.E</li>
+                <li>Format KSSM: Standard Kandungan &amp; Pembelajaran</li>
+                <li>Cetak RPH Segera untuk persediaan panel</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-gold btn-block" data-action="switch-tab" data-target="microteaching">
+                Buka Micro-Teaching
+              </button>
+            </div>
+          </div>
+
+          <!-- Modul 4 -->
+          <div class="card module-card">
+            <div class="card-header border-emerald">
+              <span class="badge badge-success">Modul 4</span>
+              <span class="badge badge-outline">Temu Duga Panel</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Simulator Temu Duga MARA (Teknik STAR)</h4>
+              <p class="card-text">
+                25+ soalan lazim panel MARA merangkumi Akta MARA 1966, falsafah MRSM, isu sukan/obesiti, dan senario disiplin guru asrama.
+              </p>
+              <ul class="feature-bullets">
+                <li>Mod Kad Soalan Interaktif (Flashcards)</li>
+                <li>Panduan Struktur Jawapan Format STAR</li>
+                <li>Senarai Kata Kunci Markah Tinggi Panel</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-secondary btn-block" data-action="switch-tab" data-target="interview">
+                Buka Simulator Temu Duga
+              </button>
+            </div>
+          </div>
+
+          <!-- Modul 5 -->
+          <div class="card module-card">
+            <div class="card-header border-blue">
+              <span class="badge badge-info">Modul 5</span>
+              <span class="badge badge-outline">Rujukan Sahih</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Pusat Rujukan Sahih &amp; Kit Nota Cetak</h4>
+              <p class="card-text">
+                Arkib komprehensif 4 dokumen rujukan lengkap berformat Markdown yang boleh disemak secara luar talian atau dicetak ke PDF/A4.
+              </p>
+              <ul class="feature-bullets">
+                <li>01: Fakta &amp; Akta 249 MARA, SPMRSM</li>
+                <li>02: Protokol Bleep Test &amp; Norma SEGAK</li>
+                <li>03: 3 RPH Lengkap &amp; Rubrik Panel MRSM</li>
+                <li>04: Bank 25 Soalan Temuduga DG41</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline btn-block" data-action="switch-tab" data-target="docs">
+                Buka Pusat Rujukan
+              </button>
+            </div>
+          </div>
+
+          <!-- Modul 6 (Etika & Panduan Pantas) -->
+          <div class="card module-card">
+            <div class="card-header border-navy">
+              <span class="badge badge-secondary">Panduan MAC</span>
+              <span class="badge badge-outline">Etika Calon</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-heading">Tatacara, Etika &amp; Senarai Semak Dokumen</h4>
+              <p class="card-text">
+                Panduan menyeluruh persediaan fizikal, mental, etika berpakaian, dan senarai dokumen fizikal wajib yang perlu dibawa ke pusat MAC.
+              </p>
+              <ul class="feature-bullets">
+                <li>Etika berpakaian sukan &amp; korporat rasmi</li>
+                <li>Penyusunan fail dokumen mengikut tertib</li>
+                <li>Strategi masa dan pengurusan tenaga hari penilaian</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline btn-block" id="btn-dashboard-open-guide">
+                Lihat Panduan Penuh
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tentatif Hari Penilaian & Checklist -->
+        <div class="grid grid-2 info-sections-grid">
+          <div class="card">
+            <div class="card-header bg-subtle">
+              <h4 class="card-heading-sm">Tentatif Piawai Hari Penilaian MARA Assessment Centre</h4>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-time">07:30 Pagi</div>
+                  <div class="timeline-content">
+                    <strong>Pendaftaran &amp; Semakan Dokumen</strong>
+                    <p class="text-muted">Pemeriksaan sijil asal, kad pengenalan, borang pengesahan dan nombor giliran calon.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">08:30 Pagi</div>
+                  <div class="timeline-content">
+                    <strong>Ujian Psikometrik MyPersonaliti &amp; Integriti</strong>
+                    <p class="text-muted">Ujian bertulis/komputer menguji sahsiah, kestabilan emosi, dan konsistensi jawapan (60 minit).</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">10:30 Pagi</div>
+                  <div class="timeline-content">
+                    <strong>Ujian Kecergasan Fizikal (Bleep Test 20m &amp; SEGAK)</strong>
+                    <p class="text-muted">Ujian daya tahan kardiovaskular 20m shuttle run dan bateri SEGAK khusus guru PJPK.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">12:30 T/Hari</div>
+                  <div class="timeline-content">
+                    <strong>Rehat, Solat &amp; Persediaan Bahan Micro-Teaching</strong>
+                    <p class="text-muted">Pertukaran pakaian korporat/batik, semakan akhir RPH dan alat bantu mengajar.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">02:00 Petang</div>
+                  <div class="timeline-content">
+                    <strong>Sesi Pengajaran Mikro (Micro-Teaching 10–15 Minit)</strong>
+                    <p class="text-muted">Simulasi pengajaran praktikal di hadapan panel penilai MRSM mengikut DSKP KSSM.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">03:30 Petang</div>
+                  <div class="timeline-content">
+                    <strong>Sesi Temu Duga Bersemuka Panel MARA (Teknik STAR)</strong>
+                    <p class="text-muted">Penilaian mendalam pengetahuan Akta MARA 1966, sistem MRSM, pedagogi, dan sahsiah guru asrama.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header bg-subtle">
+              <h4 class="card-heading-sm">Senarai Semak Dokumen &amp; Keperluan Calon DG41</h4>
+            </div>
+            <div class="card-body">
+              <p class="text-sm text-muted">Pastikan semua dokumen di bawah telah disediakan dalam fail poket/folder kemas:</p>
+              <ul class="checklist-items" id="dashboard-checklist">
+                <li>
+                  <input type="checkbox" id="chk-1" class="check-box" data-check="ic">
+                  <label for="chk-1">Kad Pengenalan (MyKad) &amp; Sijil Kelahiran (Asal &amp; Salinan Disahkan)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-2" class="check-box" data-check="degree">
+                  <label for="chk-2">Ijazah Sarjana Muda PJPK / Pendidikan berkaitan &amp; Transkrip Lengkap</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-3" class="check-box" data-check="spm">
+                  <label for="chk-3">Sijil Pelajaran Malaysia (SPM) - Kepujian Bahasa Melayu &amp; Sejarah</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-4" class="check-box" data-check="sports-gear">
+                  <label for="chk-4">Pakaian Sukan Lengkap: Baju-T berkolar sukan, seluar trek gelap &amp; kasut joging bertali</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-5" class="check-box" data-check="formal-gear">
+                  <label for="chk-5">Pakaian Temu Duga Korporat: Baju kemeja bertali leher / Baju kurung formal / Batik MARA</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-6" class="check-box" data-check="rph-copies">
+                  <label for="chk-6">Salinan RPH Bercetak (3 Salinan untuk Panel Micro-Teaching)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="chk-7" class="check-box" data-check="med-cert">
+                  <label for="chk-7">Borang Perakuan Kesihatan Bebas Penyakit Kronik (jika diperlukan oleh urus setia)</label>
+                </li>
+              </ul>
+              <div class="card-alert-box mt-3">
+                <div class="alert-icon">!</div>
+                <div class="alert-text">
+                  <strong>Peringatan Integriti:</strong> Tiada sebarang unsur plagiarisme atau pemalsuan maklumat dibenarkan. Panel MARA amat mementingkan ketulusan dan ketepatan fakta.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: PSIKOMETRIK (Placeholder & Ready Shell for Task 3) -->
+    <section id="tab-psychometric" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-psychometric">
+      <div class="module-header-banner">
+        <div class="module-header-text">
+          <span class="badge badge-primary">Fasa 1: Penilaian Sahsiah &amp; Integriti</span>
+          <h2>Simulator Ujian Psikometrik (MyPersonaliti MARA)</h2>
+          <p>
+            Simulasi komprehensif menguji 4 domain utama: <strong>Integriti Perkhidmatan Awam</strong>, 
+            <strong>Kestabilan Emosi &amp; Tekanan</strong>, <strong>Kepimpinan &amp; Kerjasama Pasukan</strong>, 
+            dan <strong>Ketekalan Jawapan (Lie Scale / Anti-Hipokrit)</strong>.
+          </p>
+        </div>
+        <div class="module-header-actions">
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-psychometric">Panduan Soalan</button>
+          <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Analisis</button>
+        </div>
+      </div>
+
+      <!-- Container Dinamik untuk Task 3 (psychometric.js) -->
+      <div id="psychometric-app">
+        <div class="card p-4 text-center placeholder-card">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="2" class="icon-xl">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="mt-2">Modul Simulator Psikometrik</h3>
+          <p class="text-muted max-w-600 mx-auto">
+            Bank 30 soalan berpasangan format MyPersonaliti MARA dengan sistem pengesanan jawapan hipokrit/bercanggah (Consistency Index). 
+            Klik butang di bawah untuk memuatkan enjin ujian.
+          </p>
+          <div class="mt-3">
+            <button type="button" class="btn btn-primary" id="btn-start-psychometric-sample">
+              Muat Semula / Mula Ujian Penuh (30 Soalan)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: HAB KECERGASAN (Placeholder & Ready Shell for Task 4) -->
+    <section id="tab-fitness" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-fitness">
+      <div class="module-header-banner">
+        <div class="module-header-text">
+          <span class="badge badge-secondary">Fasa 2: Daya Tahan Fizikal</span>
+          <h2>Hab Kecergasan Fizikal PJPK: Bleep Test 20m &amp; SEGAK KPM</h2>
+          <p>
+            Simulasi audio larian ulang-alik 20 meter (Protokol Luc L&eacute;ger) menggunakan <strong>Web Audio API</strong> 
+            berserta Kalkulator Piawai 5 Bateri Ujian <strong>SEGAK KPM</strong> untuk calon guru sukan MRSM.
+          </p>
+        </div>
+        <div class="module-header-actions">
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-fitness">Jadual Kelajuan</button>
+          <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Norma SEGAK</button>
+        </div>
+      </div>
+
+      <!-- Container Dinamik untuk Task 4 (fitness.js) -->
+      <div id="fitness-app">
+        <div class="fitness-tabs-nav mb-3">
+          <button type="button" class="btn btn-primary btn-sm active" id="btn-subtab-bleep">Enjin Bleep Test 20m</button>
+          <button type="button" class="btn btn-outline btn-sm" id="btn-subtab-segak">Kalkulator SEGAK KPM</button>
+        </div>
+
+        <div class="card p-4 text-center placeholder-card">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2" class="icon-xl">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="mt-2">Enjin Audio Bleep Test &amp; Kalkulator SEGAK</h3>
+          <p class="text-muted max-w-600 mx-auto">
+            Penjana nada bip gelombang sintetik (Web Audio API) bebas fail luar, pemasa selang masa mengikut jadual Luc L&eacute;ger, 
+            dan formula penskoran automatik norma SEGAK KPM bagi guru Pendidikan Jasmani.
+          </p>
+          <div class="mt-3">
+            <button type="button" class="btn btn-secondary" id="btn-start-fitness-sample">
+              Muat Semula Modul Kecergasan
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MICRO-TEACHING (Placeholder & Ready Shell for Task 5) -->
+    <section id="tab-microteaching" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-microteaching">
+      <div class="module-header-banner">
+        <div class="module-header-text">
+          <span class="badge badge-gold">Fasa 3: Praktikal Pedagogi</span>
+          <h2>Micro-Teaching Hub: RPH KSSM PJPK MRSM (10–15 Minit)</h2>
+          <p>
+            Templat RPH selaras <strong>DSKP KSSM KPM</strong>, pemasa latihan mengajar berfasa, 
+            dan senarai semak 6 rubrik penilaian panel MRSM (Induksi, Kawalan Kelas, Ansur Maju, Alatan/Keselamatan, Vokal &amp; Refleksi).
+          </p>
+        </div>
+        <div class="module-header-actions">
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-microteaching">Rubrik Panel</button>
+          <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Templat RPH</button>
+        </div>
+      </div>
+
+      <!-- Container Dinamik untuk Task 5 (microteaching.js) -->
+      <div id="microteaching-app">
+        <div class="card p-4 text-center placeholder-card">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" class="icon-xl">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="mt-2">Penjana &amp; Pemasa RPH Micro-Teaching PJPK</h3>
+          <p class="text-muted max-w-600 mx-auto">
+            Dilengkapi 3 templat standard: Kemahiran Futsal/Bola Sepak (Tingkatan 2), Kapasiti Aerobik &amp; KNL (Tingkatan 4), 
+            dan Pertolongan Cemas P.R.I.C.E (Tingkatan 1).
+          </p>
+          <div class="mt-3">
+            <button type="button" class="btn btn-primary" id="btn-load-microteaching-sample">
+              Muat Semula Modul Micro-Teaching
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: TEMU DUGA STAR (Placeholder & Ready Shell for Task 6) -->
+    <section id="tab-interview" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-interview">
+      <div class="module-header-banner">
+        <div class="module-header-text">
+          <span class="badge badge-success">Fasa 4: Temu Duga Panel</span>
+          <h2>Simulator Temu Duga MARA: Bank Soalan Sahih &amp; Teknik STAR</h2>
+          <p>
+            Bank 25+ soalan lazim panel MARA merangkumi <strong>Akta MARA 1966</strong>, <strong>Sistem MRSM (SPMRSM)</strong>, 
+            <strong>Isu Pedagogi &amp; Keselamatan PJPK</strong>, dan <strong>Soalan Situasi Kaedah STAR</strong>.
+          </p>
+        </div>
+        <div class="module-header-actions">
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-guide-interview">Format STAR</button>
+          <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Bank Soalan</button>
+        </div>
+      </div>
+
+      <!-- Container Dinamik untuk Task 6 (interview.js) -->
+      <div id="interview-app">
+        <div class="card p-4 text-center placeholder-card">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" class="icon-xl">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="mt-2">Simulator Soalan Temu Duga &amp; Panduan STAR</h3>
+          <p class="text-muted max-w-600 mx-auto">
+            Latihan menjawab soalan secara rawak dengan pemasa berfikir/bercakap 2 minit, jawapan model format STAR, 
+            dan senarai kata kunci markah tinggi panel penilai.
+          </p>
+          <div class="mt-3">
+            <button type="button" class="btn btn-secondary" id="btn-load-interview-sample">
+              Muat Semula Modul Temu Duga
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: PUSAT RUJUKAN & KIT NOTA SAHIH -->
+    <section id="tab-docs" class="tab-pane" role="tabpanel" aria-labelledby="tab-btn-docs">
+      <div class="module-header-banner">
+        <div class="module-header-text">
+          <span class="badge badge-info">Pusat Sumber &amp; Kit Nota</span>
+          <h2>Pusat Rujukan Sahih: 4 Kit Nota Lengkap Calon MAC DG41</h2>
+          <p>
+            Nota padat disaring terus daripada sumber rasmi kerajaan: Portal Rasmi MARA, Akta 249, 
+            DSKP KSSM PJPK KPM, Buku Panduan Ujian SEGAK KPM, dan Protokol Luc L&eacute;ger.
+          </p>
+        </div>
+        <div class="module-header-actions">
+          <button type="button" class="btn btn-gold btn-sm btn-print" onclick="window.print()">Cetak Semua Nota</button>
+        </div>
+      </div>
+
+      <div class="docs-browser-grid">
+        <!-- Dokumen 1 -->
+        <article class="card doc-card">
+          <div class="doc-card-badge">Dokumen 01</div>
+          <div class="card-body">
+            <div class="doc-icon-title">
+              <div class="doc-tag">Akta &amp; Organisasi</div>
+              <h3 class="doc-title">Fakta Rasmi, Akta MARA 1966 &amp; Sistem Pendidikan MRSM</h3>
+            </div>
+            <p class="doc-summary">
+              Rujukan asas penubuhan Majlis Amanah Rakyat (MARA) menggantikan RIDA di bawah Akta 249 (1966). 
+              Mengandungi visi, misi, 7 strategi keusahawanan &amp; pendidikan bumiputera, 55 buah MRSM di seluruh Malaysia, 
+              serta 6 program teras SPMRSM (Premier, Ulul Albab, IGCSE, Program Khas Pendidikan, Bitara, Teknikal).
+            </p>
+            <div class="doc-highlights">
+              <strong>Isi Utama:</strong>
+              <ul>
+                <li>Sejarah RIDA (1950) ke MARA (1 Mac 1966) oleh Kongres Ekonomi Bumiputera.</li>
+                <li>Visi: Menjadi organisasi amanah yang unggul dan diberkati.</li>
+                <li>Struktur Bahagian Pendidikan Menengah (BPM) &amp; Peranan Guru PJPK MRSM.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer doc-footer">
+            <span class="doc-file-path">docs/01_FAKTA_DAN_AKTA_MARA.md</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="MACApp.showDocModal(1)">Baca Ringkasan</button>
+          </div>
+        </article>
+
+        <!-- Dokumen 2 -->
+        <article class="card doc-card">
+          <div class="doc-card-badge">Dokumen 02</div>
+          <div class="card-body">
+            <div class="doc-icon-title">
+              <div class="doc-tag">Kecergasan Fizikal</div>
+              <h3 class="doc-title">Panduan Lengkap Bleep Test 20m &amp; Ujian SEGAK KPM</h3>
+            </div>
+            <p class="doc-summary">
+              Protokol piawai larian ulang-alik 20 meter Luc L&eacute;ger (1988), jadual kelajuan setiap tahap (bermula 8.5 km/j), 
+              formula pengiraan $VO_2\text{ Max} = 18.0 + (6.0 \times \text{Kelajuan Akhir})$, serta 5 bateri Ujian Standard Kecergasan Fizikal Kebangsaan (SEGAK) KPM.
+            </p>
+            <div class="doc-highlights">
+              <strong>Isi Utama:</strong>
+              <ul>
+                <li>Piawaian 20 meter, selang masa beep dan kiraan kadar nadi pemulihan.</li>
+                <li>5 Bateri SEGAK: BMI, Naik Turun Bangku 3 minit, Tekan Tubi, Ringkuk Tubi Separa, Jangkauan Melunjur.</li>
+                <li>Jadual norma markah kebangsaan (Gred A hingga E) mengikut umur dan jantina.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer doc-footer">
+            <span class="doc-file-path">docs/02_PANDUAN_BLEEP_TEST_DAN_SEGAK.md</span>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="MACApp.showDocModal(2)">Baca Ringkasan</button>
+          </div>
+        </article>
+
+        <!-- Dokumen 3 -->
+        <article class="card doc-card">
+          <div class="doc-card-badge">Dokumen 03</div>
+          <div class="card-body">
+            <div class="doc-icon-title">
+              <div class="doc-tag">Pedagogi &amp; RPH</div>
+              <h3 class="doc-title">3 Set Lengkap RPH DSKP KSSM PJPK MRSM &amp; Rubrik Panel</h3>
+            </div>
+            <p class="doc-summary">
+              Contoh rancangan pengajaran harian lengkap bagi sesi simulasi 10–15 minit menepati format DSKP KSSM Tingkatan 1, 2 dan 4. 
+              Disertakan borang rubrik pemarkahan penilaian panel penilai MRSM.
+            </p>
+            <div class="doc-highlights">
+              <strong>Isi Utama:</strong>
+              <ul>
+                <li>Set 1: Kemahiran Hantaran &amp; Kawalan Bola Futsal (Tingkatan 2).</li>
+                <li>Set 2: Kapasiti Aerobik &amp; Kiraan Kadar Nadi Latihan KNL (Tingkatan 4).</li>
+                <li>Set 3: Pertolongan Cemas Kaedah P.R.I.C.E (Tingkatan 1).</li>
+                <li>Rubrik Penilaian: Set Induksi, Kawalan Kelas, Ansur Maju, Alatan, Vokal, Refleksi.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer doc-footer">
+            <span class="doc-file-path">docs/03_RPH_LENGKAP_PJPK_MRSM.md</span>
+            <button type="button" class="btn btn-gold btn-sm" onclick="MACApp.showDocModal(3)">Baca Ringkasan</button>
+          </div>
+        </article>
+
+        <!-- Dokumen 4 -->
+        <article class="card doc-card">
+          <div class="doc-card-badge">Dokumen 04</div>
+          <div class="card-body">
+            <div class="doc-icon-title">
+              <div class="doc-tag">Temu Duga &amp; STAR</div>
+              <h3 class="doc-title">Bank 25 Soalan Temu Duga DG41 MARA &amp; Jawapan Format STAR</h3>
+            </div>
+            <p class="doc-summary">
+              Koleksi soalan lazim panel penilai MARA dibahagikan kepada 4 kategori teras, dilengkapi rangka jawapan Situation, 
+              Task, Action, Result (STAR) dan kata kunci penskoran cemerlang.
+            </p>
+            <div class="doc-highlights">
+              <strong>Isi Utama:</strong>
+              <ul>
+                <li>Bahagian A: Fakta Organisasi, Akta 249, Visi Misi &amp; Pemimpin Utama MARA.</li>
+                <li>Bahagian B: Sistem Pendidikan MRSM, Falsafah SPMRSM &amp; Etika Guru Asrama.</li>
+                <li>Bahagian C: Pedagogi PJPK, Murid Pasif/Obesiti, Keselamatan Padang &amp; SEGAK.</li>
+                <li>Bahagian D: Soalan Situasi Khusus (Kecemasan, Gaduh Pelajar, Tekanan Tugas).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer doc-footer">
+            <span class="doc-file-path">docs/04_BANK_SOALAN_TEMUDUGA_DG41.md</span>
+            <button type="button" class="btn btn-success btn-sm" onclick="MACApp.showDocModal(4)">Baca Ringkasan</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Panduan MAC (Quick Guide Modal) -->
+  <div id="modal-guide" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-guide-title" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-guide-title" class="modal-title">Panduan Rasmi Calon MARA Assessment Centre (MAC)</h3>
+        <button type="button" class="btn-close" id="btn-close-guide" aria-label="Tutup Panduan">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Apa Itu MARA Assessment Centre (MAC)?</h4>
+        <p>
+          MAC ialah instrumen penilaian komprehensif berpusat yang digubal oleh Majlis Amanah Rakyat (MARA) 
+          untuk menyaring calon Pegawai Perkhidmatan Pendidikan Gred DG41 yang mempunyai tahap integriti tinggi, 
+          daya ketahanan fizikal optima, kecekapan pedagogi di bilik darjah / padang, dan sahsiah peribadi terpuji sebagai pendidik anak bangsa bumiputera di MRSM.
+        </p>
+
+        <h4>2. Empat Komponen Penilaian Utama:</h4>
+        <ol class="modal-numbered-list">
+          <li><strong>Ujian Psikometrik (MyPersonaliti):</strong> Menguji integriti, kestabilan emosi, ketekalan jawapan tanpa manipulasi hipokrit.</li>
+          <li><strong>Penilaian Kecergasan Fizikal:</strong> Larian 20m Luc L&eacute;ger (Bleep Test) &amp; Ujian SEGAK KPM. Calon guru PJPK wajib menunjukkan contoh kecergasan fizikal yang unggul.</li>
+          <li><strong>Pengajaran Mikro (Micro-Teaching 10–15 Minit):</strong> Demonstrasi ansur maju kemahiran, kawalan suara, keselamatan murid, dan pengurusan alatan sukan.</li>
+          <li><strong>Temu Duga Panel (Format STAR):</strong> Menilai penguasaan Akta MARA 1966, falsafah SPMRSM, isu pendidikan, serta ketangkasan menyelesaikan masalah murid asrama.</li>
+        </ol>
+
+        <h4>3. Etika Pakaian Semasa Penilaian:</h4>
+        <ul>
+          <li><strong>Sesi Amali &amp; Ujian Kecergasan:</strong> Baju-T sukan berkolar (kemas dimasukkan ke dalam seluar), seluar trek gelap (track bottom), stoking dan kasut sukan/joging bertali.</li>
+          <li><strong>Sesi Micro-Teaching &amp; Temu Duga:</strong> Pakaian formal korporat/batik MARA. Lelaki: Kemeja berlengan panjang, bertali leher, seluar slack gelap dan kasut kulit bertumit. Wanita: Baju kurung formal atau sut kerja kemas.</li>
+        </ul>
+
+        <h4>4. Petua Skor Tinggi Panel MARA:</h4>
+        <ul>
+          <li><strong>Kekuatan Vokal &amp; Keyakinan:</strong> Guru PJPK perlu lantang, jelas dan berwibawa di padang mahupun bilik temu duga.</li>
+          <li><strong>Integriti Tanpa Kompromi:</strong> Jawab soalan psikometrik dengan jujur. Soalan perangkap berpasangan akan menggagalkan calon yang cuba berbohong.</li>
+          <li><strong>Kuasai Fakta MARA &amp; MRSM:</strong> Ketahui nama Pengerusi MARA, Ketua Pengarah MARA, Akta 249, serta bilangan MRSM terkini (55 buah).</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn-modal-guide-ok">Faham &amp; Teruskan Latihan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Pratonton Dokumen (Doc Viewer Modal) -->
+  <div id="modal-doc-viewer" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-doc-title" style="display: none;">
+    <div class="modal-card modal-card-lg">
+      <div class="modal-header">
+        <h3 id="modal-doc-title" class="modal-title">Ringkasan Dokumen Rujukan</h3>
+        <button type="button" class="btn-close" id="btn-close-doc-viewer" aria-label="Tutup Paparan">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-doc-body">
+        <!-- Disuntik melalui app.js -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btn-doc-print">Cetak Ringkasan Ini</button>
+        <button type="button" class="btn btn-primary" id="btn-doc-close">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer Korporat -->
+  <footer class="corp-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">MARA Assessment Centre (MAC) Preparation Hub</div>
+        <div class="footer-sub">Khusus Calon Pegawai Perkhidmatan Pendidikan Gred DG41 (Pendidikan Jasmani &amp; Pendidikan Kesihatan)</div>
+        <div class="footer-note">Beroperasi 100% luar talian (*offline-ready*). Tiada data dihantar ke pelayan luar.</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#dashboard" onclick="MACApp.switchTab('dashboard')">Dashboard</a> &bull;
+          <a href="#docs" onclick="MACApp.switchTab('docs')">Kit Nota Sahih</a> &bull;
+          <a href="javascript:void(0)" onclick="MACApp.openGuideModal()">Panduan MAC</a>
+        </div>
+        <div class="footer-copy">Hak Cipta Terpelihara &copy; 2026 Majlis Amanah Rakyat (MARA) / Inisiatif Calon PJPK DG41</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Skrip Aplikasi -->
+  <script src="js/app.js"></script>
+</body>
+</html>

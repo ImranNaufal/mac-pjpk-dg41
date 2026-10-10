@@ -10,8 +10,8 @@
 const MACApp = (function () {
   'use strict';
 
-  // Senarai Tab Sah
-  const VALID_TABS = ['dashboard', 'psychometric', 'fitness', 'microteaching', 'interview', 'docs'];
+  // Senarai Tab Sah Mengikut Aliran Hari Penilaian MAC
+  const VALID_TABS = ['dashboard', 'psychometric', 'fitness', 'essay', 'microteaching', 'interview', 'groupdiscussion', 'docs'];
   const STORAGE_KEYS = {
     ACTIVE_TAB: 'mac_active_tab',
     CANDIDATE_NAME: 'mac_candidate_name',
@@ -144,6 +144,43 @@ const MACApp = (function () {
 
         <h4>3. Kata Kunci Pemarkahan Tinggi Panel</h4>
         <p>Suntikkan kata kunci berikut secara bersahaja: <em>"Amanah Bangsa", "Keselamatan Murid Diutamakan", "Standard DSKP KSSM", "Teladan Kecergasan", "Ansur Maju", "Kesejahteraan Asrama"</em>.</p>
+      `
+    },
+    5: {
+      title: 'Dokumen 05: Panduan Penulisan Esei MAC (BI & BM) & Model Essays',
+      category: 'Penulisan Esei Bertulis (45m - 1 Jam)',
+      file: 'docs/05_PANDUAN_PENULISAN_ESEI_MAC.md',
+      content: `
+        <h4>1. Format &amp; Struktur Penulisan Esei MAC</h4>
+        <p>Ujian esei menguji kecekapan dwibahasa (Bahasa Melayu &amp; Bahasa Inggeris), pemikiran analitikal, serta kefahaman mandat MARA dalam masa 45–60 minit (sasaran 350–500 patah perkataan).</p>
+        <h4>2. Kaedah P.E.E.L untuk Perenggan Isi</h4>
+        <ul>
+          <li><strong>P - Point:</strong> Isi utama yang tegas dan relevan.</li>
+          <li><strong>E - Explanation:</strong> Huraian mendalam mengapa tindakan ini menyokong kemenjadian murid.</li>
+          <li><strong>E - Evidence/Example:</strong> Contoh aplikasi praktikal dalam bidang PJPK dan asrama MRSM.</li>
+          <li><strong>L - Link:</strong> Pautan semula hujah kepada visi kecemerlangan MARA.</li>
+        </ul>
+        <h4>3. Contoh Model Esei Cemerlang (Band A)</h4>
+        <p>Disertakan esei model Bahasa Inggeris <em>"What Contribution Will You Give to MARA as an Educator in MRSM?"</em> dan Bahasa Melayu <em>"Peranan Pendidikan Jasmani Dalam Membentuk Modal Insan Unggul MRSM"</em>.</p>
+      `
+    },
+    6: {
+      title: 'Dokumen 06: Panduan Dinamika Kumpulan (LDK) & 5 Kajian Kes MRSM',
+      category: 'Temu Duga Berkumpulan & Perbincangan Meja Bulat',
+      file: 'docs/06_PANDUAN_LDK_DINAMIKA_KUMPULAN.md',
+      content: `
+        <h4>1. Format Sesi Dinamika Kumpulan (15 Minit Meja Bulat)</h4>
+        <p>Perbincangan 5–6 orang calon menyelesaikan kajian kes situasi sebenar maktab dihadapan barisan panel penilai MARA. Matlamat utama adalah menilai kepimpinan, kerjasama berpasukan, dan kematangan emosi (EQ).</p>
+        <h4>2. Lima (5) Kajian Kes Situasi Maktab</h4>
+        <ol>
+          <li>Kes 1: Murid menolak aktiviti riadah &amp; peningkatan kadar obesiti maktab.</li>
+          <li>Kes 2: Penganjuran Kejohanan Sukan Maktab bawah kekangan bajet &amp; gelombang haba.</li>
+          <li>Kes 3: Insiden kekasaran dan pergaduhan murid semasa liga futsal asrama.</li>
+          <li>Kes 4: Bantahan ibu bapa Tingkatan 5 terhadap amali PJ semasa musim peperiksaan.</li>
+          <li>Kes 5: Isu kehilangan aset stor sukan &amp; pengurusan tatacara stor MARA.</li>
+        </ol>
+        <h4>3. Peranan Strategik &amp; Frasa Emas Komunikasi</h4>
+        <p>Panduan memainkan watak Pemula (Initiator), Pengurus Masa (Timekeeper), Pembina Idea (Builder), Penjaga SOP (Grounder), atau Perumus Konsensus (Synthesizer) tanpa bersikap agresif atau mendominasi.</p>
       `
     }
   };
@@ -565,6 +602,33 @@ const MACApp = (function () {
       if (stored && VALID_TABS.includes(stored)) {
         initialTab = stored;
       }
+    }
+
+    // Inisialisasi Modul-Modul UI Jika Tersedia
+    try {
+      if (typeof window !== 'undefined') {
+        if (typeof window.MACEssayUI !== 'undefined' && window.MACEssayUI.init) {
+          window.MACEssayUI.init('#essay-app');
+        }
+        if (typeof window.MACGroupDiscussionUI !== 'undefined' && window.MACGroupDiscussionUI.init) {
+          window.MACGroupDiscussionUI.init('#groupdiscussion-app');
+        }
+      }
+    } catch (e) {
+      console.warn('Ralat inisialisasi modul UI sampingan:', e);
+    }
+
+    // Pemantau peralihan tab untuk memuatkan modul secara dinamik
+    if (typeof document !== 'undefined') {
+      document.addEventListener('mac:tab-switched', (e) => {
+        const tab = e.detail && e.detail.tabId;
+        if (tab === 'essay' && typeof window !== 'undefined' && window.MACEssayUI && window.MACEssayUI.init) {
+          window.MACEssayUI.init('#essay-app');
+        }
+        if (tab === 'groupdiscussion' && typeof window !== 'undefined' && window.MACGroupDiscussionUI && window.MACGroupDiscussionUI.init) {
+          window.MACGroupDiscussionUI.init('#groupdiscussion-app');
+        }
+      });
     }
 
     switchTab(initialTab, false);

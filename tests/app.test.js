@@ -27,21 +27,23 @@ const externalLinks = htmlContent.match(externalCdnPattern) || [];
 assert.strictEqual(externalLinks.length, 0, `index.html tidak boleh mempunyai sambungan internet luaran: ${JSON.stringify(externalLinks)}`);
 console.log('✔ index.html 100% bebas CDN luaran.');
 
-// Pastikan 6 tab navigation wujud
-const expectedTabs = ['dashboard', 'psychometric', 'fitness', 'microteaching', 'interview', 'docs'];
+// Pastikan kesemua 8 tab navigation wujud mengikut stesen MAC
+const expectedTabs = ['dashboard', 'psychometric', 'fitness', 'essay', 'microteaching', 'interview', 'groupdiscussion', 'docs'];
 expectedTabs.forEach(tabId => {
   assert(htmlContent.includes(`data-tab="${tabId}"`), `Butang tab "${tabId}" mesti ada dalam index.html`);
   assert(htmlContent.includes(`id="tab-${tabId}"`), `Seksyen tab pane "tab-${tabId}" mesti ada dalam index.html`);
 });
-console.log('✔ Kesemua 6 tab navigation (dashboard, psychometric, fitness, microteaching, interview, docs) wujud.');
+console.log('✔ Kesemua 8 tab navigation (dashboard, psychometric, fitness, essay, microteaching, interview, groupdiscussion, docs) wujud.');
 
-// Pastikan ID kontena bagi tugasan seterusnya wujud
+// Pastikan ID kontena bagi setiap modul wujud
 assert(htmlContent.includes('id="psychometric-app"'), 'Kontena #psychometric-app mesti wujud untuk Task 3');
 assert(htmlContent.includes('id="fitness-app"'), 'Kontena #fitness-app mesti wujud untuk Task 4');
+assert(htmlContent.includes('id="essay-app"'), 'Kontena #essay-app mesti wujud untuk Modul Esei');
 assert(htmlContent.includes('id="microteaching-app"'), 'Kontena #microteaching-app mesti wujud untuk Task 5');
 assert(htmlContent.includes('id="interview-app"'), 'Kontena #interview-app mesti wujud untuk Task 6');
+assert(htmlContent.includes('id="groupdiscussion-app"'), 'Kontena #groupdiscussion-app mesti wujud untuk Modul LDK');
 assert(htmlContent.includes('id="toast-container"'), 'Kontena #toast-container mesti wujud');
-console.log('✔ Kesemua ID kontena modul tugasan 3-6 sedia diintegrasikan.');
+console.log('✔ Kesemua ID kontena modul sedia diintegrasikan.');
 
 // 3. Semak css/style.css
 const cssContent = fs.readFileSync(cssPath, 'utf8');
@@ -190,6 +192,8 @@ assert(MACApp.DOC_SUMMARIES[1], 'DOC_SUMMARIES 1 mesti wujud');
 assert(MACApp.DOC_SUMMARIES[2], 'DOC_SUMMARIES 2 mesti wujud');
 assert(MACApp.DOC_SUMMARIES[3], 'DOC_SUMMARIES 3 mesti wujud');
 assert(MACApp.DOC_SUMMARIES[4], 'DOC_SUMMARIES 4 mesti wujud');
-console.log('✔ Kesemua 4 ringkasan dokumen rujukan sahih disahkan sedia.');
+assert(MACApp.DOC_SUMMARIES[5], 'DOC_SUMMARIES 5 mesti wujud');
+assert(MACApp.DOC_SUMMARIES[6], 'DOC_SUMMARIES 6 mesti wujud');
+console.log('✔ Kesemua 6 ringkasan dokumen rujukan sahih disahkan sedia.');
 
 console.log('\n--- SEMUA UJIAN VERIFIKASI TASK 2 LULUS 100%! ---');

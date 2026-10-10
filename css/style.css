@@ -2451,6 +2451,44 @@ code, pre {
 }
 
 /* --------------------------------------------------------------------------
+   Utiliti Tambahan: Modul Esei & Dinamika Kumpulan (LDK)
+   -------------------------------------------------------------------------- */
+.badge-maroon { background-color: var(--mara-red, #8B0000); color: #FFFFFF; }
+.badge-blue { background-color: var(--mara-navy, #0A2540); color: #FFFFFF; }
+.badge-sm { font-size: 0.72rem; padding: 0.15rem 0.45rem; }
+.border-maroon { border-color: var(--mara-red, #8B0000) !important; }
+.text-navy { color: var(--mara-navy, #0A2540); }
+.text-maroon { color: var(--mara-red, #8B0000); }
+.text-gold { color: #B8860B; }
+.text-dark { color: #1E293B; }
+.bg-light { background-color: #F8FAFC; }
+
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+
+.border-b { border-bottom: 1px solid var(--border-medium, #CBD5E1); }
+.border-t { border-top: 1px solid var(--border-medium, #CBD5E1); }
+
+.grid-cols-1 { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+.max-h-250 { max-height: 250px; overflow-y: auto; }
+.max-h-300 { max-height: 300px; overflow-y: auto; }
+.max-h-400 { max-height: 400px; overflow-y: auto; }
+
+/* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF
    -------------------------------------------------------------------------- */
 @media print {

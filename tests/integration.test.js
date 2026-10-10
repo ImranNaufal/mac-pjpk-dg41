@@ -40,17 +40,23 @@ const expectedFiles = [
   'js/app.js',
   'js/psychometric.js',
   'js/fitness.js',
+  'js/essay.js',
   'js/microteaching.js',
   'js/interview.js',
+  'js/groupdiscussion.js',
   'docs/01_FAKTA_DAN_AKTA_MARA.md',
   'docs/02_PANDUAN_BLEEP_TEST_DAN_SEGAK.md',
   'docs/03_RPH_LENGKAP_PJPK_MRSM.md',
   'docs/04_BANK_SOALAN_TEMUDUGA_DG41.md',
+  'docs/05_PANDUAN_PENULISAN_ESEI_MAC.md',
+  'docs/06_PANDUAN_LDK_DINAMIKA_KUMPULAN.md',
   'tests/app.test.js',
   'tests/psychometric.test.js',
   'tests/fitness.test.js',
+  'tests/essay.test.js',
   'tests/microteaching.test.js',
-  'tests/interview.test.js'
+  'tests/interview.test.js',
+  'tests/groupdiscussion.test.js'
 ];
 
 expectedFiles.forEach(file => {
@@ -65,8 +71,10 @@ console.log(`✔ Kesemua ${expectedFiles.length} fail utama projek disahkan wuju
 const appModulePath = path.join(projectRoot, 'js', 'app.js');
 const psychometricModulePath = path.join(projectRoot, 'js', 'psychometric.js');
 const fitnessModulePath = path.join(projectRoot, 'js', 'fitness.js');
+const essayModulePath = path.join(projectRoot, 'js', 'essay.js');
 const microteachingModulePath = path.join(projectRoot, 'js', 'microteaching.js');
 const interviewModulePath = path.join(projectRoot, 'js', 'interview.js');
+const groupdiscussionModulePath = path.join(projectRoot, 'js', 'groupdiscussion.js');
 
 // Mock persekitaran ringkas untuk import Node.js
 const mockStorage = {};
@@ -92,15 +100,19 @@ global.document = {
 const MACApp = require(appModulePath);
 const PsychometricModule = require(psychometricModulePath);
 const FitnessModule = require(fitnessModulePath);
+const EssayModule = require(essayModulePath);
 const MicroteachingModule = require(microteachingModulePath);
 const InterviewModule = require(interviewModulePath);
+const GroupDiscussionModule = require(groupdiscussionModulePath);
 
 assert(MACApp && typeof MACApp.switchTab === 'function', 'MACApp mesti dieksport dengan switchTab');
 assert(PsychometricModule && (PsychometricModule.PsychometricEngine || typeof PsychometricModule === 'function'), 'PsychometricModule mesti dieksport');
 assert(FitnessModule && FitnessModule.BleepTestEngine && FitnessModule.SEGAKCalculator, 'FitnessModule mesti mengeksport BleepTestEngine & SEGAKCalculator');
+assert(EssayModule && (EssayModule.EssayEngine || EssayModule.MACEssayModule), 'EssayModule mesti dieksport');
 assert(MicroteachingModule && MicroteachingModule.MicroTeachingHub && MicroteachingModule.DSKP_TEMPLATES, 'MicroteachingModule mesti mengeksport MicroTeachingHub & DSKP_TEMPLATES');
 assert(InterviewModule && InterviewModule.InterviewSimulator && InterviewModule.INTERVIEW_QUESTIONS, 'InterviewModule mesti mengeksport InterviewSimulator & INTERVIEW_QUESTIONS');
-console.log('✔ Kesemua 5 modul JS berjaya diimport dan mengeksport API yang lengkap.\n');
+assert(GroupDiscussionModule && (GroupDiscussionModule.LDKEngine || GroupDiscussionModule.MACGroupDiscussionModule), 'GroupDiscussionModule mesti dieksport');
+console.log('✔ Kesemua modul JS berjaya diimport dan mengeksport API yang lengkap.\n');
 
 // ============================================================================
 // BAHAGIAN 2: 100% LUAR TALIAN (OFFLINE-READY) - SIFAR PAUTAN CDN LUARAN
@@ -113,8 +125,10 @@ const clientCodeFiles = [
   'js/app.js',
   'js/psychometric.js',
   'js/fitness.js',
+  'js/essay.js',
   'js/microteaching.js',
-  'js/interview.js'
+  'js/interview.js',
+  'js/groupdiscussion.js'
 ];
 
 const externalUrlPattern = /(https?:\/\/[^\s"'<>]+)/gi;
@@ -144,8 +158,10 @@ const htmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
 assert(htmlContent.includes('<link rel="stylesheet" href="css/style.css">'), 'index.html mesti memuatkan css/style.css tempatan');
 assert(htmlContent.includes('<script src="js/psychometric.js"></script>'), 'index.html mesti memuatkan js/psychometric.js');
 assert(htmlContent.includes('<script src="js/fitness.js"></script>'), 'index.html mesti memuatkan js/fitness.js');
+assert(htmlContent.includes('<script src="js/essay.js"></script>'), 'index.html mesti memuatkan js/essay.js');
 assert(htmlContent.includes('<script src="js/microteaching.js"></script>'), 'index.html mesti memuatkan js/microteaching.js');
 assert(htmlContent.includes('<script src="js/interview.js"></script>'), 'index.html mesti memuatkan js/interview.js');
+assert(htmlContent.includes('<script src="js/groupdiscussion.js"></script>'), 'index.html mesti memuatkan js/groupdiscussion.js');
 assert(htmlContent.includes('<script src="js/app.js"></script>'), 'index.html mesti memuatkan js/app.js');
 
 console.log('✔ Sifar CDN luaran atau pautan internet dalam kesemua fail HTML, CSS, dan JS.');
@@ -162,8 +178,8 @@ assert(htmlContent.includes('brand-crest'), 'Lambang MARA mesti wujud');
 assert(htmlContent.includes('100% Luar Talian'), 'Lencana "100% Luar Talian" mesti wujud');
 assert(htmlContent.includes('id="btn-global-print"'), 'Butang cetak global mesti wujud');
 
-// 6 Tab Navigasi & Tab Panes
-const requiredTabs = ['dashboard', 'psychometric', 'fitness', 'microteaching', 'interview', 'docs'];
+// 8 Tab Navigasi & Tab Panes Mengikut Aliran Stesen Hari Penilaian MAC
+const requiredTabs = ['dashboard', 'psychometric', 'fitness', 'essay', 'microteaching', 'interview', 'groupdiscussion', 'docs'];
 requiredTabs.forEach(tab => {
   assert(htmlContent.includes(`data-tab="${tab}"`), `Butang navigasi tab "${tab}" mesti wujud`);
   assert(htmlContent.includes(`id="tab-${tab}"`), `Seksyen tab pane "#tab-${tab}" mesti wujud`);
@@ -173,8 +189,10 @@ requiredTabs.forEach(tab => {
 const requiredContainers = [
   'psychometric-app',
   'fitness-app',
+  'essay-app',
   'microteaching-app',
   'interview-app',
+  'groupdiscussion-app',
   'toast-container',
   'modal-doc-viewer',
   'modal-guide'
@@ -193,7 +211,7 @@ assert(htmlContent.includes('id="kpi-microteaching-status"'), 'KPI microteaching
 assert(htmlContent.includes('id="kpi-interview-status"'), 'KPI temuduga mesti wujud');
 assert(htmlContent.includes('id="dashboard-checklist"'), 'Senarai semak dokumen mesti wujud');
 
-console.log('✔ Kesemua 6 tab modul, 7 kontena dinamik, profil calon dan KPI wujud dalam DOM index.html.\n');
+console.log('✔ Kesemua 8 tab modul, 9 kontena dinamik, profil calon dan KPI wujud dalam DOM index.html.\n');
 
 // ============================================================================
 // BAHAGIAN 4: LIPUTAN LEMBARAN GAYA CETAKAN PINTAR (@media print)
@@ -265,7 +283,19 @@ assert(doc4.includes('STAR') || doc4.includes('Situation, Task, Action, Result')
 assert(doc4.includes('25') || doc4.includes('28'), 'Dokumen 4 mesti mengandungi bank soalan temu duga komprehensif');
 assert(doc4.includes('Akta 249') || doc4.includes('MARA'), 'Dokumen 4 mesti menyentuh soalan fakta MARA');
 
-console.log('✔ Kesemua 4 kit nota rujukan sahih menepati rujukan rasmi perundangan, KPM, dan MARA.\n');
+// Dokumen 5: Panduan Penulisan Esei MAC (BI & BM)
+const doc5 = fs.readFileSync(path.join(projectRoot, 'docs/05_PANDUAN_PENULISAN_ESEI_MAC.md'), 'utf8');
+assert(doc5.includes('PEEL') || doc5.includes('P.E.E.L'), 'Dokumen 5 mesti mengandungi kaedah PEEL');
+assert(doc5.includes('350') && doc5.includes('500'), 'Dokumen 5 mesti menetapkan sasaran 350-500 patah perkataan');
+assert(doc5.includes('MRSM'), 'Dokumen 5 mesti menghuraikan konteks MRSM dan MARA');
+
+// Dokumen 6: Panduan Dinamika Kumpulan (LDK)
+const doc6 = fs.readFileSync(path.join(projectRoot, 'docs/06_PANDUAN_LDK_DINAMIKA_KUMPULAN.md'), 'utf8');
+assert(doc6.includes('15') && (doc6.includes('minit') || doc6.includes('Minit')), 'Dokumen 6 mesti menyatakan tempoh 15 minit meja bulat');
+assert(doc6.includes('Kajian Kes') || doc6.includes('senario'), 'Dokumen 6 mesti mengandungi 5 kajian kes maktab');
+assert(doc6.includes('konsensus') || doc6.includes('Konsensus'), 'Dokumen 6 mesti menekankan persepakatan konsensus');
+
+console.log('✔ Kesemua 6 kit nota rujukan sahih menepati rujukan rasmi perundangan, KPM, dan MARA.\n');
 
 // ============================================================================
 // BAHAGIAN 6: SIMULASI ALIRAN DATA MERENTAS MODUL & DASHBOARD KPIS
@@ -401,7 +431,7 @@ assert.strictEqual(
   '12 Soalan Dilatih',
   'KPI Temu Duga mesti dikemaskini'
 );
-console.log('✔ Kesemua 4 penunjuk metrik KPI Dashboard berjaya mencerminkan data dari keempat-empat modul.');
+console.log('✔ Kesemua 4 penunjuk metrik KPI Dashboard berjaya mencerminkan data dari modul-modul berkaitan.');
 
 // 7. Navigasi Penuh Merentas Semua Tab
 requiredTabs.forEach(t => {
@@ -409,10 +439,10 @@ requiredTabs.forEach(t => {
   assert.strictEqual(result, t, `Navigasi ke "${t}" mesti berjaya`);
   assert.strictEqual(localStorage.getItem('mac_active_tab'), t, `localStorage mac_active_tab mesti "${t}"`);
 });
-console.log('✔ Kitaran pertukaran tab merentasi kesemua 6 modul berfungsi lancar dengan konsistensi state.\n');
+console.log('✔ Kitaran pertukaran tab merentasi kesemua 8 modul berfungsi lancar dengan konsistensi state.\n');
 
 // ============================================================================
-// BAHAGIAN 7: PERLAKSANAAN AUTOMATIK KESEMUA 5 UNIT TEST SUITES (100% PASS)
+// BAHAGIAN 7: PERLAKSANAAN AUTOMATIK KESEMUA 7 UNIT TEST SUITES (100% PASS)
 // ============================================================================
 console.log('--- Bahagian 7: Perlaksanaan Automatik Semua Unit Test Suis ---');
 
@@ -420,13 +450,15 @@ const testSuites = [
   { file: 'tests/app.test.js', label: 'Task 2: Navigasi UI, Tab & Pengurusan State' },
   { file: 'tests/psychometric.test.js', label: 'Task 3: Simulator Psikometrik MyPersonaliti' },
   { file: 'tests/fitness.test.js', label: 'Task 4: Hab Kecergasan Bleep Test & SEGAK' },
+  { file: 'tests/essay.test.js', label: 'Task Esei: Modul Penulisan Esei (BI/BM)' },
   { file: 'tests/microteaching.test.js', label: 'Task 5: Hab Micro-Teaching & RPH DSKP' },
-  { file: 'tests/interview.test.js', label: 'Task 6: Simulator Temu Duga Panel & Teknik STAR' }
+  { file: 'tests/interview.test.js', label: 'Task 6: Simulator Temu Duga Panel & Teknik STAR' },
+  { file: 'tests/groupdiscussion.test.js', label: 'Task LDK: Modul Dinamika Kumpulan (LDK)' }
 ];
 
 testSuites.forEach((suite, idx) => {
   const fullTestPath = path.join(projectRoot, suite.file);
-  console.log(`[${idx + 1}/5] Menjalankan ${suite.label} (${suite.file})...`);
+  console.log(`[${idx + 1}/7] Menjalankan ${suite.label} (${suite.file})...`);
   try {
     const output = execSync(`node "${fullTestPath}"`, {
       cwd: projectRoot,
@@ -445,6 +477,6 @@ testSuites.forEach((suite, idx) => {
 });
 
 console.log('\n================================================================');
-console.log('🎉 SEMUA UJIAN INTEGRASI & UNIT TEST (TASK 1 - 7) LULUS 100%!');
+console.log('🎉 SEMUA UJIAN INTEGRASI & 7 UNIT TEST SUITES LULUS 100%!');
 console.log('   Platform MARA Assessment Centre (MAC) DG41 PJPK Siap Beroperasi.');
 console.log('================================================================\n');

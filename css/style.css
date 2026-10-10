@@ -1697,6 +1697,360 @@ code, pre {
 }
 
 /* --------------------------------------------------------------------------
+   Hab Kecergasan Fizikal (Task 4: Bleep Test & SEGAK)
+   -------------------------------------------------------------------------- */
+.fitness-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fitness-subnav-bar {
+  display: flex;
+  gap: 0.75rem;
+  background-color: var(--bg-subtle);
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.fitness-subnav-bar .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Bleep Test Telemetry Grid */
+.bleep-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.telemetry-box {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.telemetry-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.telemetry-box.box-level::before { background-color: var(--mara-red); }
+.telemetry-box.box-shuttle::before { background-color: var(--mara-navy); }
+.telemetry-box.box-distance::before { background-color: var(--mara-gold); }
+.telemetry-box.box-vo2::before { background-color: var(--color-success); }
+
+.telemetry-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.telemetry-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  font-family: var(--font-mono);
+}
+
+.tele-shuttle-max, .tele-unit {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.telemetry-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* Bleep Status Pill */
+.bleep-status-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.bleep-status-pill.status-idle {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.bleep-status-pill.status-running {
+  background-color: var(--color-success);
+  color: #FFFFFF;
+  animation: pulse-running 1.2s infinite;
+}
+
+.bleep-status-pill.status-paused {
+  background-color: var(--color-warning);
+  color: #FFFFFF;
+}
+
+@keyframes pulse-running {
+  0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(5, 150, 105, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+}
+
+/* 20m Visual Track */
+.bleep-track-wrapper {
+  background-color: #0F172A;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  color: #FFFFFF;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.track-header, .track-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.track-label-center {
+  color: var(--mara-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bleep-track-lane {
+  position: relative;
+  height: 54px;
+  background: repeating-linear-gradient(90deg, #1E293B 0, #1E293B 20px, #334155 20px, #334155 22px);
+  border-top: 3px solid #E2E8F0;
+  border-bottom: 3px solid #E2E8F0;
+  margin: 0.85rem 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.track-cone {
+  position: absolute;
+  font-size: 1.1rem;
+  color: #F97316;
+  text-shadow: 0 0 6px rgba(249, 115, 22, 0.8);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.cone-start { left: 4px; }
+.cone-end { right: 4px; }
+
+.track-runner-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.1s linear;
+  z-index: 3;
+}
+
+.runner-avatar {
+  font-size: 1.85rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+}
+
+.track-runner-dot.shuttle-hit .runner-avatar {
+  transform: scale(1.3) rotate(-10deg);
+}
+
+.bleep-controls-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Status Qualify Card */
+.status-qualify-box {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.status-qualify-box.qualify-pass {
+  background-color: var(--color-success-bg);
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+
+.status-qualify-box.qualify-fail {
+  background-color: var(--color-danger-bg);
+  border-color: #FECACA;
+  color: #991B1B;
+}
+
+.qualify-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+
+.qualify-desc {
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.benchmark-pill {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* SEGAK Form & Result Styles */
+.battery-section {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.battery-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mara-navy);
+  margin-bottom: 0.85rem;
+  border-left: 3px solid var(--mara-red);
+  padding-left: 0.5rem;
+}
+
+.form-static-badge {
+  background-color: var(--mara-navy-subtle);
+  border: 1px solid var(--border-medium);
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--mara-navy);
+  font-size: 0.9rem;
+}
+
+.segak-battery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.battery-score-card {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+}
+
+.battery-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.battery-points {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--mara-navy);
+  font-family: var(--font-mono);
+  margin: 0.35rem 0;
+}
+
+.battery-points .total-pt {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.battery-sub {
+  color: var(--mara-gold);
+  font-size: 1.1rem;
+}
+
+.segak-grade-badge {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding: 0.4rem 1.5rem;
+  border-radius: var(--radius-md);
+  color: #FFFFFF;
+}
+
+.segak-grade-badge.grade-A { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
+.segak-grade-badge.grade-B { background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%); }
+.segak-grade-badge.grade-C { background: linear-gradient(135deg, #D97706 0%, #FBBF24 100%); }
+.segak-grade-badge.grade-D { background: linear-gradient(135deg, #DC2626 0%, #F87171 100%); }
+.segak-grade-badge.grade-E { background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 100%); }
+
+.intervention-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.intervention-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.intervention-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--mara-red);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .bleep-telemetry-grid, .segak-battery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bleep-telemetry-grid, .segak-battery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF
    -------------------------------------------------------------------------- */
 @media print {

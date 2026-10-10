@@ -506,6 +506,14 @@ const MACApp = (function () {
       });
     }
 
+    // Listener Butang Panduan Khusus Modul
+    const btnGuideFitness = document.getElementById('btn-guide-fitness');
+    if (btnGuideFitness) {
+      btnGuideFitness.addEventListener('click', () => {
+        openDocModal(2);
+      });
+    }
+
     // 6. Escape Key untuk tutup semua modal
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {

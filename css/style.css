@@ -2488,6 +2488,13 @@ code, pre {
 .max-h-300 { max-height: 300px; overflow-y: auto; }
 .max-h-400 { max-height: 400px; overflow-y: auto; }
 
+.table-responsive { width: 100%; overflow-x: auto; margin-top: 1rem; }
+.table-custom { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; }
+.table-custom th, .table-custom td { padding: 0.75rem 1rem; border: 1px solid var(--border-medium, #E2E8F0); }
+.table-custom th { background-color: var(--color-bg-subtle, #F1F5F9); color: var(--mara-navy, #0A2540); font-weight: 700; }
+.table-custom tr:nth-child(even) { background-color: #F8FAFC; }
+.table-custom tr:hover { background-color: #F1F5F9; }
+
 /* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF
    -------------------------------------------------------------------------- */

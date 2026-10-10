@@ -1,0 +1,4 @@
+# Scratch & temporary development artifacts
+.superpowers/
+node_modules/
+*.log

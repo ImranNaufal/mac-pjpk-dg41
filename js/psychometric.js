@@ -446,6 +446,13 @@
         return false;
       }
       this.answers[qNum] = val;
+
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.setItem('mac_psychometric_draft_answers', JSON.stringify(this.answers));
+        }
+      } catch (e) {}
+
       return true;
     }
 
@@ -465,6 +472,12 @@
       }
       this.answers = {};
       this.remainingSeconds = this.durationMinutes * 60;
+
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.removeItem('mac_psychometric_draft_answers');
+        }
+      } catch (e) {}
     }
 
     /**
@@ -577,6 +590,12 @@
       } else {
         status = 'PERLU PERBAIKAN';
       }
+
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.removeItem('mac_psychometric_draft_answers');
+        }
+      } catch (e) {}
 
       return {
         domainScores,

@@ -796,27 +796,37 @@ MARA Assessment Centre (MAC) Official Preparation Hub
     exportRPHHtml(rph = this.currentRPH) {
       if (!rph) return '';
 
+      const esc = (val) => {
+        if (val === null || val === undefined) return '';
+        return String(val)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      };
+
       const skItems = Array.isArray(rph.sk)
-        ? rph.sk.map(s => `<li>${s}</li>`).join('')
-        : `<li>${rph.sk}</li>`;
+        ? rph.sk.map(s => `<li>${esc(s)}</li>`).join('')
+        : `<li>${esc(rph.sk)}</li>`;
 
       const spItems = Array.isArray(rph.sp)
-        ? rph.sp.map(s => `<li>${s}</li>`).join('')
-        : `<li>${rph.sp}</li>`;
+        ? rph.sp.map(s => `<li>${esc(s)}</li>`).join('')
+        : `<li>${esc(rph.sp)}</li>`;
 
       let phaseRows = '';
       if (Array.isArray(rph.phases)) {
         phaseRows = rph.phases.map(p => `
           <tr>
             <td class="rph-phase-col">
-              <strong>${p.phaseName || p.name}</strong><br>
-              <span class="badge badge-sm badge-outline">${p.duration}</span>
+              <strong>${esc(p.phaseName || p.name)}</strong><br>
+              <span class="badge badge-sm badge-outline">${esc(p.duration)}</span>
             </td>
-            <td class="rph-focus-col">${p.focus || '-'}</td>
-            <td class="rph-act-col">${(p.activities || '').replace(/\n/g, '<br>')}</td>
+            <td class="rph-focus-col">${esc(p.focus || '-')}</td>
+            <td class="rph-act-col">${esc(p.activities || '').replace(/\n/g, '<br>')}</td>
             <td class="rph-safe-col">
-              <div class="rph-safe-tag"><strong>Keselamatan:</strong> ${p.safety || '-'}</div>
-              ${p.notes ? `<div class="rph-notes-tag mt-1"><strong>Catatan/EMK:</strong> ${p.notes}</div>` : ''}
+              <div class="rph-safe-tag"><strong>Keselamatan:</strong> ${esc(p.safety || '-')}</div>
+              ${p.notes ? `<div class="rph-notes-tag mt-1"><strong>Catatan/EMK:</strong> ${esc(p.notes)}</div>` : ''}
             </td>
           </tr>
         `).join('');
@@ -827,7 +837,7 @@ MARA Assessment Centre (MAC) Official Preparation Hub
           <div class="rph-doc-header">
             <div class="rph-header-top">
               <span class="rph-badge">MARA ASSESSMENT CENTRE (MAC)</span>
-              <span class="rph-meta-date">${rph.formattedDate || ''}</span>
+              <span class="rph-meta-date">${esc(rph.formattedDate || '')}</span>
             </div>
             <h3 class="rph-doc-title">RANCANGAN PENGAJARAN HARIAN (RPH) MICRO-TEACHING</h3>
             <p class="rph-doc-sub">Skim Pegawai Perkhidmatan Pendidikan DG41 &bull; Pendidikan Jasmani &amp; Kesihatan (PJPK) &bull; Bahagian Pendidikan Menengah MARA</p>
@@ -838,25 +848,25 @@ MARA Assessment Centre (MAC) Official Preparation Hub
               <tbody>
                 <tr>
                   <th>Nama Calon</th>
-                  <td>${rph.candidateName || 'Calon DG41 PJPK'}</td>
+                  <td>${esc(rph.candidateName || 'Calon DG41 PJPK')}</td>
                   <th>Maktab Cadangan</th>
-                  <td>${rph.mrsmBranch || 'MRSM (Sistem SPMRSM)'}</td>
+                  <td>${esc(rph.mrsmBranch || 'MRSM (Sistem SPMRSM)')}</td>
                 </tr>
                 <tr>
                   <th>Mata Pelajaran</th>
-                  <td><strong>${rph.subject}</strong></td>
+                  <td><strong>${esc(rph.subject)}</strong></td>
                   <th>Tingkatan</th>
-                  <td>${rph.form}</td>
+                  <td>${esc(rph.form)}</td>
                 </tr>
                 <tr>
                   <th>Tajuk / Fokus</th>
-                  <td colspan="3"><strong class="text-maroon">${rph.topic || rph.title}</strong></td>
+                  <td colspan="3"><strong class="text-maroon">${esc(rph.topic || rph.title)}</strong></td>
                 </tr>
                 <tr>
                   <th>Bidang / Tema</th>
-                  <td>${rph.field || rph.theme || '-'}</td>
+                  <td>${esc(rph.field || rph.theme || '-')}</td>
                   <th>Masa Sesi</th>
-                  <td><span class="badge badge-gold">${rph.duration}</span></td>
+                  <td><span class="badge badge-gold">${esc(rph.duration)}</span></td>
                 </tr>
               </tbody>
             </table>

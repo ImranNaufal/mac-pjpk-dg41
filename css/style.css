@@ -127,10 +127,10 @@ code, pre {
 }
 
 /* --------------------------------------------------------------------------
-   Header Korporat MARA
+   Header Korporat MARA & Profil Calon
    -------------------------------------------------------------------------- */
-.corp-header {
-  background: linear-gradient(135deg, var(--mara-navy) 0%, var(--mara-navy-light) 55%, var(--mara-red) 100%);
+.header-main {
+  background: linear-gradient(135deg, var(--mara-navy) 0%, #153A60 60%, var(--mara-red) 100%);
   color: var(--text-inverse);
   box-shadow: var(--shadow-md);
   position: relative;
@@ -140,151 +140,273 @@ code, pre {
 .header-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.1rem 1.5rem;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.brand-wrapper {
+.header-brand {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.brand-crest {
+.mara-badge {
+  background-color: var(--mara-red);
+  color: #FFFFFF;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--mara-gold);
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
-.crest-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.header-title-box {
+  display: flex;
+  flex-direction: column;
 }
 
-.brand-sup {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  color: var(--mara-gold);
-  text-transform: uppercase;
-}
-
-.brand-title {
-  font-size: 1.35rem;
+.header-title {
+  font-size: 1.25rem;
   font-weight: 800;
   color: #FFFFFF;
-  margin: 0.1rem 0;
   letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.brand-sub {
+.header-subtitle {
   font-size: 0.825rem;
-  color: #E2E8F0;
+  color: #F1F5F9;
   font-weight: 500;
+  margin: 0.2rem 0;
 }
 
-.header-actions {
+.badge-version {
+  display: inline-block;
+  background-color: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  color: #FEE89D;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.candidate-bar {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.offline-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background-color: rgba(5, 150, 105, 0.2);
-  border: 1px solid rgba(5, 150, 105, 0.5);
-  color: #A7F3D0;
+.candidate-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.candidate-label {
+  color: #CBD5E1;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.candidate-info strong {
+  color: #FFFFFF;
+  font-size: 0.85rem;
+}
+
+.candidate-id {
+  color: var(--mara-gold);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+}
+
+.btn-profile-toggle {
+  background-color: var(--mara-red);
+  color: #FFFFFF;
+  border: 1px solid var(--mara-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.65rem;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-full);
+  cursor: pointer;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
 }
 
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10B981;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
-  animation: pulse-animation 2s infinite;
-}
-
-@keyframes pulse-animation {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+.btn-profile-toggle:hover {
+  background-color: var(--mara-red-light);
 }
 
 /* --------------------------------------------------------------------------
-   Bar Navigasi Tab
+   Notice Strip (Klausa Penting Lampiran A)
    -------------------------------------------------------------------------- */
-.main-nav {
+.notice-strip {
+  background-color: #FEF3C7;
+  border-bottom: 1px solid #F59E0B;
+  color: #78350F;
+  font-size: 0.825rem;
+}
+
+.notice-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.notice-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Bar Navigasi Tab Utama (Desktop & iPad)
+   -------------------------------------------------------------------------- */
+.nav-tabs-wrapper {
   background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 2px solid var(--border-medium);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.nav-container {
+.nav-tabs-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.tab-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-container::-webkit-scrollbar {
-  height: 3px;
-}
-.nav-container::-webkit-scrollbar-thumb {
-  background: var(--border-medium);
-}
-
-.nav-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.15rem;
-  background: transparent;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  background-color: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 600;
+  border-bottom: 4px solid transparent;
   color: var(--text-muted);
   cursor: pointer;
-  white-space: nowrap;
+  transition: all var(--transition-fast);
+  min-height: 64px;
+}
+
+.tab-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--mara-navy);
+}
+
+.tab-btn.active {
+  background-color: var(--mara-red-subtle);
+  color: var(--mara-red);
+  border-bottom-color: var(--mara-red);
+  font-weight: 700;
+}
+
+.tab-badge-phase {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.2rem;
+}
+
+.tab-btn.active .tab-badge-phase {
+  background-color: var(--mara-red);
+  color: #FFFFFF;
+}
+
+.tab-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.tab-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.tab-subtext {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+  text-align: center;
+}
+
+.tab-btn.active .tab-subtext {
+  color: var(--mara-red-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Navigation Bar (Mudah Alih / Telefon Pintar)
+   -------------------------------------------------------------------------- */
+.bottom-nav {
+  display: none; /* Disorokkan pada desktop/iPad secara lalai */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-medium);
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  grid-template-columns: repeat(4, 1fr);
+  height: 60px;
+}
+
+.bottom-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.35rem 0.25rem;
+  min-height: 48px;
   transition: all var(--transition-fast);
 }
 
-.nav-tab:hover {
-  color: var(--mara-navy);
-  background-color: var(--bg-subtle);
+.bottom-nav-btn .b-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
 }
 
-.nav-tab.active {
+.bottom-nav-btn .b-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.bottom-nav-btn.active {
   color: var(--mara-red);
-  border-bottom-color: var(--mara-red);
-  background-color: var(--mara-red-subtle);
-}
-
-.nav-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
@@ -2507,6 +2629,96 @@ code, pre {
   color: #B22222;
   text-decoration: none;
 }
+
+/* --------------------------------------------------------------------------
+   Responsive Layout untuk Mobile & iPad / Tablet
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nav-tabs-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    padding-bottom: 72px; /* Ruang untuk bottom-nav */
+  }
+  .nav-tabs-wrapper {
+    display: none; /* Sembunyikan tab atas pada skrin telefon, guna bottom-nav */
+  }
+  .bottom-nav {
+    display: grid;
+  }
+  .header-container {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .candidate-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Modal Profil Calon */
+.profile-card {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+.profile-card.hidden { display: none !important; }
+.profile-card-content {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  max-width: 500px;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  border-top: 5px solid var(--mara-red);
+}
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+/* Toast Container */
+.toast-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.toast {
+  background: #1E293B;
+  color: #FFFFFF;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.toast.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast-success { background: #065F46; border-left: 4px solid #10B981; }
+.toast-warning { background: #92400E; border-left: 4px solid #F59E0B; }
+.toast-info { background: #0A2540; border-left: 4px solid #38BDF8; }
 
 /* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF

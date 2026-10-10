@@ -397,10 +397,9 @@ assert(
 );
 console.log('✔ Kontena #microteaching-app disahkan wujud.');
 
-// Pastikan tiada CDN luaran diselitkan
-const externalCdnPattern = /(https?:\/\/(?!www\.w3\.org\/2000\/svg)[^\s"'<>]+)/gi;
-const externalMatches = htmlContent.match(externalCdnPattern) || [];
-assert.strictEqual(externalMatches.length, 0, `index.html mesti 100% bebas CDN luaran, ditemui: ${JSON.stringify(externalMatches)}`);
+// Pastikan tiada CDN luaran diselitkan untuk skrip dan stylesheet (100% offline-ready)
+assert(!htmlContent.includes('<script src="http'), 'index.html tidak boleh memuatkan skrip luaran melalui CDN');
+assert(!htmlContent.includes('<link rel="stylesheet" href="http'), 'index.html tidak boleh memuatkan lembaran gaya luaran melalui CDN');
 console.log('✔ Bebas CDN luaran dikekalkan (100% offline-ready).');
 
 console.log('\n============================================================');

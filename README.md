@@ -260,25 +260,40 @@ Sediakan dokumen berikut dalam **Folder Poket / Fail Sijil Berasingan** (Asal & 
 
 ## 6. Senarai Punca Kuasa & Sumber Rujukan Sahih
 
-Platform ini dibina berasaskan punca kuasa dan warta rasmi persekutuan:
+Platform ini dibina berasaskan punca kuasa, warta rasmi persekutuan, dan kajian sukan antarabangsa:
 
 1. **Akta Majlis Amanah Rakyat 1966 [Akta 249]:**
    * *Seksyen 6(1):* Kewajipan memajukan, menggalakkan, memudahkan, dan menjalankan pembangunan ekonomi dan sosial masyarakat luar bandar.
-   * *Portal Rasmi MARA:* [https://www.mara.gov.my](https://www.mara.gov.my)
+   * *Teks Rasmi Akta 249 MARA:* [https://www.mara.gov.my/korporat/profil-korporat/akta-249/](https://www.mara.gov.my/korporat/profil-korporat/akta-249/)
+   * *Sejarah Penubuhan & RIDA:* [https://www.mara.gov.my/korporat/profil-korporat/sejarah-mara/](https://www.mara.gov.my/korporat/profil-korporat/sejarah-mara/)
 2. **Kementerian Kemajuan Desa dan Wilayah (KKDW):**
    * Dasar dan peruntukan pembangunan modal insan luar bandar melalui rangkaian institusi pendidikan MARA.
-3. **Dokumen Standard Kurikulum dan Pentaksiran (DSKP) KSSM PJPK:**
+   * *Portal Rasmi KKDW:* [https://www.kkdw.gov.my/](https://www.kkdw.gov.my/)
+3. **Sistem Pendidikan Maktab Rendah Sains MARA (SPMRSM):**
+   * Bahagian Pendidikan Menengah (BPM) MARA: Kurikulum Premier, Ulul Albab, IGCSE, Program Khas Pendidikan, Bitara, dan Sistem Homeroom.
+   * *Portal BPM SPMRSM:* [https://www.mara.gov.my/pendidikan/pendidikan-menengah/sistem-pendidikan-mrsm/](https://www.mara.gov.my/pendidikan/pendidikan-menengah/sistem-pendidikan-mrsm/)
+   * *Direktori 55 MRSM Semalaysia:* [https://www.mara.gov.my/pendidikan/pendidikan-menengah/senarai-mrsm/](https://www.mara.gov.my/pendidikan/pendidikan-menengah/senarai-mrsm/)
+4. **Dokumen Standard Kurikulum dan Pentaksiran (DSKP) KSSM PJPK:**
    * Diterbitkan oleh **Bahagian Pembangunan Kurikulum (BPK)**, Kementerian Pendidikan Malaysia.
    * Rujukan SK dan SP Tingkatan 1, 2, dan 4 merangkumi 3 domain: Psikomotor, Kognitif, dan Afektif.
-4. **Buku Panduan Standard Kecergasan Fizikal Kebangsaan Untuk Murid Sekolah Malaysia (SEGAK):**
+   * *Portal Rasmi BPK KPM:* [http://bpk.moe.gov.my/](http://bpk.moe.gov.my/)
+   * *Repositori Kurikulum Menengah BPK:* [http://bpk.moe.gov.my/index.php/terbitan-bpk/kurikulum-sekolah-menengah](http://bpk.moe.gov.my/index.php/terbitan-bpk/kurikulum-sekolah-menengah)
+5. **Buku Panduan Standard Kecergasan Fizikal Kebangsaan Untuk Murid Sekolah Malaysia (SEGAK):**
    * Bahagian Sukan, Kokurikulum dan Kesenian (BSKK), Kementerian Pendidikan Malaysia (Surat Pekeliling Ikhtisas Bil. 4/2008).
-5. **Protokol Ujian Larian Ulang-Alik 20m (Multi-Stage Fitness Test):**
+   * *Arkib SPI KPM:* [https://www.moe.gov.my/pekeliling/surat-pekeliling-ikhtisas](https://www.moe.gov.my/pekeliling/surat-pekeliling-ikhtisas)
+   * *Portal Rasmi BSKK KPM:* [https://www.moe.gov.my/korporat/jabatan-dan-bahagian/bahagian-sukan-kokurikulum-dan-kesenian](https://www.moe.gov.my/korporat/jabatan-dan-bahagian/bahagian-sukan-kokurikulum-dan-kesenian)
+6. **Protokol Ujian Larian Ulang-Alik 20m (Bleep Test / Multi-Stage Fitness Test):**
    * *Léger, L. A., & Lambert, J. (1982) / Ramsbottom, R. et al. (1988):* Jadual kelajuan larian Aras 1–21 dan formula penentuan kapasiti aerobik VO2 Max.
-6. **Surat Pekeliling Ikhtisas (SPI) Keselamatan KPM:**
+   * *Institut Sukan Negara (ISN):* [https://www.isn.gov.my/](https://www.isn.gov.my/)
+   * *Kajian Luc Léger (PubMed / NIH):* [https://pubmed.ncbi.nlm.nih.gov/3190890/](https://pubmed.ncbi.nlm.nih.gov/3190890/)
+7. **Surat Pekeliling Ikhtisas (SPI) Keselamatan KPM:**
    * *SPI Bil. 9/2000:* Panduan Keselamatan Diri Murid Semasa Pengajaran Pendidikan Jasmani dan Kesihatan Serta Kegiatan Kokurikulum dan Sukan.
    * *Surat Siaran Garis Panduan KPM Langkah Penjagaan Semasa Cuaca Panas & Jerebu.*
-7. **Sistem Pendidikan Maktab Rendah Sains MARA (SPMRSM):**
-   * Bahagian Pendidikan Menengah (BPM) MARA: Kurikulum Premier, Ulul Albab, IGCSE, Program Khas Pendidikan, Bitara, dan Sistem Homeroom.
+   * *Portal Rasmi KPM:* [https://www.moe.gov.my/](https://www.moe.gov.my/)
+8. **Pengambilan & Ujian Integriti Perjawatan Awam (SPP / MARA):**
+   * Standard Instrumen MyPersonaliti MARA & Skim Ujian Integriti Penjawat Awam.
+   * *Suruhanjaya Perkhidmatan Pendidikan (SPP):* [https://www.spp.gov.my/](https://www.spp.gov.my/)
+   * *Portal Pengambilan Kerjaya MARA:* [https://www.mara.gov.my/kerjaya-mara/](https://www.mara.gov.my/kerjaya-mara/)
 
 ---
 

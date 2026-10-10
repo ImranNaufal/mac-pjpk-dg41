@@ -21,11 +21,10 @@ console.log('✔ Fail index.html, css/style.css, dan js/app.js disahkan wujud.')
 // 2. Semak Kandungan index.html
 const htmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
 
-// Pastikan tiada pautan CDN luaran
-const externalCdnPattern = /(https?:\/\/(?!www\.w3\.org\/2000\/svg)[^\s"'<>]+)/gi;
-const externalLinks = htmlContent.match(externalCdnPattern) || [];
-assert.strictEqual(externalLinks.length, 0, `index.html tidak boleh mempunyai sambungan internet luaran: ${JSON.stringify(externalLinks)}`);
-console.log('✔ index.html 100% bebas CDN luaran.');
+// Pastikan tiada pautan CDN luaran untuk skrip dan stylesheet
+assert(!htmlContent.includes('<script src="http'), 'index.html tidak boleh memuatkan skrip luaran melalui CDN');
+assert(!htmlContent.includes('<link rel="stylesheet" href="http'), 'index.html tidak boleh memuatkan lembaran gaya luaran melalui CDN');
+console.log('✔ index.html 100% bebas CDN skrip dan gaya luaran.');
 
 // Pastikan kesemua 8 tab navigation wujud mengikut stesen MAC
 const expectedTabs = ['dashboard', 'psychometric', 'fitness', 'essay', 'microteaching', 'interview', 'groupdiscussion', 'docs'];

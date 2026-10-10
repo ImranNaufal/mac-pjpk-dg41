@@ -119,8 +119,7 @@ console.log('✔ Kesemua modul JS berjaya diimport dan mengeksport API yang leng
 // ============================================================================
 console.log('--- Bahagian 2: Pengesahan 100% Luar Talian (Sifar CDN / URL Luaran) ---');
 
-const clientCodeFiles = [
-  'index.html',
+const scriptAndStyleFiles = [
   'css/style.css',
   'js/app.js',
   'js/psychometric.js',
@@ -133,20 +132,22 @@ const clientCodeFiles = [
 
 const externalUrlPattern = /(https?:\/\/[^\s"'<>]+)/gi;
 
-clientCodeFiles.forEach(relPath => {
+scriptAndStyleFiles.forEach(relPath => {
   const filePath = path.join(projectRoot, relPath);
   const content = fs.readFileSync(filePath, 'utf8');
   
   const matches = content.match(externalUrlPattern) || [];
-  // Kecualikan namespace SVG rasmi W3C (xmlns="http://www.w3.org/2000/svg")
-  const disallowedUrls = matches.filter(url => !url.includes('www.w3.org/2000/svg'));
-
   assert.strictEqual(
-    disallowedUrls.length,
+    matches.length,
     0,
-    `Fail ${relPath} dilarang mempunyai pautan URL internet luaran. Ditemui: ${JSON.stringify(disallowedUrls)}`
+    `Fail skrip/gaya ${relPath} dilarang mempunyai pautan URL internet luaran. Ditemui: ${JSON.stringify(matches)}`
   );
 });
+
+// Semak index.html bebas pergantungan CDN luaran (tiada script/link luaran)
+const htmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
+assert(!htmlContent.includes('<script src="http'), 'index.html tidak boleh memuatkan skrip luaran melalui CDN');
+assert(!htmlContent.includes('<link rel="stylesheet" href="http'), 'index.html tidak boleh memuatkan lembaran gaya luaran melalui CDN');
 
 // Semak juga tiada @import url luaran dalam CSS
 const cssContent = fs.readFileSync(cssPath, 'utf8');
@@ -154,7 +155,6 @@ assert(!cssContent.includes('@import url'), 'css/style.css tidak boleh mengandun
 assert(!cssContent.includes('http://') && !cssContent.includes('https://'), 'css/style.css 100% bebas pautan web luar');
 
 // Semak index.html hanya menggunakan skrip dan link setempat
-const htmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
 assert(htmlContent.includes('<link rel="stylesheet" href="css/style.css">'), 'index.html mesti memuatkan css/style.css tempatan');
 assert(htmlContent.includes('<script src="js/psychometric.js"></script>'), 'index.html mesti memuatkan js/psychometric.js');
 assert(htmlContent.includes('<script src="js/fitness.js"></script>'), 'index.html mesti memuatkan js/fitness.js');

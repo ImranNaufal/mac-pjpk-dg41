@@ -2495,6 +2495,19 @@ code, pre {
 .table-custom tr:nth-child(even) { background-color: #F8FAFC; }
 .table-custom tr:hover { background-color: #F1F5F9; }
 
+.link-gov {
+  color: var(--mara-red, #8B0000);
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.25rem;
+  word-break: break-all;
+}
+.link-gov:hover {
+  color: #B22222;
+  text-decoration: none;
+}
+
 /* --------------------------------------------------------------------------
    @media print - Pengoptimuman Cetakan Dokumen & PDF
    -------------------------------------------------------------------------- */

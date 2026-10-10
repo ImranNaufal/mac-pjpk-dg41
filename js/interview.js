@@ -1590,6 +1590,9 @@
 
       // 2. Pemasa Lisan Interaktif bagi Setiap Kad
       const timerBoxes = scopeContainer.querySelectorAll('.oral-timer-box');
+      let currentRunningTimer = null;
+      let currentRunningResetFn = null;
+
       timerBoxes.forEach(box => {
         const qId = box.getAttribute('data-qid');
         const digits = box.querySelector(`#timer-digits-${qId}`);
@@ -1600,8 +1603,21 @@
         let targetDuration = 120;
         let cardTimerInstance = new InterviewTimer();
 
+        const resetThisCard = () => {
+          cardTimerInstance.reset(targetDuration);
+          if (digits) {
+            digits.textContent = cardTimerInstance.formatTime(targetDuration);
+            digits.style.color = '';
+          }
+          if (toggleBtn) toggleBtn.textContent = 'Mula Berfikir & Jawab';
+        };
+
         presetBtns.forEach(pBtn => {
           pBtn.addEventListener('click', () => {
+            if (currentRunningTimer === cardTimerInstance) {
+              currentRunningTimer = null;
+              currentRunningResetFn = null;
+            }
             const secs = parseInt(pBtn.getAttribute('data-seconds'), 10) || 120;
             targetDuration = secs;
             presetBtns.forEach(b => b.classList.remove('btn-primary', 'active'));
@@ -1621,6 +1637,13 @@
               cardTimerInstance.resume();
               toggleBtn.textContent = 'Jeda Pemasa';
             } else {
+              // Jika ada pemasa lain yang sedang berjalan, hentikan dan tetapkan semula terlebih dahulu
+              if (currentRunningResetFn && currentRunningTimer !== cardTimerInstance) {
+                currentRunningResetFn();
+              }
+              currentRunningTimer = cardTimerInstance;
+              currentRunningResetFn = resetThisCard;
+
               toggleBtn.textContent = 'Jeda Pemasa';
               cardTimerInstance.start(
                 targetDuration,
@@ -1635,6 +1658,10 @@
                 () => {
                   if (digits) digits.textContent = '00:00';
                   if (toggleBtn) toggleBtn.textContent = 'Masa Tamat!';
+                  if (currentRunningTimer === cardTimerInstance) {
+                    currentRunningTimer = null;
+                    currentRunningResetFn = null;
+                  }
                   if (typeof global.MACApp !== 'undefined' && global.MACApp.showToast) {
                     global.MACApp.showToast(`Masa menjawab soalan #${qId} telah tamat!`, 'info', 3000);
                   }
@@ -1646,12 +1673,11 @@
 
         if (resetBtn) {
           resetBtn.addEventListener('click', () => {
-            cardTimerInstance.reset(targetDuration);
-            if (digits) {
-              digits.textContent = cardTimerInstance.formatTime(targetDuration);
-              digits.style.color = '';
+            if (currentRunningTimer === cardTimerInstance) {
+              currentRunningTimer = null;
+              currentRunningResetFn = null;
             }
-            if (toggleBtn) toggleBtn.textContent = 'Mula Berfikir & Jawab';
+            resetThisCard();
           });
         }
       });

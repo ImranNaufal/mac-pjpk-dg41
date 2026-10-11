@@ -123,12 +123,12 @@ const requiredMethods = [
   'calculateScore', 'handleScoreChange', 'startTimer', 'pauseTimer', 'resetTimer',
   'setCategoryFilter', 'handleSearchInput', 'clearSearch', 'toggleQuestionAccordion',
   'toggleAllQuestions', 'togglePracticed', 'copyQuestionText', 'startOralTimer',
-  'stopOralTimer', 'resetOralTimer', 'render'
+  'stopOralTimer', 'resetOralTimer', 'toggleQuickNotes', 'render'
 ];
 requiredMethods.forEach(method => {
   assert.strictEqual(typeof interviewModule[method], 'function', `Fungsi "${method}" mesti dieksport`);
 });
-console.log('✔ Kesemua 16 fungsi pengurusan temu duga dan bank soalan disahkan dieksport.');
+console.log(`✔ Kesemua ${requiredMethods.length} fungsi pengurusan temu duga dan bank soalan disahkan dieksport.`);
 
 console.log('\n============================================================');
 console.log('🎉 SEMUA UJIAN HAB TEMU DUGA & BANK SOALAN TELAH LULUS 100%!');

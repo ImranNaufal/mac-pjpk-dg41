@@ -1241,6 +1241,17 @@ const MACInterview = (function () {
     });
   }
 
+  function toggleQuickNotes() {
+    const bodyEl = document.getElementById('iv-quick-notes-body');
+    const btnEl = document.getElementById('btn-toggle-quick-notes');
+    if (!bodyEl) return;
+    const isClosed = bodyEl.style.display === 'none' || !bodyEl.style.display;
+    bodyEl.style.display = isClosed ? 'block' : 'none';
+    if (btnEl) {
+      btnEl.innerHTML = isClosed ? '📕 Tutup Nota Ringkas ▴' : '📖 Buka Nota Ringkas IV ▾';
+    }
+  }
+
   function copyQuestionText(qId) {
     const q = INTERVIEW_QUESTIONS.find(item => item.id === qId);
     if (!q) return;
@@ -1638,6 +1649,88 @@ Kata Kunci: ${q.keywords.join(', ')}`;
           </div>
         </div>
 
+        <!-- Kad Nota Ringkas Poket Temu Duga (Hanya Info Temu Duga Sahaja) -->
+        <div class="card mb-4 iv-quick-notes-card">
+          <div class="card-header border-gold d-flex justify-between items-center" style="cursor: pointer;" onclick="MACInterview.toggleQuickNotes()">
+            <div class="d-flex items-center gap-2">
+              <span class="text-2xl">⚡</span>
+              <div>
+                <h3 class="card-heading text-navy">NOTA POKET KILAT TEMU DUGA (BACA 2 MINIT SEBELUM MASUK BILIK)</h3>
+                <p class="text-xs text-secondary mt-1">Hanya Info Temu Duga Sahaja: 5 Fakta Emas MARA • Skrip Pitch 60s • 5 Multi-Role • Jawapan English • Skor 40-50</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-primary" id="btn-toggle-quick-notes">
+              📖 Buka Nota Ringkas IV ▾
+            </button>
+          </div>
+          <div class="card-body" id="iv-quick-notes-body" style="display: none;">
+            <div class="quick-notes-grid">
+              
+              <!-- Kotak 1: 5 Fakta Emas MARA -->
+              <div class="quick-note-box box-gold">
+                <div class="quick-note-title text-gold">🏛️ 1. 5 FAKTA EMAS MARA (HAFAL 30 SAAT)</div>
+                <div class="quick-note-content">
+                  <ul>
+                    <li><strong>Tarikh &amp; Akta:</strong> 1 Mac 1966 • Seksyen 6(1) Akta MARA 1966 (Akta 249) memajukan sosioekonomi Bumiputera.</li>
+                    <li><strong>Slogan:</strong> <em>"Keusahawanan dan Pendidikan Global"</em>.</li>
+                    <li><strong>4 Pimpinan:</strong> Menteri KKDW (Dato' Seri Zahid Hamidi) • Pengerusi (Datuk Dr Asyraf Wajdi) • KP MARA (Ir. Dr. Mahzan Teh) • Pengarah BPM MARA.</li>
+                    <li><strong>58 MRSM:</strong> Pertama di Seremban (1972 - Model Bronx Science NY). Aliran: Premier, Ulul Albab (Tahfiz 30 Juzuk), IGCSE, Bitara, IB-MYP, Teknikal.</li>
+                    <li><strong>Dasar Panas:</strong> Sifar Buli <em>"You Touch, You Go"</em> (buang maktab) &amp; Kuota 60% B40 + Program BUDI MARA.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Kotak 2: Skrip Pitch 60 Saat -->
+              <div class="quick-note-box box-blue">
+                <div class="quick-note-title text-navy">🎙️ 2. SKRIP ELEVATOR PITCH 60 SAAT</div>
+                <div class="quick-note-content">
+                  <p class="mb-2"><em>"Assalamualaikum Ahli Panel. Saya [Nama], graduan PJPK/Sains Sukan [Universiti] dengan lesen kejurulatihan [Sukan Utama] &amp; pentauliahan CPR/AED."</em></p>
+                  <p class="mb-2"><em>"Semasa praktikum, saya melonjakkan celik SEGAK murid sebanyak 22% &amp; bimbing pasukan ke suku akhir MSSD."</em></p>
+                  <p class="mb-2"><em>"Saya memilih MARA kerana bersedia 100% untuk ekosistem asrama 24 jam sebagai Guru PJ, Penasihat Homeroom, dan Warden Asrama berintegriti."</em></p>
+                  <p><strong>Penutup Kunci:</strong> <em>"Saya komited berkhidmat di mana-mana 58 buah MRSM di seluruh negara demi menjulang amanah anak bangsa."</em></p>
+                </div>
+              </div>
+
+              <!-- Kotak 3: 5 Multi-Role Guru PJ MRSM -->
+              <div class="quick-note-box box-green">
+                <div class="quick-note-title text-emerald">🎽 3. 5 PERANAN (MULTI-ROLE) GURU PJ MRSM</div>
+                <div class="quick-note-content">
+                  <ul>
+                    <li><strong>1. Pendidik PdPc &amp; PBD:</strong> Amali padang KSSM &amp; teori Pendidikan Kesihatan (PEERS) berlandaskan PAK-21.</li>
+                    <li><strong>2. Pentaksir Standard SEGAK:</strong> 2 kali setahun (Penggal 1 &amp; 2) dengan data sahih tanpa manipulasi.</li>
+                    <li><strong>3. Pegawai Keselamatan Padang:</strong> <em>Duty of Care</em> audit tiang gol, padang &amp; SOP kecemasan D.R.C.A.B.</li>
+                    <li><strong>4. Guru Homeroom:</strong> Ibu bapa angkat bimbing emosi, moral &amp; kebajikan 10–15 orang anak maktab.</li>
+                    <li><strong>5. Warden Asrama 24 Jam:</strong> Kawal disiplin malam, bantu murid sakit jam 2 pagi, tegakkan sifar buli <em>"You Touch, You Go"</em>.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Kotak 4: Bila Panel Bertukar English -->
+              <div class="quick-note-box box-purple">
+                <div class="quick-note-title" style="color: #7C3AED;">🇬🇧 4. BILA PANEL BERTUKAR BAHASA INGGERIS</div>
+                <div class="quick-note-content">
+                  <ul>
+                    <li><strong>Why P.E. Matters:</strong> <em>"P.E. builds mental resilience (grit), tactical decision-making, and cognitive stamina that power students aiming for Ivy League and top global universities."</em></li>
+                    <li><strong>Anti-Bullying &amp; Seniority:</strong> <em>"On the pitch, seniority carries zero privileges. Respect is earned purely through sportsmanship under MARA's zero-tolerance 'You Touch, You Go' policy."</em></li>
+                    <li><strong>Sports Entrepreneurship:</strong> <em>"We organize Maktab Sports Carnivals where students manage sponsorship, merchandise sales, and event budgeting, learning financial literacy directly."</em></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Baris Bawah: Skor 10 Kriteria & Pantang Larang -->
+            <div class="quick-note-box box-red mt-3">
+              <div class="quick-note-title text-danger">📊 5. SKOR LAMPIRAN F1 &amp; PANTANG LARANG TEMU DUGA</div>
+              <div class="quick-note-content">
+                <p><strong>Sasaran Skor MARA:</strong> 10 Kriteria Penilaian • Skala 1 - 5 • Markah Penuh 50 • <strong>Lulus/Pilihan: 40 – 50 Markah</strong> (Bawah 40 Gagal).</p>
+                <p class="mt-2 text-danger"><strong>5 Pantang Larang:</strong> 1. Jangan kata minat sukan dari kecil (klise!) • 2. Jangan tolak tugas warden/homeroom • 3. Jangan kata MRSM bawah KPM (KKDW &amp; BPM!) • 4. Jangan membebel kisah sekolah rendah • 5. Jangan kompromi isu buli!</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <!-- Kad Pemasa Temu Duga Kumpulan 30 Minit -->
         <div class="card mb-4">
           <div class="card-header border-navy">
@@ -1884,6 +1977,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     startOralTimer,
     stopOralTimer,
     resetOralTimer,
+    toggleQuickNotes,
     render
   };
 })();

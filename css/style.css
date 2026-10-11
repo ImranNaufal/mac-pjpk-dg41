@@ -3286,6 +3286,85 @@ code, pre {
   border: 1px solid #A7F3D0;
 }
 
+/* Kad Nota Ringkas Poket IV */
+.border-gold {
+  border-bottom: 3px solid #D97706;
+}
+
+.iv-quick-notes-card {
+  border: 1px solid #FDE68A;
+  background-color: #FFFDF5;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+}
+
+.quick-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .quick-notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quick-note-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  border: 1px solid #E2E8F0;
+}
+
+.quick-note-box.box-gold {
+  border-left: 4px solid #D97706;
+  background: #FFFBEB;
+}
+
+.quick-note-box.box-blue {
+  border-left: 4px solid #0284C7;
+  background: #F0F9FF;
+}
+
+.quick-note-box.box-green {
+  border-left: 4px solid #059669;
+  background: #ECFDF5;
+}
+
+.quick-note-box.box-purple {
+  border-left: 4px solid #7C3AED;
+  background: #F5F3FF;
+}
+
+.quick-note-box.box-red {
+  border-left: 4px solid #DC2626;
+  background: #FEF2F2;
+}
+
+.quick-note-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.quick-note-content {
+  font-size: 0.825rem;
+  line-height: 1.55;
+  color: #1E293B;
+}
+
+.quick-note-content ul {
+  margin: 0.35rem 0 0 1.15rem;
+  padding: 0;
+}
+
+.quick-note-content li {
+  margin-bottom: 0.35rem;
+}
+
 /* --------------------------------------------------------------------------
    Hab Senarai Semak & Panduan (Lampiran A & D)
    -------------------------------------------------------------------------- */

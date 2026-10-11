@@ -466,7 +466,8 @@ const MACFitness = (function () {
             </div>
 
             <!-- Jadual 10 Peringkat Mengikut Lampiran E -->
-            <div class="table-responsive mt-4">
+            <div class="mobile-scroll-hint">👈 Leret jadual ke kanan untuk pusingan 1 hingga 11 👉</div>
+            <div class="table-responsive mt-2">
               <table class="table-custom bleep-table">
                 <thead>
                   <tr>

@@ -27,13 +27,13 @@ assert(!htmlContent.includes('<script src="http'), 'index.html tidak boleh memua
 assert(!htmlContent.includes('<link rel="stylesheet" href="http'), 'index.html tidak boleh memuatkan lembaran gaya luaran melalui CDN');
 console.log('✔ index.html 100% bebas CDN skrip dan gaya luaran.');
 
-// Pastikan hanya 4 tab rasmi MAC mengikut PDF wujud
-const expectedTabs = ['fitness', 'teaching', 'interview', 'checklist'];
+// Pastikan 5 tab rasmi MAC (termasuk Page Sumber Nota Ringkas IV 'docs') wujud
+const expectedTabs = ['fitness', 'teaching', 'interview', 'docs', 'checklist'];
 expectedTabs.forEach(tabId => {
   assert(htmlContent.includes(`data-tab="${tabId}"`), `Butang tab "${tabId}" mesti ada dalam index.html`);
   assert(htmlContent.includes(`id="tab-${tabId}"`), `Seksyen tab pane "tab-${tabId}" mesti ada dalam index.html`);
 });
-console.log('✔ Kesemua 4 tab rasmi MAC (fitness, teaching, interview, checklist) wujud.');
+console.log('✔ Kesemua 5 tab rasmi MAC (fitness, teaching, interview, docs, checklist) wujud.');
 
 // Pastikan tab-tab luar yang tidak relevan telah dibuang sepenuhnya dari navigasi
 const purgedTabs = ['psychometric', 'essay', 'microteaching', 'groupdiscussion'];

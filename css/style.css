@@ -293,7 +293,7 @@ code, pre {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
 }
 
@@ -3537,9 +3537,9 @@ code, pre {
     padding: 0.85rem 1.25rem;
   }
   
-  /* Tab bar atas kekal kemas 4 lajur sebaris di iPad */
+  /* Tab bar atas kekal kemas 5 lajur sebaris di iPad */
   .nav-tabs-container {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   
   .tab-btn {
@@ -3703,7 +3703,7 @@ code, pre {
 
   .bottom-nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     height: 62px;
     background: #FFFFFF;
     border-top: 1.5px solid var(--border-medium);
@@ -3736,7 +3736,7 @@ code, pre {
   }
 
   /* Stack Grid ke 1 Lajur pada Telefon */
-  .grid-2, .grid-3, .form-grid-2, .form-grid-3 {
+  .grid-2, .grid-3, .form-grid-2, .form-grid-3, .docs-browser-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }

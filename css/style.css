@@ -2944,6 +2944,344 @@ code, pre {
 }
 
 /* --------------------------------------------------------------------------
+   Hab Temu Duga: Bank 28 Soalan & Panduan Format S.T.A.R
+   -------------------------------------------------------------------------- */
+.qbank-section-card {
+  margin-top: 1.5rem;
+  border-top: 4px solid var(--mara-crimson);
+}
+
+.qbank-progress-container {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #059669, #10B981);
+  transition: width 0.35s ease;
+}
+
+.qbank-controls-bar {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.q-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.q-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.q-search-box .input-field {
+  padding-left: 2.4rem;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.q-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.q-filter-pill {
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.q-filter-pill:hover {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+  color: var(--text-primary);
+}
+
+.q-filter-pill.active {
+  background: var(--mara-navy);
+  color: #FFFFFF;
+  border-color: var(--mara-navy);
+  box-shadow: 0 2px 4px rgba(10, 37, 64, 0.2);
+}
+
+.question-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.question-card {
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.question-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.question-card.card-practiced {
+  border-color: #A7F3D0;
+  background: #FAFDFA;
+}
+
+.question-card-header {
+  padding: 0.75rem 1rem;
+  background: #F8FAFC;
+  border-bottom: 1px solid #F1F5F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.q-header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.q-focus-area {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  background: #E2E8F0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.question-card-body {
+  padding: 1rem 1.15rem;
+}
+
+.question-text {
+  font-size: 1.025rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.q-num-lead {
+  color: var(--mara-crimson);
+  font-weight: 800;
+  margin-right: 0.25rem;
+}
+
+.q-action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star-drawer {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-top: 0.85rem;
+}
+
+.star-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .star-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.star-col {
+  background: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.star-col-s {
+  border-left: 4px solid #0284C7;
+  background: #F0F9FF;
+}
+
+.star-col-t {
+  border-left: 4px solid #D97706;
+  background: #FFFBEB;
+}
+
+.star-col-a {
+  border-left: 4px solid #059669;
+  background: #ECFDF5;
+}
+
+.star-col-r {
+  border-left: 4px solid #7C3AED;
+  background: #F5F3FF;
+}
+
+.star-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.star-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: #FFFFFF;
+}
+
+.star-col-s .star-letter { background: #0284C7; }
+.star-col-t .star-letter { background: #D97706; }
+.star-col-a .star-letter { background: #059669; }
+.star-col-r .star-letter { background: #7C3AED; }
+
+.star-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #1E293B;
+  flex-grow: 1;
+}
+
+.keyword-panel {
+  background: #F1F5F9;
+  border: 1px dashed #CBD5E1;
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+}
+
+.keyword-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.keyword-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.keyword-pill {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.pitfall-panel {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+}
+
+.pitfall-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #991B1B;
+}
+
+.pitfall-list {
+  margin: 0.3rem 0 0 1.2rem;
+  padding: 0;
+  font-size: 0.825rem;
+  color: #7F1D1D;
+  line-height: 1.45;
+}
+
+.oral-timer-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.oral-timer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+}
+
+.oral-digits {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.oral-timer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.badge-purple {
+  background-color: #7C3AED;
+  color: #FFFFFF;
+}
+
+.badge-emerald-subtle {
+  background-color: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+/* --------------------------------------------------------------------------
    Hab Senarai Semak & Panduan (Lampiran A & D)
    -------------------------------------------------------------------------- */
 .checklist-items-container {
@@ -3411,7 +3749,33 @@ code, pre {
   .btn-group-row .btn, .btn-group-row button {
     width: 100%;
   }
+
+  /* Question Bank Mobile Polish */
+  .q-filter-chips {
+    gap: 0.35rem;
+  }
+  .q-filter-pill {
+    font-size: 0.775rem;
+    padding: 0.35rem 0.65rem;
+  }
+  .q-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .q-action-bar .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .oral-timer-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .oral-timer-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
+
 
 /* Modal Profil Calon */
 .profile-card {

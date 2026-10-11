@@ -21,7 +21,8 @@ global.document = {
     value: '',
     innerText: '',
     innerHTML: '',
-    classList: { add: () => {}, remove: () => {} },
+    style: {},
+    classList: { add: () => {}, remove: () => {}, toggle: () => {} },
     addEventListener: () => {}
   }),
   querySelectorAll: () => []
@@ -81,9 +82,54 @@ console.log('✔ Logik pemarkahan 10 kriteria dan gred keputusan rasmi MARA disa
 // 3. Ujian Pemasa Temu Duga Kumpulan 30 Minit (Klausa 4.2)
 console.log('Ujian 3: Pemasa Temu Duga Kumpulan 30 Minit (Klausa 4.2)');
 assert.strictEqual(interviewModule.INTERVIEW_DURATION_SEC, 1800, 'Tempoh temu duga mesti tepat 30 minit (1800 saat)');
-
 console.log('✔ Konfigurasi pemasa 30 minit Lampiran A Klausa 4.2 disahkan.');
 
+// 4. Ujian Integriti Bank 28 Soalan Temu Duga DG41
+console.log('Ujian 4: Integriti Bank 28 Soalan Temu Duga DG41');
+const questions = interviewModule.INTERVIEW_QUESTIONS;
+assert(Array.isArray(questions), 'INTERVIEW_QUESTIONS mesti berbentuk array');
+assert.strictEqual(questions.length, 28, 'Mesti ada tepat 28 soalan dalam bank soalan temu duga');
+
+const categoryCounts = { mara: 0, mrsm: 0, pjpk: 0, star: 0 };
+questions.forEach(q => {
+  assert(q.id >= 1 && q.id <= 28, `ID soalan mesti antara 1 dan 28 (dijumpai: ${q.id})`);
+  assert(q.category && ['mara', 'mrsm', 'pjpk', 'star'].includes(q.category), `Kategori tidak sah: ${q.category}`);
+  categoryCounts[q.category]++;
+
+  // Sahkan struktur STAR
+  assert(q.question && q.question.length > 10, `Teks soalan #${q.id} tidak lengkap`);
+  assert(q.focusArea && q.focusArea.length > 5, `Fokus utama #${q.id} tidak lengkap`);
+  assert(q.starAnswer, `starAnswer untuk soalan #${q.id} mesti wujud`);
+  assert(q.starAnswer.situation && q.starAnswer.situation.length > 10, `Situation #${q.id} tidak lengkap`);
+  assert(q.starAnswer.task && q.starAnswer.task.length > 10, `Task #${q.id} tidak lengkap`);
+  assert(q.starAnswer.action && q.starAnswer.action.length > 20, `Action #${q.id} tidak lengkap`);
+  assert(q.starAnswer.result && q.starAnswer.result.length > 10, `Result #${q.id} tidak lengkap`);
+
+  // Sahkan kata kunci & perangkap
+  assert(Array.isArray(q.keywords) && q.keywords.length >= 2, `Keywords #${q.id} mesti ada sekurang-kurangnya 2`);
+  assert(Array.isArray(q.pitfalls) && q.pitfalls.length >= 1, `Pitfalls #${q.id} mesti ada sekurang-kurangnya 1`);
+});
+
+assert.strictEqual(categoryCounts.mara, 7, 'Kategori "mara" mesti mengandungi tepat 7 soalan');
+assert.strictEqual(categoryCounts.mrsm, 7, 'Kategori "mrsm" mesti mengandungi tepat 7 soalan');
+assert.strictEqual(categoryCounts.pjpk, 7, 'Kategori "pjpk" mesti mengandungi tepat 7 soalan');
+assert.strictEqual(categoryCounts.star, 7, 'Kategori "star" mesti mengandungi tepat 7 soalan');
+console.log('✔ Kesemua 28 soalan merentasi 4 kategori rasmi (7 setiap kategori) dengan format STAR disahkan lengkap.');
+
+// 5. Ujian Eksport Fungsi Interaktif Bank Soalan
+console.log('Ujian 5: Eksport Fungsi Interaktif Bank Soalan');
+const requiredMethods = [
+  'calculateScore', 'handleScoreChange', 'startTimer', 'pauseTimer', 'resetTimer',
+  'setCategoryFilter', 'handleSearchInput', 'clearSearch', 'toggleQuestionAccordion',
+  'toggleAllQuestions', 'togglePracticed', 'copyQuestionText', 'startOralTimer',
+  'stopOralTimer', 'resetOralTimer', 'render'
+];
+requiredMethods.forEach(method => {
+  assert.strictEqual(typeof interviewModule[method], 'function', `Fungsi "${method}" mesti dieksport`);
+});
+console.log('✔ Kesemua 16 fungsi pengurusan temu duga dan bank soalan disahkan dieksport.');
+
 console.log('\n============================================================');
-console.log('🎉 SEMUA UJIAN HAB TEMU DUGA (LAMPIRAN F1) TELAH LULUS 100%!');
+console.log('🎉 SEMUA UJIAN HAB TEMU DUGA & BANK SOALAN TELAH LULUS 100%!');
 console.log('============================================================\n');
+

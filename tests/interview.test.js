@@ -115,7 +115,14 @@ assert.strictEqual(categoryCounts.mrsm, 7, 'Kategori "mrsm" mesti mengandungi te
 assert.strictEqual(categoryCounts.pjpk, 7, 'Kategori "pjpk" mesti mengandungi tepat 7 soalan');
 assert.strictEqual(categoryCounts.star, 7, 'Kategori "star" mesti mengandungi tepat 7 soalan');
 assert.strictEqual(categoryCounts.spot, 7, 'Kategori "spot" mesti mengandungi tepat 7 soalan');
-console.log('✔ Kesemua 35 soalan merentasi 5 kategori rasmi (7 setiap kategori) dengan format STAR disahkan lengkap.');
+
+// Sahkan kesemua 35 soalan mempunyai skrip jawapan lisan terus (DIRECT_SPOKEN_SCRIPTS)
+const directScripts = interviewModule.DIRECT_SPOKEN_SCRIPTS;
+assert(directScripts && typeof directScripts === 'object', 'DIRECT_SPOKEN_SCRIPTS mesti wujud');
+for (let i = 1; i <= 35; i++) {
+  assert(typeof directScripts[i] === 'string' && directScripts[i].length > 50, `Skrip jawapan terus untuk Soalan #${i} mesti lengkap`);
+}
+console.log('✔ Kesemua 35 soalan merentasi 5 kategori rasmi mempunyai Skrip Jawapan Lisan Terus & format STAR lengkap.');
 
 // 5. Ujian Eksport Fungsi Interaktif Bank Soalan
 console.log('Ujian 5: Eksport Fungsi Interaktif Bank Soalan');
@@ -123,7 +130,7 @@ const requiredMethods = [
   'calculateScore', 'handleScoreChange', 'startTimer', 'pauseTimer', 'resetTimer',
   'setCategoryFilter', 'handleSearchInput', 'clearSearch', 'toggleQuestionAccordion',
   'toggleAllQuestions', 'togglePracticed', 'copyQuestionText', 'startOralTimer',
-  'stopOralTimer', 'resetOralTimer', 'toggleQuickNotes', 'render'
+  'stopOralTimer', 'resetOralTimer', 'switchSubView', 'toggleQuickNotes', 'render'
 ];
 requiredMethods.forEach(method => {
   assert.strictEqual(typeof interviewModule[method], 'function', `Fungsi "${method}" mesti dieksport`);

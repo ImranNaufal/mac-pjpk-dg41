@@ -1136,11 +1136,55 @@ const MACInterview = (function () {
   }
 
   // ==========================================================================
-  // BAHAGIAN 4: PENGURUSAN STATUS & STATE BANK SOALAN
+  // BAHAGIAN 4: SKRIP JAWAPAN LISAN TERUS (UNTUK DIBACA SECARA TERUS)
+  // ==========================================================================
+  const DIRECT_SPOKEN_SCRIPTS = {
+    1: 'Tuan/Puan Panel, MARA ditubuhkan pada 1 Mac 1966 di bawah Akta Parlimen 1965 (Akta Majlis Amanah Rakyat 1966 / Akta 249) sebagai badan berkanun hasil resolusi Kongres Ekonomi Bumiputera pertama bagi menggantikan RIDA. Mengikut Seksyen 6(1) Akta 249, kewajipan utama MARA adalah memajukan, menggalakkan, memudahkan serta menjalankan pembangunan ekonomi dan kemasyarakatan khususnya di kawasan luar bandar. Sebagai Guru PJPK di MRSM, saya menyokong mandat Seksyen 6(1)(d) dan (e) ini dengan membina modal insan Bumiputera yang bukan sahaja pintar STEM tetapi mempunyai kecergasan kardiorespiratori unggul, daya tahan mental (grit) yang kental, serta disiplin kepimpinan melalui sukan agar mereka mampu bersaing di peringkat global tanpa kelesuan fizikal.',
+    2: 'Visi MARA ialah "Menjadi organisasi amanah yang unggul dan diberkati untuk mengangkat martabat bangsa", manakala Misi MARA ialah "Menerajui bidang keusahawanan, pendidikan dan pelaburan untuk penguasaan ekuiti Bumiputera". Slogan rasmi MARA pula ialah "Keusahawanan dan Pendidikan Global". Dalam pengajaran PJPK, saya menterjemahkan visi dan misi ini melalui tiga pendekatan: Pertama, melaksanakan Ujian SEGAK dengan integriti mutlak tanpa manipulasi data sebagai tanda menjunjung amanah bangsa. Kedua, menerapkan pedagogi PAK-21, sains sukan moden dan pendekatan TGfU agar selaras dengan pendidikan global. Ketiga, melatih murid mengurus Karnival Sukan Maktab termasuk belanjawan dan penajaan bagi memupuk minda keusahawanan sukan.',
+    3: 'Terdapat empat perbezaan utama antara MRSM dan sekolah harian biasa KPM: Pertama, MRSM berada di bawah Bahagian Pendidikan Menengah (BPM) MARA dan Kementerian Kemajuan Desa dan Wilayah (KKDW), dengan ekosistem asrama penuh 100% yang mendidik murid selama 24 jam sehari. Kedua, MRSM mengamalkan Sistem Pendidikan MRSM (SPMRSM) yang menawarkan 6 aliran khas iaitu Premier, Ulul Albab, IGCSE, Bitara (PKP), IB-MYP, dan Teknikal, serta sijil graduasi sendiri berdasarkan TPNG. Ketiga, MRSM mempunyai Sistem Homeroom di mana setiap guru menjadi ibu bapa angkat kepada 10 hingga 15 orang pelajar. Keempat, guru PJPK di MRSM memikul peranan menyeluruh (multi-role) iaitu mengajar di padang waktu pagi, menjadi jurulatih sukan maktab waktu petang, serta berkhidmat sebagai penasihat Homeroom dan Warden Asrama pada waktu malam.',
+    4: 'SPMRSM mempunyai aliran berbeza dan saya menyesuaikan pedagogi PJPK mengikut keperluan setiap aliran: (1) MRSM Premier: Mengimbangi sukan berprestasi tinggi dengan jadual akademik KSSM dan sahsiah MARA. (2) MRSM Ulul Albab (Tahfiz 30 Juzuk): Merangka senaman aerobik dan latihan pernafasan diafragma yang meningkatkan kapasiti paru-paru untuk kelancaran hafazan Al-Quran tanpa menyebabkan kelesuan melampau waktu malam. (3) MRSM IGCSE (Dwi-Sijil SPM & Cambridge): Menjadikan waktu PJ sebagai terapi pelepasan tekanan (stress reliever) bagi mengelakkan keletihan mental (burnout). (4) MRSM Bitara / PKP (Pintar Berbakat): Menyediakan aktiviti sukan berfokus strategi taktikal tinggi dan penyelesaian masalah kinestetik (KBAT). (5) MRSM IB-MYP & Teknikal: Mengintegrasikan sains pergerakan biomekanik serta pentaksiran berasaskan inkuiri global.',
+    5: 'MARA ialah badan berkanun persekutuan di bawah seliaan Kementerian Kemajuan Desa dan Wilayah (KKDW) yang diterajui oleh Menteri KKDW, YAB Dato\' Seri Dr. Ahmad Zahid bin Hamidi. Dasar tertinggi MARA diputuskan oleh Majlis MARA yang dipengerusikan oleh Pengerusi MARA, YB Datuk Dr. Asyraf Wajdi bin Dato\' Dusuki. Pentadbiran eksekutif MARA pula diketuai oleh Ketua Pengarah MARA, YBhg. Dato\' Zulfikri bin Osman, dibantu oleh Timbalan Ketua Pengarah (Pendidikan), YBhg. Ir. Dr. Mahzan bin Teh. Kesemua 58 buah MRSM di seluruh Malaysia diuruskan secara langsung oleh Bahagian Pendidikan Menengah (BPM) MARA yang diketuai oleh Pengarah BPM, YBrs. Tuan Haji Shahrizal bin Mohd Saderi.',
+    6: 'Saya memilih untuk berkhidmat bersama MARA kerana saya terpanggil dengan roh "Amanah Rakyat" dalam membangunkan anak bangsa Bumiputera luar bandar dan B40 (yang kini merangkumi kuota sekurang-kurangnya 60% pelajar MRSM termasuk tajaan BUDI MARA). Berbeza dengan sekolah biasa di mana hubungan guru-murid berakhir pada jam 2.00 petang, ekosistem asrama penuh MRSM memberi ruang kepada saya untuk mendidik secara holistik 24 jam sehari melalui padang sukan, Sistem Homeroom, dan tugas Warden Asrama. Saya mahu melahirkan pemimpin masa depan yang bukan sahaja mendapat deretan A, tetapi mempunyai tubuh yang sihat, disiplin masa yang tajam, dan akhlak yang terpuji.',
+    7: 'Saya berpegang kepada prinsip "Mens sana in corpore sano" — akal yang cerdas terletak pada tubuh yang cergas. Kajian sains sukan membuktikan bahawa aktiviti fizikal aerobik meningkatkan aliran darah dan oksigen ke otak (neurogenesis) yang menguatkan daya ingatan murid STEM. Selain itu, di atas padang sukan, saya melatih murid mengawal emosi apabila tewas, bangkit semula daripada kegagalan (resilience), berkomunikasi dalam pasukan, dan mematuhi peraturan. Kemahiran insaniah inilah yang membezakan graduan MRSM apabila mereka melangkah ke universiti terkemuka dunia dan alam pekerjaan kelak.',
+    8: 'Sebagai graduan PJPK yang terlatih dengan disiplin masa dan kecergasan fizikal, saya amat bersedia memikul amanah Warden Asrama. Strategi saya ialah: Pertama, mengamalkan Pengurusan Masa Berasaskan Blok (Time-Blocking) di mana waktu siang (7.30 pagi – 4.30 petang) difokuskan 100% kepada PdPc PJPK, penyediaan RPH, dan kejurulatihan sukan; manakala waktu malam diperuntukkan untuk rondaan blok asrama, semakan prep malam, dan kebajikan murid. Kedua, saya memperkasakan kepimpinan pelajar melalui Badan Wakil Pelajar (BWP) dan Ketua Bilik (Dorm Leader) untuk memantau disiplin asas. Ketiga, saya mengekalkan rutin kecergasan peribadi supaya sentiasa bertenaga dan tidak mengalami kelesuan (burnout).',
+    9: 'Di MRSM, Guru Homeroom ialah ibu bapa angkat rasmi kepada kumpulan kecil 10 hingga 15 orang pelajar. Jika anak homeroom saya murung dan merosot akademiknya, langkah pertama saya ialah memanggilnya untuk sesi pertemuan empat mata secara santai tanpa menghakimi (non-judgmental active listening) bagi mengenal pasti punca sebenar—sama ada masalah rindu keluarga (homesick), tekanan rakan sebaya, atau kesukaran subjek. Kedua, saya mengajak murid tersebut berjoging atau beriadah petang bersama ahli homeroom kerana aktiviti fizikal merembeskan hormon endorfin yang memulihkan emosi. Ketiga, saya merujuk murid kepada Guru Kaunseling (UBK) untuk intervensi pakar, menghubungi ibu bapa kandungnya secara berkala, dan melantik rakan sebaya homeroom yang cemerlang sebagai buddy pembelajaran.',
+    10: 'Saya menyokong penuh ketegasan Pengerusi MARA melalui prinsip sifar kompromi buli: "You Touch, You Go!". Melalui sukan dan PJPK, saya mencegah budaya buli dengan empat pendekatan: Pertama, menyalurkan lebihan tenaga fizikal dan hormon remaja ke arah persaingan yang sihat melalui Liga Sukan Antara Asrama/Homeroom pada waktu petang. Kedua, mendidik etika kesukanan (sportsmanship) bahawa kekuatan fizikal adalah untuk melindungi rakan sepasukan, bukan menindas golongan lemah. Ketiga, menghapuskan jurang senioriti toksik melalui program buddy sukan merentas tingkatan. Keempat, sebagai warden dan guru sukan, saya sentiasa memastikan stor sukan berkunci dan memantau kawasan titik buta (blind spots) di asrama pada waktu malam.',
+    11: 'Jadual harian MRSM dari jam 5.30 pagi hingga 11.00 malam sememangnya mencabar mental pelajar. Dari sudut fisiologi senaman, aktiviti fizikal berintensiti sederhana di padang merangsang otak merembeskan hormon Endorfin, Dopamin, dan Serotonin sambil menurunkan paras hormon Kortisol (hormon stres). Oleh itu, saya menjadikan kelas PJPK sebagai waktu "Joyful Learning" yang menyeronokkan melalui permainan kecil berpasukan (TGfU) dan gamifikasi kecergasan, bukan latih tubi tentera yang menekan. Pada fasa penyejukan badan (cooling down), saya turut membimbing murid melakukan teknik pernafasan dalam (diaphragmatic breathing) supaya minda mereka kembali segar untuk sesi pembelajaran seterusnya.',
+    12: 'Saya bersedia 100% tanpa sebarang syarat untuk ditempatkan di mana-mana sahaja daripada 58 buah MRSM di seluruh Malaysia, termasuk di Sabah, Sarawak, atau kawasan pedalaman. Bagi saya, berkhidmat di MRSM luar bandar adalah satu penghormatan kerana di situlah letaknya mandat asal MARA untuk membela pelajar Bumiputera luar bandar. Malah, pelajar di kawasan luar bandar terkenal dengan daya tahan fizikal dan bakat sukan semula jadi yang luar biasa. Saya akan memanfaatkan persekitaran alam semula jadi setempat untuk aktiviti rekreasi luar dan menggilap bakat mereka sehingga mampu mengharumkan nama maktab di peringkat kebangsaan.',
+    13: 'Di MRSM, dua kejohanan sukan paling berprestij ialah KEJORA (Kejohanan Olahraga MRSM Se-Malaysia) dan SUPER (Sukan Perdana MRSM). Bagi memastikan kontinjen maktab mencapai prestasi puncak tanpa menjejaskan akademik, saya menggunakan kaedah Periodisasi Latihan Saintifik 4 Fasa: (1) Fasa Persediaan Umum untuk membina asas daya tahan kardiorespiratori dan kekuatan otot; (2) Fasa Persediaan Khusus yang memfokuskan teknik biomekanik dan taktikal permainan; (3) Fasa Pra-Pertandingan melalui perlawanan ujian dan simulasi tekanan; dan (4) Fasa Pertandingan & Tapering (mengurangkan beban latihan 5 hari sebelum kejohanan supaya otot pulih 100%). Saya juga bekerjasama dengan Penyelia Asrama/Dewan Selera untuk memastikan hidrasi dan nutrisi atlet mencukupi.',
+    14: 'Seorang Guru PJPK di MRSM mesti menjadi suri teladan (role model) kecergasan dan kekemasan diri. Semasa sesi PdPc amali di padang atau gelanggang, saya memakai baju-T sukan berkolar yang dimasukkan ke dalam seluar (tuck-in) dengan kemas, seluar trek sukan gelap yang sopan (bukan seluar ketat atau jeans), stoking dan kasut sukan bertali penuh, serta wisel dan jam randik. Semasa mengajar teori Pendidikan Kesihatan di bilik darjah, menghadiri mesyuarat, atau majlis rasmi maktab pula, saya memakai pakaian formal penjawat awam (kemeja berlengan panjang bertali leher / pakaian korporat MARA / batik Malaysia pada hari Khamis) selaras dengan Pekeliling Perkhidmatan MARA.',
+    15: 'Dalam mengendalikan murid obesiti atau pasif, prinsip utama saya ialah sifar penghinaan fizikal (Zero Body Shaming) dan pendekatan inklusif. Pertama, saya menggunakan Pedagogi Terbeza (Differentiated Instruction) mengikut prinsip F.I.T.T—contohnya, ketika murid lain melakukan larian pecut, murid obesiti diberi sasaran jalan pantas (brisk walking) mengikut kemampuan kadar nadi latihan mereka supaya tidak mencederakan sendi lutut. Kedua, saya melibatkan mereka secara aktif dalam peranan kepimpinan teknikal seperti penjaga masa, pencatat statistik, atau pengadil pembantu supaya mereka tidak berasa tersisih. Ketiga, saya memberikan pujian atas setiap peningkatan kecil (small wins) bagi membina semula keyakinan diri mereka.',
+    16: 'Jika murid rebah tidak sedarkan diri semasa Bleep Test, saya mengaktifkan protokol kecemasan perubatan D.R.C.A.B dengan tenang dan pantas: (1) Tiup wisel panjang untuk hentikan larian semua murid serta-merta dan arahkan murid lain berundur supaya kawasan pengudaraan terbuka. (2) D - Danger: Pastikan kawasan sekitar selamat. (3) R - Response: Tepuk bahu murid dan panggil namanya dengan jelas. (4) Hantar 2 orang murid pantas untuk memaklumkan Guru Bertugas/Pusat Kesihatan Maktab, hubungi talian kecemasan 999, dan bawa peti First Aid serta peranti AED. (5) C/A/B - Circulation, Airway, Breathing: Periksa nadi karotid dan pernafasan dalam masa kurang 10 saat. Jika tiada nadi dan nafas, mulakan CPR (30 tekanan dada : 2 bantuan pernafasan) dan guna AED. Jika murid bernafas dan sekadar pitam kepanasan, baringkan dalam Posisi Pemulihan (Recovery Position), tinggikan sedikit kakinya, dan longgarkan pakaian ketat. Selepas murid diserahkan kepada paramedik, saya laporkan segera kepada Pengetua/PK HEM untuk menghubungi ibu bapa dan menulis laporan rasmi insiden.',
+    17: 'Sebagai guru PJPK, saya tertakluk kepada doktrin undang-undang "In Loco Parentis" (bertindak menggantikan peranan ibu bapa yang berhati-hati) dan "Duty of Care" (kewajipan menjaga keselamatan murid daripada bahaya yang boleh dijangka / foreseeable harm). Untuk mematuhinya 100%: Pertama, saya melakukan Audit Keselamatan Padang & Alatan 10 minit sebelum kelas bermula—memastikan tiang gol futsal/bola baling berpasak kukuh dan tidak berkarat, permukaan gelanggang kering, serta tiada serpihan kaca. Kedua, membuat saringan kesihatan lisan (PAR-Q) pada awal kelas untuk mengesan murid yang demam, asma, atau cedera. Ketiga, mengamalkan Pengawasan Berterusan (Constant Supervision)—saya tidak akan sesekali meninggalkan murid bersendirian di padang atau bilik gimnasium tanpa pengawasan. Keempat, memastikan stor sukan sentiasa dikunci selepas alatan dikeluarkan.',
+    18: 'Dalam DSKP KSSM PJPK, Pentaksiran Bilik Darjah (PBD) tidak hanya menilai siapa yang paling laju berlari atau paling banyak menjaringkan gol. Sebaliknya, saya menilai murid secara holistik merentasi 3 Domain Utama: (1) Domain Psikomotor: Menilai teknik lakuan asas dan peningkatan ansur maju kendiri murid berbanding tahap awalnya; (2) Domain Kognitif: Menilai kefahaman murid terhadap strategi permainan, peraturan, dan konsep sains sukan melalui soal jawab lisan atau senarai semak; (3) Domain Afektif (Standard Kandungan 5.0): Menilai disiplin, kerjasama berpasukan, semangat kesukanan, dan kepatuhan keselamatan. Oleh itu, murid yang kurang berbakat motor semula jadi tetapi berusaha gigih, memahami konsep taktikal, dan berdisiplin tinggi tetap berupaya mencapai Tahap Penguasaan cemerlang (TP5 atau TP6).',
+    19: 'Ujian SEGAK dilaksanakan 2 kali setahun (Mac dan Ogos) dan datanya adalah penunjuk kesihatan kritikal maktab. Jika 25% murid didapati berlebihan berat badan (BMI > 25), saya tidak akan membiarkan data itu sekadar di atas kertas. Saya akan melaksanakan Pelan Intervensi 3 Penjuru: (1) Penjuru Senaman Terancang: Menubuhkan kelab kecergasan petang "MRSM Fit & Lean" menggunakan preskripsi F.I.T.T (3-4 kali seminggu, 45 minit senaman aerobik berimpak rendah seperti brisk walking, senamrobik, dan latihan litar). (2) Penjuru Pemakanan Dewan Selera: Bekerjasama dengan PK HEM dan Penyelia Asrama untuk menyemak menu makan 5 kali sehari di dewan selera agar mengurangkan makanan bergoreng/minuman manis dan menambah buah-buahan serta air kosong. (3) Penjuru Motivasi: Mengadakan pertandingan penurunan BMI sihat antara Homeroom dengan ganjaran merit maktab.',
+    20: 'Ramai menyangka Pendidikan Jasmani hanya aktiviti otot, sedangkan sukan moden menuntut pemikiran taktikal yang pantas. Saya menerapkan KBAT dalam kelas PJ melalui pendekatan TGfU (Teaching Games for Understanding). Daripada hanya menyuruh murid membuat hantaran berulang secara mekanikal, saya meletakkan mereka dalam situasi permainan bersyarat (modified small-sided games) dan mengemukakan soalan inkuiri aras tinggi (Bloom Taxonomy: Analisis & Mencipta) seperti: "Mengapa hantaran leret lebih selamat berbanding hantaran lambung apabila pasukan lawan melakukan tekanan tinggi?" atau "Bagaimanakah pasukan kamu boleh membuka ruang kosong dalam situasi serangan 3 lawan 2?". Murid berbincang selama 1 minit untuk merangka strategi sendiri sebelum mengujinya semula di gelanggang.',
+    21: 'Komponen PEERS (Pendidikan Kesihatan Reproduktif dan Sosial) merangkumi 75% daripada kurikulum Pendidikan Kesihatan KSSM dan amat penting bagi murid remaja di asrama penuh. Strategi saya ialah: Pertama, menetapkan peraturan kelas yang jelas bahawa topik ini dipelajari secara saintifik (anatomi biologi), perundangan (Akta Kesalahan Seksual Terhadap Kanak-Kanak), serta nilai akhlak dan batas agama—tiada ruang untuk jenaka lucah. Kedua, bagi topik yang sangat sensitif, saya melaksanakan pengajaran berasingan mengikut jantina supaya murid berasa selesa. Ketiga, saya menyediakan Kotak Soalan Tanpa Nama (Anonymous Question Box) agar murid boleh menulis kemusykilan kesihatan remaja tanpa rasa malu, lalu saya menjawabnya secara profesional dan berfakta di dalam kelas.',
+    22: '(Situasi) Saya berdepan pertembungan tiga tugas penting serentak: melatih pasukan maktab untuk kejohanan minggu depan, menghantar data rasmi SEGAK ke BPM MARA, dan giliran bertugas sebagai Warden Asrama. (Tugas) Saya perlu memastikan ketiga-tiga amanah ini diselesaikan mengikut tarikh akhir tanpa mengabaikan keselamatan murid atau kualiti pengajaran. (Tindakan) Pertama, saya menyusun jadual menggunakan Matriks Keutamaan Eisenhower. Waktu pagi dan sela masa tidak mengajar digunakan bersama rakan panitia PJPK untuk menyemak dan memuat naik data SEGAK melalui hamparan digital bersepadu. Waktu petang (5.00 – 6.30 petang) difokuskan sepenuhnya kepada latihan taktikal berstruktur bola sepak dengan melantik kapten pasukan mengetuai sesi pemanasan badan. Waktu malam pula saya melaksanakan rondaan warden asrama, dan menggunakan waktu tenang selepas "lights-out" jam 11.00 malam di bilik gerakan warden untuk membuat semakan akhir laporan SEGAK. (Hasil) Laporan SEGAK berjaya dihantar ke BPM 24 jam lebih awal daripada tarikh tutup, pasukan bola sepak bersedia sepenuhnya untuk kejohanan, dan disiplin asrama kekal terkawal.',
+    23: '(Situasi) Saya menyedari peralatan sukan berjenama milik maktab telah dibawa keluar oleh seorang guru senior untuk kegunaan kelab luar tanpa direkodkan dalam buku log stor sukan. (Tugas) Sebagai guru yang bertanggungjawab ke atas stor sukan, saya wajib memelihara integriti aset kerajaan di bawah Tatacara Pengurusan Stor MARA sambil menjaga keharmonian hubungan profesional sesama rakan sejawat. (Tindakan) Pertama, saya tidak akan menuduh atau memalukan beliau di khalayak ramai. Saya akan bertemu beliau secara peribadi empat mata dengan penuh hormat. Kedua, saya memaklumkan secara berhemah bahawa pihak panitia sedang menjalankan audit inventori berkala untuk disahkan oleh Penolong Kanan Kokurikulum, dan meminta kerjasama beliau memulangkan alatan tersebut serta mengisi Borang Pinjaman Aset Rasmi sekiranya mendapat kelulusan Pengetua. Ketiga, jika masih berulang selepas teguran berhemah, saya akan melaporkan secara rasmi kepada Ketua Panitia dan Pentadbir mengikut saluran tatatertib. (Hasil) Peralatan sukan maktab berjaya dipulangkan dengan selamat, sistem buku log keluar-masuk stor diperketatkan, dan hubungan kerja kekal profesional.',
+    24: '(Situasi) Sepasang ibu bapa hadir ke maktab dalam keadaan marah kerana menyangka anak mereka didenda berlari sehingga rebah kepenatan semasa kelas PJ. (Tugas) Saya perlu meredakan kemarahan ibu bapa tersebut secara profesional, membentangkan fakta sebenar berasaskan rekod kurikulum, dan memelihara imej baik MRSM. (Tindakan) Pertama, saya menjemput ibu bapa tersebut ke bilik rundingan yang selesa bersama Penolong Kanan HEM, menghidangkan air, dan mengamalkan "Active Listening"—mendengar luahan mereka dengan tenang tanpa memotong percakapan. Kedua, setelah emosi mereka reda, saya memohon maaf atas kebimbangan yang timbul dan menunjukkan dokumen RPH rasmi serta rekod Ujian SEGAK/Bleep Test, sambil menjelaskan bahawa larian tersebut bukan dendaan tetapi pentaksiran kecergasan wajib kurikulum. Ketiga, saya menerangkan bahawa sebaik sahaja anak mereka kelihatan penat, saya telah mengarahkannya berehat di tempat teduh dan memberikan rawatan awal mengikut SOP. (Hasil) Ibu bapa memahami perkara sebenar, berpuas hati dengan ketelusan dokumentasi maktab, dan bersetuju bekerjasama memantau tahap kecergasan anak mereka.',
+    25: '(Situasi) Dua orang pelajar asrama bertumbuk di tengah gelanggang futsal akibat provokasi terjahan keras semasa perlawanan antara dormitori. (Tugas) Saya perlu menghentikan pergaduhan serta-merta, mengelakkan kecederaan parah atau pergaduhan berkumpulan, dan menyelesaikan konflik tersebut secara mendidik. (Tindakan) Pertama, saya meniup wisel panjang dengan kuat dan tegas, menghentikan perlawanan serta-merta, dan memisahkan kedua-dua pelajar tersebut ke dua sudut gelanggang yang berjauhan (jarak sekurang-kurangnya 15 meter) sambil mengarahkan pemain lain duduk bertenang. Kedua, saya memeriksa sama ada terdapat kecederaan fizikal dan memberikan rawatan awal P.R.I.C.E jika ada lebam. Ketiga, selepas emosi kedua-duanya reda (cooling-off period), saya mengadakan sesi mediasi bersemuka untuk menyedarkan mereka bahawa semangat persaudaraan maktab jauh lebih penting daripada kemenangan futsal, meminta mereka bermaafan, serta melaporkan insiden kepada Ketua Warden dan Guru Disiplin mengikut SOP maktab. (Hasil) Pergaduhan berjaya dikawal sepenuhnya tanpa merebak ke asrama, kedua-dua pelajar kembali berdamai, dan perlawanan dapat diteruskan dengan semangat kesukanan tinggi.',
+    26: '(Situasi) Hujan ribut beserta petir melanda secara tiba-tiba ketika saya dijadualkan mengajar kelas amali PJ di padang terbuka, manakala dewan serbaguna sedang digunakan untuk majlis rasmi maktab. (Tugas) Saya perlu memastikan keselamatan 30 orang murid daripada bahaya petir dan memastikan waktu PdPc tetap berjalan secara berkesan tanpa membiarkan murid melepak kosong. (Tindakan) Saya sentiasa menyediakan Pelan Kontingensi Cuaca Buruk (Rainy Day Lesson Plan). Pertama, saya memindahkan murid ke bilik darjah atau koridor berbumbung yang selamat dan lebar. Kedua, saya mengubah suai aktiviti kepada latihan kecergasan ruang terhad (seperti stesen senaman kalistenik berat badan, regangan mobiliti dinamik, atau ujian ketangkasan kuadrant) ATAU menggunakan papan putih di kelas untuk sesi analisis taktikal formasi permainan dan kuiz interaktif Pendidikan Kesihatan (PEERS). (Hasil) Keselamatan murid terjamin 100%, objektif pembelajaran DSKP tetap tercapai, dan murid kekal aktif sepanjang waktu PdPc.',
+    27: '(Situasi) Seorang murid menyerahkan slip cuti sakit (MC) klinik yang kelihatan telah diubah suai tarikh dan tandatangannya semata-mata untuk mengelak daripada menduduki Ujian SEGAK. (Tugas) Saya perlu menegakkan integriti dokumen rasmi di samping menyiasat punca sebenar ketakutan murid tersebut secara berhemah. (Tindakan) Pertama, saya membuat semakan pengesahan secara sulit dengan pihak klinik atau Pusat Kesihatan Maktab untuk mengesahkan kesahihan slip tersebut. Kedua, saya memanggil murid itu secara empat mata (tanpa memalukannya di hadapan rakan sekelas) dan bertanya dengan penuh empati mengapa dia bertindak sedemikian. Apabila mendapati dia berasa malu kerana tidak mampu membuat tekan tubi, saya menerangkan kesalahan berat memalsukan dokumen rasmi, merujuknya kepada Guru Kaunseling dan disiplin untuk rekod bimbingan, namun pada masa yang sama saya melatihnya secara ansur maju pada waktu petang sehingga dia bersedia menjalani ujian ulangan SEGAK dengan jujur. (Hasil) Murid tersebut insaf, tidak lagi mengulangi perbuatan tidak jujur, dan berjaya menamatkan Ujian SEGAK dengan penuh keyakinan.',
+    28: '(Situasi) Semasa menjalani latihan mengajar / bertugas di institusi terdahulu, saya mendapati ramai pelajar mengalami kelesuan dan kurang aktif bersukan pada waktu petang kerana lebih gemar terperap dengan peranti pintar. (Tugas) Saya ditugaskan merangka satu program kecergasan berimpak tinggi yang mampu menarik minat seluruh warga pelajar secara sukarela. (Tindakan) Saya telah mengetuai penganjuran program "FitFest & Cabaran 10,000 Langkah Antara Rumah Sukan" yang menggabungkan elemen gamifikasi, larian berhalangan (obstacle run), senamrobik perdana, dan gerai pemeriksaan BMI/Kadar Nadi kendalian kelab sukan pelajar. Setiap penyertaan pelajar menyumbang mata merit kepada rumah sukan masing-masing. (Hasil) Program tersebut berjaya menarik lebih 95% penyertaan aktif warga sekolah, meningkatkan purata skor kecergasan kardiorespiratori pelajar sebanyak 18% dalam ujian penggal kedua, dan menghidupkan kembali budaya riadah petang.',
+    29: 'Thank you to the honorable panel. MARA should hire me because I bring a complete package of sports science expertise, high physical stamina, and 100% readiness for MRSM\'s 24-hour boarding ecosystem—not only as a Physical Education teacher on the field, but also as a dedicated Homeroom advisor and hostel warden. Regarding top global universities like the Ivy League and Russell Group, admission officers today do not just look for straight A\'s; they look for grit, leadership, teamwork, and emotional resilience under pressure. Through my P.E. lessons and sports coaching, I build students\' cardiovascular endurance—which scientifically boosts cognitive stamina for long study hours—while guiding them to develop a strong sports leadership portfolio that makes MRSM scholars stand out globally.',
+    30: 'In a full boarding school environment like MRSM, sports is the most powerful tool to unite students across different forms, provided it is guided by strict ethics. First, I fully uphold MARA\'s zero-tolerance policy on bullying—"You Touch, You Go!" On my sports field and in the hostel, seniority carries zero privileges; respect is earned purely through discipline and fair play. Second, I implement a Cross-Batch Sports Buddy System, where Form 4 and Form 5 seniors are assigned to coach and encourage Form 1 juniors in basic sports skills, transforming potential rivalry into mentorship. Third, after every match, I conduct a mandatory 3-minute reflection and handshake session to reinforce humility in victory and grace in defeat.',
+    31: 'Assalamualaikum dan salam sejahtera Tuan/Puan Panel. Nama saya [Nama Anda], graduan Ijazah Sarjana Muda Pendidikan Jasmani dan Pendidikan Kesihatan dari [Universiti Anda]. Kekuatan utama saya merangkumi tiga aspek: Pertama, penguasaan pedagogi DSKP PJPK dan sains sukan moden yang terbukti apabila saya berjaya meningkatkan peratusan lulus cemerlang ujian kecergasan murid sebanyak 22% semasa praktikum. Kedua, saya memiliki kemahiran kejurulatihan sukan serta pentauliahan Pertolongan Cemas/CPR yang menjamin keselamatan murid di padang. Ketiga, saya mempunyai stamina fizikal dan mental yang tinggi untuk berkhidmat dalam ekosistem asrama penuh 24 jam sebagai Guru PJPK, Penasihat Homeroom, dan Warden Asrama. Saya bersedia ditempatkan di mana-mana 58 buah MRSM seluruh Malaysia demi menjulang amanah pendidikan MARA.',
+    32: 'Slogan "Keusahawanan dan Pendidikan Global" sangat dekat dengan dunia sukan kerana industri sukan adalah antara sektor ekonomi terbesar dunia. Di MRSM, saya membudayakan keusahawanan melalui tiga inisiatif: Pertama, menganjurkan Karnival Sukan & Keusahawanan Maktab (Sports Fiesta) di mana jawatankuasa pelajar menguruskan sendiri bajet kejohanan, mencari penajaan (sponsorship), mereka bentuk dan menjual jersi rumah sukan, serta membuka gerai minuman kesihatan. Kedua, melatih murid mengurus operasi kelab sukan secara profesional termasuk pengiraan kos alatan dan pulangan modal (ROI). Ketiga, menggalakkan inovasi murid menghasilkan alat bantu latihan sukan kos rendah daripada bahan kitar semula.',
+    33: 'Bagi saya, integriti adalah nyawa seorang penjawat awam MARA. Memalsukan data Ujian SEGAK bukan sahaja melanggar etika profesionalisme, malah menganiaya murid kerana kita menyembunyikan risiko kesihatan sebenar mereka. Untuk menjamin ketelusan 100%: Pertama, saya melaksanakan sistem Semakan Silang Berpasangan (Peer & Teacher Verification) di setiap 4 stesen ujian SEGAK menggunakan rubrik rasmi KPM. Kedua, setiap skor dicatat terus ke dalam borang penilaian rasmi dan ditandatangani oleh murid serta guru pada hari ujian dijalankan. Ketiga, saya membentangkan data sebenar kepada pihak pentadbiran maktab disertai dengan Pelan Intervensi F.I.T.T yang konkrit, supaya pihak maktab menilai kejayaan guru bukan pada angka yang dipalsukan, tetapi pada peningkatan kecergasan murid hasil intervensi yang jujur.',
+    34: 'Dalam situasi ini, nyawa dan keselamatan murid adalah keutamaan mutlak tanpa mengabaikan tanggungjawab PdPc pagi. Tindakan saya mengikut kronologi: Pertama, pada jam 2.30 pagi, saya mengikut SOP Kecemasan Asrama dengan memaklumkan Ketua Warden/PK HEM, menghubungi ibu bapa murid, dan membawa murid ke Jabatan Kecemasan Hospital menggunakan kenderaan maktab bersama Penyelia Asrama. Kedua, sekiranya murid perlu ditahan di wad dan urusan selesai lewat sekitar jam 5.30 pagi, saya akan mengatur giliran pemantauan bersama Warden Kedua/Penyelia Asrama. Ketiga, sebelum jam 7.00 pagi, saya memaklumkan Ketua Panitia PJPK dan PK Akademik: jika saya sempat kembali ke maktab, saya akan mengubah suai kelas jam 7.30 pagi kepada aktiviti berisiko rendah atau teori Pendidikan Kesihatan di dalam kelas agar tidak berlaku kecuaian keselamatan di padang akibat keletihan; manakala jika saya masih di hospital bersama murid, saya menyerahkan modul latihan/RPH yang telah sedia ada kepada guru ganti (relief).',
+    35: 'Jadual makan 5 kali sehari di dewan selera MRSM memberikan tenaga untuk belajar, tetapi jika kalori masuk melebihi kalori keluar (surplus calories), murid akan mengalami obesiti dan cepat mengantuk semasa kelas malam (prep). Intervensi saintifik saya merangkumi tiga langkah: Pertama, memperkenalkan program "Active Dorm, Sharp Mind" pada waktu riadah petang (5.00 – 6.15 petang) di mana semua pelajar diwajibkan turun beriadah menggunakan preskripsi F.I.T.T (Kekerapan 4 kali seminggu, Intensiti 60-70% Kadar Nadi Maksimum, Masa 40 minit, Jenis aktiviti menyeronokkan seperti brisk walk, futsal, aerobik, dan frisbee). Kedua, bekerjasama dengan Jawatankuasa Dewan Selera Maktab untuk memaparkan info kalori makanan di dewan makan serta mengurangkan kandungan gula dalam minuman petang/malam. Ketiga, mendidik murid dalam kelas Pendidikan Kesihatan tentang konsep keseimbangan tenaga (Calorie In vs Calorie Out) supaya mereka mengamalkan gaya hidup sihat sepanjang hayat.'
+  };
+
+  // ==========================================================================
+  // BAHAGIAN 5: PENGURUSAN STATUS & STATE BANK SOALAN (BUKA TERUS BY DEFAULT)
   // ==========================================================================
   let currentCategoryFilter = 'all';
   let currentSearchQuery = '';
-  const expandedQuestionIds = new Set();
+  let currentSubView = 'notes'; // 'notes' (default: Nota 35 Soalan & Jawapan) | 'rubric' (Lampiran F1)
+
+  // PENTING: Semua 35 soalan dibuka secara lalai (open by default) supaya sekali buka terus senang baca!
+  const expandedQuestionIds = new Set(INTERVIEW_QUESTIONS.map(q => q.id));
   const oralTimers = {}; // Map of qId -> timer state
 
   function getPracticedIds() {
@@ -1182,13 +1226,13 @@ const MACInterview = (function () {
     if (btnEl) {
       btnEl.innerHTML = isNowPracticed
         ? '✓ Telah Dilatih (Klik Batal)'
-        : '◻ Tandakan Selesai Latih Tubi';
+        : '◻ Tandakan Selesai Baca / Latih';
       btnEl.className = isNowPracticed ? 'btn btn-sm btn-emerald' : 'btn btn-sm btn-secondary';
     }
 
     if (window.MACApp && typeof window.MACApp.showToast === 'function') {
       window.MACApp.showToast(
-        isNowPracticed ? `Soalan #${qId} ditandakan telah dilatih! 🎯` : `Tanda latihan Soalan #${qId} dibatalkan.`,
+        isNowPracticed ? `Soalan #${qId} ditandakan selesai dibaca/dilatih! 🎯` : `Tanda latihan Soalan #${qId} dibatalkan.`,
         'info',
         2000
       );
@@ -1203,7 +1247,7 @@ const MACInterview = (function () {
 
     const txtEl = document.getElementById('qbank-progress-text');
     const barEl = document.getElementById('qbank-progress-fill');
-    if (txtEl) txtEl.innerText = `${count} / ${total} Soalan Telah Dilatih (${pct}%)`;
+    if (txtEl) txtEl.innerText = `${count} / ${total} Soalan Telah Dibaca / Dilatih (${pct}%)`;
     if (barEl && barEl.style) barEl.style.width = `${pct}%`;
   }
 
@@ -1216,50 +1260,65 @@ const MACInterview = (function () {
     if (isExpanded) {
       contentEl.style.display = 'none';
       expandedQuestionIds.delete(qId);
-      if (btnEl) btnEl.innerHTML = '📖 Lihat Panduan Jawapan S.T.A.R &amp; Kata Kunci ▾';
+      if (btnEl) btnEl.innerHTML = '📖 Buka Jawapan Penuh &amp; S.T.A.R ▾';
     } else {
       contentEl.style.display = 'block';
       expandedQuestionIds.add(qId);
-      if (btnEl) btnEl.innerHTML = '📕 Tutup Panduan Jawapan S.T.A.R ▴';
+      if (btnEl) btnEl.innerHTML = '📕 Sembunyikan Jawapan ▴';
     }
   }
 
   function toggleAllQuestions(expand = true) {
     INTERVIEW_QUESTIONS.forEach(q => {
+      if (expand) expandedQuestionIds.add(q.id);
+      else expandedQuestionIds.delete(q.id);
       const contentEl = document.getElementById(`q-drawer-${q.id}`);
       const btnEl = document.getElementById(`btn-toggle-q-${q.id}`);
       if (contentEl) {
         contentEl.style.display = expand ? 'block' : 'none';
-        if (expand) expandedQuestionIds.add(q.id);
-        else expandedQuestionIds.delete(q.id);
       }
       if (btnEl) {
         btnEl.innerHTML = expand
-          ? '📕 Tutup Panduan Jawapan S.T.A.R ▴'
-          : '📖 Lihat Panduan Jawapan S.T.A.R &amp; Kata Kunci ▾';
+          ? '📕 Sembunyikan Jawapan ▴'
+          : '📖 Buka Jawapan Penuh &amp; S.T.A.R ▾';
       }
     });
   }
 
-  function toggleQuickNotes() {
-    const bodyEl = document.getElementById('iv-quick-notes-body');
-    const btnEl = document.getElementById('btn-toggle-quick-notes');
-    if (!bodyEl) return;
-    const isClosed = bodyEl.style.display === 'none' || !bodyEl.style.display;
-    bodyEl.style.display = isClosed ? 'block' : 'none';
-    if (btnEl) {
-      btnEl.innerHTML = isClosed ? '📕 Tutup Nota Ringkas ▴' : '📖 Buka Nota Ringkas IV ▾';
+  function switchSubView(mode = 'notes') {
+    currentSubView = mode;
+    const notesSection = document.getElementById('iv-view-notes');
+    const rubricSection = document.getElementById('iv-view-rubric');
+    const btnNotes = document.getElementById('btn-subview-notes');
+    const btnRubric = document.getElementById('btn-subview-rubric');
+
+    if (notesSection) notesSection.style.display = mode === 'notes' ? 'block' : 'none';
+    if (rubricSection) rubricSection.style.display = mode === 'rubric' ? 'block' : 'none';
+
+    if (btnNotes) {
+      btnNotes.className = mode === 'notes' ? 'btn btn-primary' : 'btn btn-secondary';
     }
+    if (btnRubric) {
+      btnRubric.className = mode === 'rubric' ? 'btn btn-primary' : 'btn btn-secondary';
+    }
+  }
+
+  function toggleQuickNotes() {
+    switchSubView(currentSubView === 'notes' ? 'rubric' : 'notes');
   }
 
   function copyQuestionText(qId) {
     const q = INTERVIEW_QUESTIONS.find(item => item.id === qId);
     if (!q) return;
 
+    const directScript = DIRECT_SPOKEN_SCRIPTS[q.id] || '';
     const copyText = `SOALAN TEMU DUGA MARA DG9/DG41 (PJPK) #${q.id} [${q.categoryLabel}]:
 ${q.question}
 
 Fokus Utama: ${q.focusArea}
+
+Skrip Jawapan Terus:
+"${directScript}"
 
 Panduan S.T.A.R:
 - Situation: ${q.starAnswer.situation}
@@ -1272,7 +1331,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(copyText).then(() => {
         if (window.MACApp && typeof window.MACApp.showToast === 'function') {
-          window.MACApp.showToast(`Soalan #${qId} berjaya disalin ke papan keratan!`, 'success');
+          window.MACApp.showToast(`Soalan & Jawapan #${qId} berjaya disalin!`, 'success');
         }
       }).catch(() => {
         fallbackCopyText(copyText);
@@ -1293,14 +1352,14 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     try {
       document.execCommand('copy');
       if (window.MACApp && typeof window.MACApp.showToast === 'function') {
-        window.MACApp.showToast('Soalan berjaya disalin!', 'success');
+        window.MACApp.showToast('Soalan & Jawapan berjaya disalin!', 'success');
       }
     } catch (e) {}
     document.body.removeChild(textArea);
   }
 
   // ==========================================================================
-  // BAHAGIAN 5: PEMASA LISAN KAD SOALAN (1 - 3 MINIT)
+  // BAHAGIAN 6: PEMASA LISAN KAD SOALAN (1 - 3 MINIT)
   // ==========================================================================
   function startOralTimer(qId, targetSeconds = 120) {
     stopOralTimer(qId);
@@ -1363,7 +1422,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
   }
 
   // ==========================================================================
-  // BAHAGIAN 6: TAPISAN & CARIAN SOALAN
+  // BAHAGIAN 7: TAPISAN & CARIAN NOTA SOALAN TEMU DUGA
   // ==========================================================================
   function setCategoryFilter(cat) {
     currentCategoryFilter = cat;
@@ -1388,10 +1447,12 @@ Kata Kunci: ${q.keywords.join(', ')}`;
       }
       // 2. Carian teks
       if (currentSearchQuery) {
+        const directScript = DIRECT_SPOKEN_SCRIPTS[q.id] || '';
         const textToSearch = [
           q.question,
           q.focusArea,
           q.categoryLabel,
+          directScript,
           q.starAnswer.situation,
           q.starAnswer.task,
           q.starAnswer.action,
@@ -1415,14 +1476,14 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     const practicedSet = getPracticedIds();
 
     if (countBadge) {
-      countBadge.innerText = `Memaparkan ${filtered.length} daripada ${INTERVIEW_QUESTIONS.length} Soalan`;
+      countBadge.innerText = `Memaparkan ${filtered.length} daripada ${INTERVIEW_QUESTIONS.length} Soalan & Jawapan`;
     }
 
     if (filtered.length === 0) {
       listContainer.innerHTML = `
         <div class="empty-state-box text-center p-4">
           <p class="text-lg font-bold text-muted">Tiada soalan ditemui untuk carian "${escapeHtml(currentSearchQuery)}"</p>
-          <p class="text-sm text-secondary mt-1">Cuba cari kata kunci lain seperti "Akta 249", "bleep test", "warden", atau "homeroom".</p>
+          <p class="text-sm text-secondary mt-1">Cuba cari kata kunci lain seperti "Akta 249", "bleep test", "warden", "buli", atau "homeroom".</p>
           <button type="button" class="btn btn-secondary mt-3" onclick="MACInterview.clearSearch()">
             🔄 Set Semula Carian
           </button>
@@ -1435,6 +1496,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     filtered.forEach(q => {
       const isPracticed = practicedSet.has(q.id);
       const isExpanded = expandedQuestionIds.has(q.id);
+      const directScript = DIRECT_SPOKEN_SCRIPTS[q.id] || `${q.starAnswer.situation} ${q.starAnswer.task} ${q.starAnswer.action} ${q.starAnswer.result}`;
 
       // Warna badge mengikut kategori
       let badgeColorClass = 'badge-mara';
@@ -1450,39 +1512,42 @@ Kata Kunci: ${q.keywords.join(', ')}`;
       const pitfallItems = (q.pitfalls || []).map(p => `<li>${escapeHtml(p)}</li>`).join('');
 
       cardsHtml += `
-        <div class="card question-card mb-3 ${isPracticed ? 'card-practiced' : ''}" id="question-card-${q.id}">
+        <div class="card question-card mb-4 ${isPracticed ? 'card-practiced' : ''}" id="question-card-${q.id}">
           <div class="question-card-header">
             <div class="q-header-meta">
-              <span class="badge ${badgeColorClass}">#${q.id} • ${q.categoryLabel}</span>
-              <span class="q-focus-area">${escapeHtml(q.focusArea)}</span>
+              <span class="badge ${badgeColorClass}">SOALAN #${q.id} • ${q.categoryLabel}</span>
+              <span class="q-focus-area">🎯 Fokus: ${escapeHtml(q.focusArea)}</span>
               <span class="badge badge-emerald-subtle" id="practiced-badge-${q.id}" style="display: ${isPracticed ? 'inline-flex' : 'none'};">
-                ✓ Telah Dilatih
+                ✓ Selesai Dibaca / Dilatih
               </span>
             </div>
             <div class="q-header-actions">
-              <button type="button" class="btn btn-ghost btn-sm" onclick="MACInterview.copyQuestionText(${q.id})" title="Salin Soalan">
-                📋 Salin
+              <button type="button" class="btn btn-ghost btn-sm" onclick="MACInterview.copyQuestionText(${q.id})" title="Salin Soalan & Jawapan">
+                📋 Salin Nota
               </button>
             </div>
           </div>
 
           <div class="question-card-body">
             <h4 class="question-text">
-              <span class="q-num-lead">S${q.id}.</span> ${escapeHtml(q.question)}
+              <span class="q-num-lead">SOALAN ${q.id}:</span> "${escapeHtml(q.question)}"
             </h4>
 
-            <div class="q-action-bar mt-2">
-              <button type="button" class="btn btn-secondary btn-sm" id="btn-toggle-q-${q.id}" onclick="MACInterview.toggleQuestionAccordion(${q.id})">
-                ${isExpanded ? '📕 Tutup Panduan Jawapan S.T.A.R ▴' : '📖 Lihat Panduan Jawapan S.T.A.R &amp; Kata Kunci ▾'}
-              </button>
-
-              <button type="button" class="btn btn-sm ${isPracticed ? 'btn-emerald' : 'btn-secondary'}" id="btn-practice-toggle-${q.id}" onclick="MACInterview.togglePracticed(${q.id})">
-                ${isPracticed ? '✓ Telah Dilatih (Klik Batal)' : '◻ Tandakan Selesai Latih Tubi'}
-              </button>
-            </div>
-
-            <!-- Drawer Panduan S.T.A.R & Kata Kunci (Expandable) -->
+            <!-- Drawer Nota Jawapan Penuh, S.T.A.R & Kata Kunci (Dibuka Terus / Expanded By Default) -->
             <div class="star-drawer mt-3" id="q-drawer-${q.id}" style="display: ${isExpanded ? 'block' : 'none'};">
+              
+              <!-- KOTAK UTAMA: SKRIP JAWAPAN LISAN TERUS (SENANG BACA) -->
+              <div class="direct-answer-box mb-3">
+                <div class="direct-answer-title">
+                  <span>💬 JAWAPAN PADAT (BOLEH TERUS BACA / SEBUT DI HADAPAN PANEL):</span>
+                </div>
+                <p class="direct-answer-script">"${escapeHtml(directScript)}"</p>
+              </div>
+
+              <!-- PECAHAN POIN S.T.A.R (RINGKASAN STRUKTUR) -->
+              <div class="star-section-label mb-1">
+                <strong>📌 Pecahan Struktur Jawapan Mengikut Formula S.T.A.R:</strong>
+              </div>
               <div class="star-grid">
                 <!-- Situation -->
                 <div class="star-col star-col-s">
@@ -1523,7 +1588,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
 
               <!-- Kata Kunci Wajib -->
               <div class="mt-3 keyword-panel">
-                <span class="keyword-title">🔑 Kata Kunci Wajib Disebut:</span>
+                <span class="keyword-title">🔑 Kata Kunci Wajib Disebut (Markah Tinggi Panel):</span>
                 <div class="keyword-pills-wrap mt-1">
                   ${keywordPills}
                 </div>
@@ -1531,7 +1596,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
 
               <!-- Perangkap Calon -->
               <div class="mt-3 pitfall-panel">
-                <span class="pitfall-title">⚠️ Perangkap &amp; Kesilapan Calon (Elakkan):</span>
+                <span class="pitfall-title">⚠️ Perangkap &amp; Kesilapan Calon (Jangan Sebut!):</span>
                 <ul class="pitfall-list mt-1">
                   ${pitfallItems}
                 </ul>
@@ -1540,7 +1605,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
               <!-- Pemasa Lisan Latihan Temu Duga (1 - 3 Minit) -->
               <div class="mt-3 oral-timer-box">
                 <div class="oral-timer-header">
-                  <strong>🎙️ Latihan Sebutan Lisan Kendiri:</strong>
+                  <strong>🎙️ Pemasa Latihan Sebutan Lisan:</strong>
                   <span class="oral-digits font-mono" id="oral-timer-digits-${q.id}">02:00</span>
                 </div>
                 <div class="oral-timer-controls mt-2">
@@ -1553,6 +1618,16 @@ Kata Kunci: ${q.keywords.join(', ')}`;
                 </div>
               </div>
 
+            </div>
+
+            <div class="q-action-bar mt-3">
+              <button type="button" class="btn btn-sm ${isPracticed ? 'btn-emerald' : 'btn-secondary'}" id="btn-practice-toggle-${q.id}" onclick="MACInterview.togglePracticed(${q.id})">
+                ${isPracticed ? '✓ Telah Dilatih (Klik Batal)' : '◻ Tandakan Selesai Baca / Latih'}
+              </button>
+
+              <button type="button" class="btn btn-ghost btn-sm" id="btn-toggle-q-${q.id}" onclick="MACInterview.toggleQuestionAccordion(${q.id})">
+                ${isExpanded ? '📕 Sembunyikan Jawapan ▴' : '📖 Buka Jawapan Penuh &amp; S.T.A.R ▾'}
+              </button>
             </div>
 
           </div>
@@ -1581,7 +1656,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
   }
 
   // ==========================================================================
-  // BAHAGIAN 7: RENDER KESELURUHAN HAB TEMU DUGA
+  // BAHAGIAN 8: RENDER KESELURUHAN HAB TEMU DUGA (NOTA SOALAN DI ATAS SEKALI)
   // ==========================================================================
   function render(containerId = 'interview-app') {
     if (typeof document === 'undefined') return;
@@ -1639,260 +1714,195 @@ Kata Kunci: ${q.keywords.join(', ')}`;
         <!-- Banner Tajuk Modul -->
         <div class="module-header-banner">
           <div class="module-header-text">
-            <h2>FASA 3: TEMU DUGA PANEL &amp; BANK SOALAN STAR</h2>
-            <p>Borang Penilaian Temu Duga (Gred 5 - Gred 9) Lampiran F1 (v.300726) • Pemasa 30 Minit • Bank 28 Soalan &amp; Jawapan S.T.A.R</p>
+            <h2>NOTA KHAS 35 SOALAN &amp; JAWAPAN TEMU DUGA GURU PJPK MRSM</h2>
+            <p>Sekali Buka Terus Baca: Skrip Jawapan Penuh + Pecahan S.T.A.R + Kata Kunci Panel MARA (Dilengkapi Borang Lampiran F1)</p>
           </div>
           <div class="header-action-group">
             <button type="button" class="btn btn-secondary" onclick="window.print()">
-              🖨️ Cetak Borang Lampiran F1 (A4)
+              🖨️ Cetak Nota / PDF (A4)
             </button>
           </div>
         </div>
 
-        <!-- Kad Nota Ringkas Poket Temu Duga (Hanya Info Temu Duga Sahaja) -->
-        <div class="card mb-4 iv-quick-notes-card">
-          <div class="card-header border-gold d-flex justify-between items-center" style="cursor: pointer;" onclick="MACInterview.toggleQuickNotes()">
-            <div class="d-flex items-center gap-2">
-              <span class="text-2xl">⚡</span>
+        <!-- Bar Pilihan Paparan: Nota 35 Soalan & Jawapan (Utama/Default) vs Borang Rubrik Lampiran F1 -->
+        <div class="iv-mode-switcher-bar mb-4">
+          <button type="button" class="btn btn-primary" id="btn-subview-notes" onclick="MACInterview.switchSubView('notes')">
+            📘 Nota Lengkap 35 Soalan &amp; Jawapan IV (Buka Terus)
+          </button>
+          <button type="button" class="btn btn-secondary" id="btn-subview-rubric" onclick="MACInterview.switchSubView('rubric')">
+            📝 Borang Rubrik 10 Kriteria &amp; Pemasa 30 Minit (Lampiran F1)
+          </button>
+        </div>
+
+        <!-- ===================================================================
+             PAPARAN 1 (DEFAULT AKTIF): NOTA KHAS 35 SOALAN & JAWAPAN TEMU DUGA
+             =================================================================== -->
+        <div id="iv-view-notes" style="display: block;">
+          <div class="card qbank-section-card" id="qbank-container">
+            <div class="card-header border-mara d-flex justify-between items-center">
               <div>
-                <h3 class="card-heading text-navy">NOTA POKET KILAT TEMU DUGA (BACA 2 MINIT SEBELUM MASUK BILIK)</h3>
-                <p class="text-xs text-secondary mt-1">Hanya Info Temu Duga Sahaja: 5 Fakta Emas MARA • Skrip Pitch 60s • 5 Multi-Role • Jawapan English • Skor 40-50</p>
+                <h3 class="card-heading">📘 BUKU NOTA 35 SOALAN &amp; JAWAPAN TEMU DUGA (GURU PJPK DG9 / DG41)</h3>
+                <p class="text-sm text-secondary mt-1">Semua jawapan dibuka terus supaya senang dibaca. Tapis mengikut 5 kategori atau cari kata kunci di bawah.</p>
               </div>
+              <span class="badge badge-mara" id="qbank-count-badge">35 Soalan &amp; Jawapan</span>
             </div>
-            <button type="button" class="btn btn-sm btn-primary" id="btn-toggle-quick-notes">
-              📖 Buka Nota Ringkas IV ▾
-            </button>
-          </div>
-          <div class="card-body" id="iv-quick-notes-body" style="display: none;">
-            <div class="quick-notes-grid">
-              
-              <!-- Kotak 1: 5 Fakta Emas MARA -->
-              <div class="quick-note-box box-gold">
-                <div class="quick-note-title text-gold">🏛️ 1. 5 FAKTA EMAS MARA (HAFAL 30 SAAT)</div>
-                <div class="quick-note-content">
-                  <ul>
-                    <li><strong>Tarikh &amp; Akta:</strong> 1 Mac 1966 • Seksyen 6(1) Akta MARA 1966 (Akta 249) memajukan sosioekonomi Bumiputera.</li>
-                    <li><strong>Slogan:</strong> <em>"Keusahawanan dan Pendidikan Global"</em>.</li>
-                    <li><strong>4 Pimpinan:</strong> Menteri KKDW (Dato' Seri Zahid Hamidi) • Pengerusi (Datuk Dr Asyraf Wajdi) • KP MARA (Ir. Dr. Mahzan Teh) • Pengarah BPM MARA.</li>
-                    <li><strong>58 MRSM:</strong> Pertama di Seremban (1972 - Model Bronx Science NY). Aliran: Premier, Ulul Albab (Tahfiz 30 Juzuk), IGCSE, Bitara, IB-MYP, Teknikal.</li>
-                    <li><strong>Dasar Panas:</strong> Sifar Buli <em>"You Touch, You Go"</em> (buang maktab) &amp; Kuota 60% B40 + Program BUDI MARA.</li>
-                  </ul>
+
+            <div class="card-body">
+              <!-- Penjejak Kemajuan Bacaan / Latihan Calon -->
+              <div class="qbank-progress-container mb-3">
+                <div class="d-flex justify-between items-center mb-1">
+                  <span class="text-sm font-bold text-navy">Kemajuan Bacaan &amp; Latih Tubi Nota Soalan IV:</span>
+                  <span class="text-sm font-bold text-emerald" id="qbank-progress-text">0 / 35 Soalan Telah Dibaca / Dilatih (0%)</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" id="qbank-progress-fill" style="width: 0%;"></div>
                 </div>
               </div>
 
-              <!-- Kotak 2: Skrip Pitch 60 Saat -->
-              <div class="quick-note-box box-blue">
-                <div class="quick-note-title text-navy">🎙️ 2. SKRIP ELEVATOR PITCH 60 SAAT</div>
-                <div class="quick-note-content">
-                  <p class="mb-2"><em>"Assalamualaikum Ahli Panel. Saya [Nama], graduan PJPK/Sains Sukan [Universiti] dengan lesen kejurulatihan [Sukan Utama] &amp; pentauliahan CPR/AED."</em></p>
-                  <p class="mb-2"><em>"Semasa praktikum, saya melonjakkan celik SEGAK murid sebanyak 22% &amp; bimbing pasukan ke suku akhir MSSD."</em></p>
-                  <p class="mb-2"><em>"Saya memilih MARA kerana bersedia 100% untuk ekosistem asrama 24 jam sebagai Guru PJ, Penasihat Homeroom, dan Warden Asrama berintegriti."</em></p>
-                  <p><strong>Penutup Kunci:</strong> <em>"Saya komited berkhidmat di mana-mana 58 buah MRSM di seluruh negara demi menjulang amanah anak bangsa."</em></p>
+              <!-- Kawalan Carian & Penapis 5 Kategori -->
+              <div class="qbank-controls-bar mb-4">
+                <div class="q-search-box">
+                  <span class="q-search-icon">🔍</span>
+                  <input type="text" id="qbank-search-input" class="input-field" placeholder="Cari terus soalan atau jawapan (cth: Akta 249, buli, warden, homeroom, SEGAK, DRCAB, English)..." oninput="MACInterview.handleSearchInput(this.value)">
+                </div>
+
+                <div class="q-filter-chips mt-2">
+                  <button type="button" class="q-filter-pill active" data-category="all" onclick="MACInterview.setCategoryFilter('all')">Semua Soalan (35)</button>
+                  <button type="button" class="q-filter-pill" data-category="mara" onclick="MACInterview.setCategoryFilter('mara')">🏛️ 1. Akta &amp; MARA (S1–S7)</button>
+                  <button type="button" class="q-filter-pill" data-category="mrsm" onclick="MACInterview.setCategoryFilter('mrsm')">🏫 2. Budaya MRSM (S8–S14)</button>
+                  <button type="button" class="q-filter-pill" data-category="pjpk" onclick="MACInterview.setCategoryFilter('pjpk')">🏅 3. PJPK &amp; SOP Sukan (S15–S21)</button>
+                  <button type="button" class="q-filter-pill" data-category="star" onclick="MACInterview.setCategoryFilter('star')">⭐ 4. Situasi STAR (S22–S28)</button>
+                  <button type="button" class="q-filter-pill" data-category="spot" onclick="MACInterview.setCategoryFilter('spot')">🇬🇧 5. Spot Emas &amp; English (S29–S35)</button>
+                </div>
+
+                <div class="d-flex justify-between items-center mt-2">
+                  <div class="btn-group-sm">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="MACInterview.toggleAllQuestions(true)">📖 Buka Semua Jawapan (Senang Baca)</button>
+                    <button type="button" class="btn btn-ghost btn-sm" onclick="MACInterview.toggleAllQuestions(false)">📁 Ringkaskan (Senarai Soalan Sahaja)</button>
+                  </div>
                 </div>
               </div>
 
-              <!-- Kotak 3: 5 Multi-Role Guru PJ MRSM -->
-              <div class="quick-note-box box-green">
-                <div class="quick-note-title text-emerald">🎽 3. 5 PERANAN (MULTI-ROLE) GURU PJ MRSM</div>
-                <div class="quick-note-content">
-                  <ul>
-                    <li><strong>1. Pendidik PdPc &amp; PBD:</strong> Amali padang KSSM &amp; teori Pendidikan Kesihatan (PEERS) berlandaskan PAK-21.</li>
-                    <li><strong>2. Pentaksir Standard SEGAK:</strong> 2 kali setahun (Penggal 1 &amp; 2) dengan data sahih tanpa manipulasi.</li>
-                    <li><strong>3. Pegawai Keselamatan Padang:</strong> <em>Duty of Care</em> audit tiang gol, padang &amp; SOP kecemasan D.R.C.A.B.</li>
-                    <li><strong>4. Guru Homeroom:</strong> Ibu bapa angkat bimbing emosi, moral &amp; kebajikan 10–15 orang anak maktab.</li>
-                    <li><strong>5. Warden Asrama 24 Jam:</strong> Kawal disiplin malam, bantu murid sakit jam 2 pagi, tegakkan sifar buli <em>"You Touch, You Go"</em>.</li>
-                  </ul>
-                </div>
+              <!-- Kontena Senarai 35 Kad Soalan & Jawapan (Semua Dibuka Secara Lalai) -->
+              <div id="interview-questions-list" class="question-cards-container">
+                <!-- Dimuatkan secara dinamik oleh renderQuestionCards() -->
               </div>
 
-              <!-- Kotak 4: Bila Panel Bertukar English -->
-              <div class="quick-note-box box-purple">
-                <div class="quick-note-title" style="color: #7C3AED;">🇬🇧 4. BILA PANEL BERTUKAR BAHASA INGGERIS</div>
-                <div class="quick-note-content">
-                  <ul>
-                    <li><strong>Why P.E. Matters:</strong> <em>"P.E. builds mental resilience (grit), tactical decision-making, and cognitive stamina that power students aiming for Ivy League and top global universities."</em></li>
-                    <li><strong>Anti-Bullying &amp; Seniority:</strong> <em>"On the pitch, seniority carries zero privileges. Respect is earned purely through sportsmanship under MARA's zero-tolerance 'You Touch, You Go' policy."</em></li>
-                    <li><strong>Sports Entrepreneurship:</strong> <em>"We organize Maktab Sports Carnivals where students manage sponsorship, merchandise sales, and event budgeting, learning financial literacy directly."</em></li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Baris Bawah: Skor 10 Kriteria & Pantang Larang -->
-            <div class="quick-note-box box-red mt-3">
-              <div class="quick-note-title text-danger">📊 5. SKOR LAMPIRAN F1 &amp; PANTANG LARANG TEMU DUGA</div>
-              <div class="quick-note-content">
-                <p><strong>Sasaran Skor MARA:</strong> 10 Kriteria Penilaian • Skala 1 - 5 • Markah Penuh 50 • <strong>Lulus/Pilihan: 40 – 50 Markah</strong> (Bawah 40 Gagal).</p>
-                <p class="mt-2 text-danger"><strong>5 Pantang Larang:</strong> 1. Jangan kata minat sukan dari kecil (klise!) • 2. Jangan tolak tugas warden/homeroom • 3. Jangan kata MRSM bawah KPM (KKDW &amp; BPM!) • 4. Jangan membebel kisah sekolah rendah • 5. Jangan kompromi isu buli!</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Kad Pemasa Temu Duga Kumpulan 30 Minit -->
-        <div class="card mb-4">
-          <div class="card-header border-navy">
-            <h3 class="card-heading">PEMASA TEMU DUGA KUMPULAN (30 MINIT - KLAUSA 4.2)</h3>
-            <span class="badge badge-info">30 Minit Kumpulan</span>
-          </div>
-          <div class="card-body text-center">
-            <div class="teaching-timer-box">
-              <div id="interview-timer-display" class="teaching-timer-digits">30:00</div>
-              <p class="text-muted text-sm mt-2">Temu Duga dijalankan selama 30 minit secara berkumpulan di bilik yang sama mengikut Klausa 4.2 Lampiran A.</p>
-            </div>
-
-            <div class="btn-group-row mt-3">
-              <button type="button" class="btn btn-primary btn-large" id="btn-int-start">
-                ▶️ Mula 30 Minit
-              </button>
-              <button type="button" class="btn btn-secondary btn-large" id="btn-int-pause" disabled>
-                ⏸️ Jeda
-              </button>
-              <button type="button" class="btn btn-ghost btn-large" id="btn-int-reset">
-                🔄 Semula
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kad Skor & Rubrik Lampiran F1 (10 Kriteria) -->
-        <div class="card mb-4">
-          <div class="card-header border-red">
-            <h3 class="card-heading">SEKSYEN 1 : PENILAIAN TEMU DUGA (10 KRITERIA RASMI MARA)</h3>
-            <span class="badge badge-mara">Skala 1 - 5 (5 Tertinggi) • Markah Penuh: 50</span>
-          </div>
-          <div class="card-body">
-            <!-- Kad Ringkasan Markah -->
-            <div class="score-summary-bar mb-4">
-              <div class="score-summary-item">
-                <span class="text-xs text-muted">Jumlah Markah Temu Duga:</span>
-                <strong id="display-interview-total" class="text-2xl">${currentResult.totalScore} / 50</strong>
-              </div>
-              <div class="score-summary-item">
-                <span class="text-xs text-muted">Status Cadangan Panel:</span>
-                <strong id="display-interview-decision" class="text-xl ${currentResult.isPass ? 'text-emerald' : 'text-danger'}">
-                  ${currentResult.decisionFull}
-                </strong>
-              </div>
-            </div>
-
-            <!-- Jadual 10 Kriteria Lampiran F1 -->
-            <div class="table-responsive">
-              <table class="table-custom rubric-table">
-                <thead>
-                  <tr>
-                    <th style="width: 5%;">Bil</th>
-                    <th style="width: 65%;">10 Kriteria Penilaian Temu Duga Lampiran F1</th>
-                    <th style="width: 30%;" class="text-center">Skor (1 - 5)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${rubricRowsHtml}
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Seksyen 2: Kekuatan & Kelemahan -->
-            <div class="mt-4 form-grid-2">
-              <div class="form-group">
-                <label for="int-kekuatan"><strong>SEKSYEN 2 : KEKUATAN CALON:</strong></label>
-                <textarea id="int-kekuatan" class="input-field" rows="3" placeholder="Catatan kekuatan penguasaan subjek, kemahiran komunikasi, karisma pendidik...">${savedNotes.kekuatan}</textarea>
-              </div>
-              <div class="form-group">
-                <label for="int-kelemahan"><strong>KELEMAHAN CALON:</strong></label>
-                <textarea id="int-kelemahan" class="input-field" rows="3" placeholder="Catatan ruang penambahbaikan calon...">${savedNotes.kelemahan}</textarea>
-              </div>
-            </div>
-
-            <!-- Seksyen 3: Ulasan Keseluruhan Panel -->
-            <div class="form-group mt-3">
-              <label for="int-ulasan"><strong>SEKSYEN 3 : ULASAN KESELURUHAN PANEL:</strong></label>
-              <textarea id="int-ulasan" class="input-field" rows="3" placeholder="Ulasan keseluruhan potensi calon sebagai Pegawai Perkhidmatan Pendidikan DG9 MARA...">${savedNotes.ulasan}</textarea>
-            </div>
-
-            <!-- Seksyen 4: Cadangan Panel (Pilihan 40-50 vs Gagal <40) -->
-            <div class="cadangan-panel-box mt-4">
-              <h4 class="font-bold text-navy">SEKSYEN 4 : CADANGAN PANEL (LAMPIRAN F1)</h4>
-              <div class="radio-group-row mt-2">
-                <div class="cadangan-pill ${currentResult.totalScore >= 40 ? 'pill-active-green' : ''}">
-                  <span class="check-box-indicator">${currentResult.totalScore >= 40 ? '☑' : '☐'}</span>
-                  <strong>Pilihan ( 40 – 50 )</strong>
-                </div>
-                <div class="cadangan-pill ${currentResult.totalScore < 40 ? 'pill-active-red' : ''}">
-                  <span class="check-box-indicator">${currentResult.totalScore < 40 ? '☑' : '☐'}</span>
-                  <strong>Gagal ( &lt; 40 )</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <button type="button" class="btn btn-primary" id="btn-save-interview">💾 Simpan Skor &amp; Catatan Temu Duga</button>
             </div>
           </div>
         </div>
 
         <!-- ===================================================================
-             BAHAGIAN 5: BANK 35 SOALAN TEMU DUGA DG41 & JAWAPAN FORMAT S.T.A.R
+             PAPARAN 2: BORANG RUBRIK 10 KRITERIA & PEMASA 30 MINIT (LAMPIRAN F1)
              =================================================================== -->
-        <div class="card qbank-section-card" id="qbank-container">
-          <div class="card-header border-mara d-flex justify-between items-center">
-            <div>
-              <h3 class="card-heading">BANK 28 SOALAN TEMU DUGA DG41 &amp; PANDUAN JAWAPAN S.T.A.R</h3>
-              <p class="text-sm text-secondary mt-1">Lengkap dengan Formula S.T.A.R, Kata Kunci Wajib &amp; Tips Mengelak Perangkap Panel</p>
+        <div id="iv-view-rubric" style="display: none;">
+          <!-- Kad Pemasa Temu Duga Kumpulan 30 Minit -->
+          <div class="card mb-4">
+            <div class="card-header border-navy">
+              <h3 class="card-heading">PEMASA TEMU DUGA KUMPULAN (30 MINIT - KLAUSA 4.2)</h3>
+              <span class="badge badge-info">30 Minit Kumpulan</span>
             </div>
-            <span class="badge badge-mara" id="qbank-count-badge">35 Soalan Tersedia</span>
+            <div class="card-body text-center">
+              <div class="teaching-timer-box">
+                <div id="interview-timer-display" class="teaching-timer-digits">30:00</div>
+                <p class="text-muted text-sm mt-2">Temu Duga dijalankan selama 30 minit secara berkumpulan di bilik yang sama mengikut Klausa 4.2 Lampiran A.</p>
+              </div>
+
+              <div class="btn-group-row mt-3">
+                <button type="button" class="btn btn-primary btn-large" id="btn-int-start">
+                  ▶️ Mula 30 Minit
+                </button>
+                <button type="button" class="btn btn-secondary btn-large" id="btn-int-pause" disabled>
+                  ⏸️ Jeda
+                </button>
+                <button type="button" class="btn btn-ghost btn-large" id="btn-int-reset">
+                  🔄 Semula
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="card-body">
-            <!-- Penjejak Kemajuan Latihan Calon -->
-            <div class="qbank-progress-container mb-4">
-              <div class="d-flex justify-between items-center mb-1">
-                <span class="text-sm font-bold text-navy">Kemajuan Latih Tubi Temu Duga Anda:</span>
-                <span class="text-sm font-bold text-emerald" id="qbank-progress-text">0 / 28 Soalan Telah Dilatih (0%)</span>
-              </div>
-              <div class="progress-bar-track">
-                <div class="progress-bar-fill" id="qbank-progress-fill" style="width: 0%;"></div>
-              </div>
+          <!-- Kad Skor & Rubrik Lampiran F1 (10 Kriteria) -->
+          <div class="card mb-4">
+            <div class="card-header border-red">
+              <h3 class="card-heading">SEKSYEN 1 : PENILAIAN TEMU DUGA (10 KRITERIA RASMI MARA)</h3>
+              <span class="badge badge-mara">Skala 1 - 5 (5 Tertinggi) • Markah Penuh: 50</span>
             </div>
-
-            <!-- Kawalan Carian & Penapis Kategori -->
-            <div class="qbank-controls-bar mb-3">
-              <div class="q-search-box">
-                <span class="q-search-icon">🔍</span>
-                <input type="text" id="qbank-search-input" class="input-field" placeholder="Cari soalan, topik, kata kunci (cth: Akta 249, SEGAK, warden, homeroom)..." oninput="MACInterview.handleSearchInput(this.value)">
-              </div>
-
-              <div class="q-filter-chips mt-2">
-                <button type="button" class="q-filter-pill active" data-category="all" onclick="MACInterview.setCategoryFilter('all')">Semua (35)</button>
-                <button type="button" class="q-filter-pill" data-category="mara" onclick="MACInterview.setCategoryFilter('mara')">🏛️ Akta &amp; MARA (7)</button>
-                <button type="button" class="q-filter-pill" data-category="mrsm" onclick="MACInterview.setCategoryFilter('mrsm')">🏫 Budaya MRSM (7)</button>
-                <button type="button" class="q-filter-pill" data-category="pjpk" onclick="MACInterview.setCategoryFilter('pjpk')">🏅 PJPK &amp; SOP Sukan (7)</button>
-                <button type="button" class="q-filter-pill" data-category="star" onclick="MACInterview.setCategoryFilter('star')">⭐ Senario STAR (7)</button>
-                <button type="button" class="q-filter-pill" data-category="spot" onclick="MACInterview.setCategoryFilter('spot')">🇬🇧 Spot Emas &amp; English (7)</button>
-              </div>
-
-              <div class="d-flex justify-between items-center mt-2">
-                <div class="btn-group-sm">
-                  <button type="button" class="btn btn-ghost btn-sm" onclick="MACInterview.toggleAllQuestions(true)">📂 Buka Semua Panduan</button>
-                  <button type="button" class="btn btn-ghost btn-sm" onclick="MACInterview.toggleAllQuestions(false)">📁 Tutup Semua</button>
+            <div class="card-body">
+              <!-- Kad Ringkasan Markah -->
+              <div class="score-summary-bar mb-4">
+                <div class="score-summary-item">
+                  <span class="text-xs text-muted">Jumlah Markah Temu Duga:</span>
+                  <strong id="display-interview-total" class="text-2xl">${currentResult.totalScore} / 50</strong>
+                </div>
+                <div class="score-summary-item">
+                  <span class="text-xs text-muted">Status Cadangan Panel:</span>
+                  <strong id="display-interview-decision" class="text-xl ${currentResult.isPass ? 'text-emerald' : 'text-danger'}">
+                    ${currentResult.decisionFull}
+                  </strong>
                 </div>
               </div>
-            </div>
 
-            <!-- Kontena Senarai Kad Soalan -->
-            <div id="interview-questions-list" class="question-cards-container">
-              <!-- Dimuatkan secara dinamik oleh renderQuestionCards() -->
-            </div>
+              <!-- Jadual 10 Kriteria Lampiran F1 -->
+              <div class="table-responsive">
+                <table class="table-custom rubric-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">Bil</th>
+                      <th style="width: 65%;">10 Kriteria Penilaian Temu Duga Lampiran F1</th>
+                      <th style="width: 30%;" class="text-center">Skor (1 - 5)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${rubricRowsHtml}
+                  </tbody>
+                </table>
+              </div>
 
+              <!-- Seksyen 2: Kekuatan & Kelemahan -->
+              <div class="mt-4 form-grid-2">
+                <div class="form-group">
+                  <label for="int-kekuatan"><strong>SEKSYEN 2 : KEKUATAN CALON:</strong></label>
+                  <textarea id="int-kekuatan" class="input-field" rows="3" placeholder="Catatan kekuatan penguasaan subjek, kemahiran komunikasi, karisma pendidik...">${savedNotes.kekuatan}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="int-kelemahan"><strong>KELEMAHAN CALON:</strong></label>
+                  <textarea id="int-kelemahan" class="input-field" rows="3" placeholder="Catatan ruang penambahbaikan calon...">${savedNotes.kelemahan}</textarea>
+                </div>
+              </div>
+
+              <!-- Seksyen 3: Ulasan Keseluruhan Panel -->
+              <div class="form-group mt-3">
+                <label for="int-ulasan"><strong>SEKSYEN 3 : ULASAN KESELURUHAN PANEL:</strong></label>
+                <textarea id="int-ulasan" class="input-field" rows="3" placeholder="Ulasan keseluruhan potensi calon sebagai Pegawai Perkhidmatan Pendidikan DG9 MARA...">${savedNotes.ulasan}</textarea>
+              </div>
+
+              <!-- Seksyen 4: Cadangan Panel (Pilihan 40-50 vs Gagal <40) -->
+              <div class="cadangan-panel-box mt-4">
+                <h4 class="font-bold text-navy">SEKSYEN 4 : CADANGAN PANEL (LAMPIRAN F1)</h4>
+                <div class="radio-group-row mt-2">
+                  <div class="cadangan-pill ${currentResult.totalScore >= 40 ? 'pill-active-green' : ''}">
+                    <span class="check-box-indicator">${currentResult.totalScore >= 40 ? '☑' : '☐'}</span>
+                    <strong>Pilihan ( 40 – 50 )</strong>
+                  </div>
+                  <div class="cadangan-pill ${currentResult.totalScore < 40 ? 'pill-active-red' : ''}">
+                    <span class="check-box-indicator">${currentResult.totalScore < 40 ? '☑' : '☐'}</span>
+                    <strong>Gagal ( &lt; 40 )</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <button type="button" class="btn btn-primary" id="btn-save-interview">💾 Simpan Skor &amp; Catatan Temu Duga</button>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     `;
 
-    // Pasang Event Listeners & Inisialisasi Bank Soalan
+    // Pasang Event Listeners & Inisialisasi Nota Soalan
     setupEventListeners();
     renderQuestionCards();
     updatePracticedProgress();
@@ -1962,6 +1972,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     INTERVIEW_DURATION_SEC,
     INTERVIEW_CRITERIA_MARA,
     INTERVIEW_QUESTIONS,
+    DIRECT_SPOKEN_SCRIPTS,
     calculateScore,
     handleScoreChange,
     startTimer,
@@ -1977,6 +1988,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
     startOralTimer,
     stopOralTimer,
     resetOralTimer,
+    switchSubView,
     toggleQuickNotes,
     render
   };

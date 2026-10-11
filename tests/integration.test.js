@@ -44,6 +44,7 @@ const expectedFiles = [
   'js/teaching.js',
   'js/interview.js',
   'js/checklist.js',
+  'docs/NOTA_SOALAN_DAN_JAWAPAN_TEMU_DUGA_PJPK.md',
   'docs/00_NOTA_RINGKAS_TEMU_DUGA_IV_DG41.md',
   'docs/05_GARIS_PANDUAN_MAC_DAN_SENARAI_SEMAK_LAMPIRAN_A.md',
   'docs/06_PENGETAHUAN_AM_MRSM_DAN_PANDUAN_GURU_PJPK.md',

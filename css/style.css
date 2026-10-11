@@ -3286,6 +3286,66 @@ code, pre {
   border: 1px solid #A7F3D0;
 }
 
+/* Bar Penukar Mod Nota Soalan IV vs Borang Rubrik Lampiran F1 */
+.iv-mode-switcher-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: #F8FAFC;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #CBD5E1;
+}
+
+.iv-mode-switcher-bar .btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.925rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .iv-mode-switcher-bar {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* Kotak Skrip Jawapan Lisan Terus (Senang Baca) */
+.direct-answer-box {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border: 1.5px solid #F59E0B;
+  border-left: 6px solid #D97706;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
+}
+
+.direct-answer-title {
+  font-size: 0.825rem;
+  font-weight: 800;
+  color: #92400E;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.direct-answer-script {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #0F172A;
+  font-weight: 500;
+  margin: 0;
+}
+
+.star-section-label {
+  font-size: 0.825rem;
+  color: #334155;
+}
+
 /* Kad Nota Ringkas Poket IV */
 .border-gold {
   border-bottom: 3px solid #D97706;

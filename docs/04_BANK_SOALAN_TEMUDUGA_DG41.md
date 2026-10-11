@@ -327,6 +327,115 @@ Gunakan format **S.T.A.R** bagi menjawab semua soalan berbentuk situasi (*situat
 
 ---
 
+## KATEGORI 5: SPOT EMAS PANEL, KEUSAHAWANAN & SOALAN BAHASA INGGERIS (SOALAN 29 – 35)
+
+---
+
+### Soalan 29 (Bahasa Inggeris): "Why should MARA hire you as a Physical Education teacher instead of other candidates, and how does Physical Education support students aiming for Ivy League and top global universities?"
+* **Focus Area:** Bilingual Proficiency, Global Mindset & Holistic Student Excellence
+* **STAR Guide:**
+  * **S (Situation):** Top MRSM students aspire to gain admission into Ivy League, Russell Group, and world-class universities where admission officers evaluate holistic character beyond straight A results.
+  * **T (Task):** To prove to the panel that as a PE educator, I possess the vision and bilingual capability to build students' leadership, grit, and unique athletic portfolio for top-tier international scholarships.
+  * **A (Action):**
+    1. In English-medium environments (especially for MRSM IGCSE and IB-MYP programs), I cultivate mental resilience, tactical strategic thinking, and emotional regulation under pressure.
+    2. I guide students to document their sports leadership roles, sports science research projects, and community fitness initiatives for their personal statements and admission interviews.
+    3. I demonstrate that physical endurance directly boosts cognitive stamina during long study hours.
+  * **R (Result):** Producing charismatic MARA scholars who not only ace global examinations but also demonstrate robust health, executive leadership, and confidence on the international stage.
+* **Keywords:** *Holistic Character Beyond Straight A's, Ivy League & Top University Profile, Cognitive Stamina & Brain Plasticity, Sports Leadership Portfolio, Bilingual Communication Proficiency, Global Mindset & Mental Resilience.*
+* **Pitfalls:** Gagap atau menolak menjawab dalam Bahasa Inggeris apabila disoal panel; menganggap subjek PJ sekadar berseronok di padang tanpa nilai tambah akademik global.
+
+---
+
+### Soalan 30 (Bahasa Inggeris): "How do you cultivate sportsmanship and eradicate toxic seniority or bullying culture among boarding school students through sports?"
+* **Focus Area:** Sports Ethics, Anti-Bullying Culture & Positive Seniority
+* **STAR Guide:**
+  * **S (Situation):** In full boarding schools, intense hostel sports rivalries can sometimes breed toxic seniority, intimidation, or informal bullying if not vigilantly managed by sports teachers.
+  * **T (Task):** To strictly enforce MARA's zero-tolerance 'You Touch, You Go' anti-bullying policy and turn the sports field into a safe sanctuary of mutual respect and camaraderie.
+  * **A (Action):**
+    1. I establish unequivocal field rules: on the pitch, seniority carries zero privileges; respect is earned purely through discipline and sportsmanship.
+    2. I implement a cross-batch buddy system where Form 4 and Form 5 seniors mentor Form 1 and Form 2 juniors in athletic skills rather than dominating them.
+    3. During post-match debriefings, I openly applaud fair play and immediately intervene at the slightest sign of unsporting taunts, ensuring that the locker room remains safe and respectful.
+  * **R (Result):** Cultivating a healthy maktab brotherhood and sisterhood anchored in shared athletic dedication, empathy, and absolute eradication of bullying behavior.
+* **Keywords:** *Zero-Tolerance 'You Touch, You Go', Fair Play & Mutual Respect, Cross-Batch Mentorship (Senior-Junior Buddy), Eradicating Toxic Seniority & Initiation, Safe Maktab & Locker Room Environment.*
+* **Pitfalls:** Menyokong atau membiarkan budaya buli/ragging atas alasan "tradisi senioriti asrama"; gagal menekankan dasar rasmi MARA 'You Touch, You Go'.
+
+---
+
+### Soalan 31 (Elevator Pitch 60 Saat): "Sila perkenalkan diri anda dalam masa 60 saat dan yakinkan panel mengapakah anda aset bernilai tinggi untuk dilantik sebagai Pegawai Perkhidmatan Pendidikan MARA DG9."
+* **Focus Area:** Pengenalan Diri Berimpak Tinggi, USP Calon & Komitmen 24 Jam
+* **STAR Guide:**
+  * **S (Situation):** Panel penilai mendengar puluhan calon setiap hari; pengenalan diri yang berjela-jela menceritakan latar belakang sekolah rendah akan membosankan panel.
+  * **T (Task):** Menyampaikan identiti profesional, kelayakan teras, kepakaran sukan spesifik, dan nilai tambah yang boleh disumbangkan kepada MRSM secara padat, yakin, dan bertenaga.
+  * **A (Action):** *"Assalamualaikum dan salam sejahtera Ahli Panel. Saya [Nama], graduan [Ijazah Sarjana Muda PJPK/Sains Sukan] dengan kepakaran kejurulatihan dalam sukan [Sukan Utama] serta pemegang pentauliahan Pertolongan Cemas CPR. Semasa latihan mengajar, saya berjaya melonjakkan kadar celik kecergasan murid sebanyak 22% dan membimbing pasukan sekolah ke peringkat suku akhir MSSD. Kekuatan terbesar saya adalah kesediaan 100% untuk ekosistem asrama penuh 24 jam: bersedia menggalas tugas hakiki di padang, penasihat Homeroom yang prihatin, dan Warden Asrama yang berintegriti tinggi. Saya komited ditempatkan di mana-mana 58 buah MRSM di seluruh Malaysia demi menjulang amanah Bumiputera."*
+  * **R (Result):** Panel mendapat gambaran serta-merta bahawa calon mempunyai pakej lengkap: berkelayakan, berstamina tinggi, mempunyai jiwa pendidik asrama, dan fleksibel.
+* **Keywords:** *Nama & Kelayakan Ijazah Khusus, Lesen Kejurulatihan & CPR Certified, Bukti Pencapaian Terukur (MSSD/SEGAK), Kesediaan Ekosistem 24 Jam Asrama/Warden, Fleksibiliti Penempatan 58 Buah MRSM.*
+* **Pitfalls:** Menceritakan sejarah hidup lampau yang tidak relevan dengan jawatan guru; bercakap melebihi 60 saat atau nada suara perlahan dan tidak bersemangat.
+
+---
+
+### Soalan 32 (Keusahawanan MARA): Slogan MARA ialah 'Keusahawanan dan Pendidikan Global'. Bagaimanakah anda sebagai guru PJPK membudayakan nilai keusahawanan dalam kalangan pelajar MRSM melalui sukan?
+* **Focus Area:** Keusahawanan Sukan (Sports Entrepreneurship), Pengurusan Kewangan & Inovasi
+* **STAR Guide:**
+  * **S (Situation):** Ramai beranggapan sukan hanya aktiviti fizikal, sedangkan industri sukan global adalah pemacu ekonomi bernilai berbilion ringgit yang selaras dengan mandat keusahawanan MARA.
+  * **T (Task):** Membuktikan bagaimana aktiviti PJPK dan kokurikulum sukan boleh dijadikan inkubator melatih minda keusahawanan murid maktab.
+  * **A (Action):**
+    1. Mengasaskan 'Karnival Sukan & Ekspo Keusahawanan Maktab' di mana pelajar homeroom menguruskan penajaan (*sponsorship*), mereka bentuk dan menjual jersi rasmi rumah sukan, serta mengendalikan gerai nutrisi sukan sihat.
+    2. Mendidik murid tentang pengurusan belanjawan acara sukan, perakaunan kos peralatan, dan analisis pulangan pelaburan (ROI).
+    3. Menerapkan inovasi produk sukan (cth: mereka cipta bahan bantu sukan murah daripada bahan kitar semula untuk projek reka cipta keusahawanan).
+  * **R (Result):** Murid bukan sahaja cergas fizikal, malah celik literasi kewangan, memiliki kemahiran rundingan perniagaan, dan berfikiran keusahawanan sebelum melangkah ke universiti.
+* **Keywords:** *Karnival Sukan & Ekspo Keusahawanan, Penajaan Sukan (Sponsorship), Pengurusan Belanjawan Acara & ROI, Literasi Kewangan & Rundingan Niaga, Inovasi Produk & Peralatan Sukan.*
+* **Pitfalls:** Menjawab bahawa guru PJPK tiada kaitan dengan mandat keusahawanan MARA; hanya mencadangkan jualan air mineral di tepi padang tanpa unsur pembelajaran pengurusan profesional.
+
+---
+
+### Soalan 33 (Integriti Guru & SEGAK): Terdapat kebimbangan mengenai manipulasi data Ujian SEGAK demi mencantikkan gred maktab. Bagaimanakah anda menjamin ketelusan dan integriti mutlak dalam pelaksanaan Ujian SEGAK?
+* **Focus Area:** Integriti Penjawat Awam, Audit Data Kecergasan & Ketelusan SEGAK
+* **STAR Guide:**
+  * **S (Situation):** Tekanan untuk mencapai sasaran KPI maktab kadangkala membuka ruang kepada pemalsuan rekod ujian fizikal jika tiada pengawasan berintegriti.
+  * **T (Task):** Menegakkan doktrin amanah MARA dengan memastikan setiap data Ujian SEGAK murid direkod secara tepat, sahih, dan telus tanpa kompromi.
+  * **A (Action):**
+    1. Mengamalkan kaedah pentaksiran bertiga: murid pelaku, murid pencatat semakan silang (*peer assessment*), dan guru pengesah di setiap stesen ujian.
+    2. Menggunakan borang skor fizikal rasmi Lampiran E dengan tandatangan murid serta-merta selepas ujian selesai bagi mengelakkan manipulasi kemudian.
+    3. Melakukan audit rawak bersama Ketua Bidang atau PK Kokurikulum.
+    4. Menegaskan kepada murid bahawa kejujuran markah adalah asas sains sukan: data yang rendah memberi peluang untuk intervensi preskripsi senaman F.I.T.T yang tepat.
+  * **R (Result):** Data SEGAK maktab dijamin 100% sahih, murid membesar dengan integriti tinggi, dan murid yang kurang cergas mendapat bantuan intervensi fizikal yang sebenar.
+* **Keywords:** *Pentaksiran Semakan Silang (Peer Assessment), Borang Tandatangan Serta-Merta Murid, Audit Rawak Bersama Pentadbir, Preskripsi Intervensi F.I.T.T Berasaskan Data Sebenar, Integriti Mutlak Penjawat Awam.*
+* **Pitfalls:** Mengabaikan integriti demi menjaga KPI maktab; tidak mempunyai mekanisme semakan silang di stesen ujian.
+
+---
+
+### Soalan 34 (Dilema Warden Jam 2:30 Pagi): Sebagai Warden Asrama, anda perlu menghantar seorang murid yang mengalami sakit perut akut disyaki apendisitis ke hospital pada jam 2:30 pagi. Pada jam 7:30 pagi, anda mempunyai jadual mengajar amali PJ di padang. Apakah tindakan profesional anda?
+* **Focus Area:** Protokol Kecemasan Asrama, Pelan Kontingensi PdPc & Ketahanan Warden
+* **STAR Guide:**
+  * **S (Situation):** Tanggungjawab kebajikan murid waktu malam bertembung dengan kewajipan hakiki pengajaran di bilik darjah pada awal pagi berikutnya.
+  * **T (Task):** Menyelamatkan nyawa murid asrama mengikut SOP perubatan maktab di samping memastikan murid kelas amali pagi tidak terabai dan keselamatan padang terjamin.
+  * **A (Action):**
+    1. Jam 2:30 pagi: Bertindak pantas menghubungi Penyelia Asrama/Pemandu Maktab, membawa murid ke Jabatan Kecemasan Hospital, memaklumkan Pengetua/PK HEM, serta menghubungi ibu bapa murid dengan tenang.
+    2. Memastikan murid diserahkan kepada pegawai perubatan dan ditemani oleh staf bertugas giliran kedua/penyelia asrama di hospital.
+    3. Jam 6:00 pagi: Mengaktifkan Pelan Kontingensi PdPc dengan memaklumkan Ketua Panitia PJPK dan Guru Penolong Kanan 1.
+    4. Menukar jadual amali padang lasak kepada sesi teori Pendidikan Kesihatan (PEERS) di dewan berhawa dingin atau meminta bantuan relief rakan panitia, memastikan objektif PdPc murid tetap tercapai tanpa mengabaikan aspek keselamatan guru yang keletihan.
+  * **R (Result):** Nyawa murid asrama terselamat melalui rawatan segera, ibu bapa berasa tenang dengan ketelusan maktab, dan sesi PdPc pagi berjalan teratur tanpa kompromi keselamatan di padang.
+* **Keywords:** *SOP Kecemasan Asrama & Hospital, Komunikasi Pantas PK HEM & Ibu Bapa, Pengaktifan Pelan Kontingensi PdPc, Kerjasama Pasukan Panitia PJPK, Mengelak Risiko Kemalangan Padang Akibat Kelesuan.*
+* **Pitfalls:** Meninggalkan murid di hospital sendirian tanpa pengganti; memaksa diri mengajar aktiviti padang lasak dalam keadaan mengantuk/lesu yang mengundang bahaya murid.
+
+---
+
+### Soalan 35 (Isu Obesiti & Gaya Hidup Sedentari Asrama): Pelajar asrama MRSM makan 5 kali sehari mengikut jadual dewan makan (sarapan, rehat, makan tengah hari, minum petang, makan malam/supper). Bagaimana anda merangka intervensi saintifik bagi menangani isu berat badan berlebihan dan gaya hidup sedentari di maktab?
+* **Focus Area:** Preskripsi F.I.T.T Obesiti, Kerjasama Dewan Makan & Pembudayaan Kecergasan Maktab
+* **STAR Guide:**
+  * **S (Situation):** Pengambilan kalori yang tinggi daripada jadual makan asrama 5 kali sehari tanpa imbangan perbelanjaan tenaga (energy expenditure) yang cukup menyebabkan peratusan murid berlebihan berat badan (BMI > 25) meningkat.
+  * **T (Task):** Merangka program intervensi kecergasan holistik berasaskan sains sukan yang berkesan, selamat, dan tidak memalukan murid (*non-stigmatizing*).
+  * **A (Action):**
+    1. Melancarkan Program 'MRSM Fit & Lean Challenge' menggunakan pendekatan F.I.T.T (Kekerapan: 3-4 kali seminggu; Intensiti: 60-70% Denyutan Jantung Maksimum; Masa: 45 minit senaman aerobik & latihan litar; Jenis: Berenang, berjoging petang, kalistenik santai).
+    2. Bekerjasama dengan Jawatankuasa Makanan Maktab untuk menyemak menu dewan makan: memperbanyakkan sayur-sayuran dan ulam-ulaman, serta mengurangkan gula dalam minuman kordial.
+    3. Mengintegrasikan teknologi jejak langkah (*pedometer/smartwatch*) antara bilik asrama dengan sistem ganjaran merit homeroom.
+    4. Memberi pendidikan nutrisi melalui silibus Pendidikan Kesihatan tentang keseimbangan tenaga (*calorie in vs calorie out*).
+  * **R (Result):** Kadar murid obesiti maktab menurun secara berfasa dalam tempoh 6 bulan, skor kardiorespiratori SEGAK meningkat, dan murid asrama membudayakan gaya hidup aktif secara sukarela.
+* **Keywords:** *Preskripsi F.I.T.T Berasaskan Sains Sukan, Program Fit & Lean Tanpa Stigma, Kerjasama Jawatankuasa Dewan Makan, Keseimbangan Tenaga (Calorie In vs Out), Gamifikasi Jejak Langkah Asrama.*
+* **Pitfalls:** Menghukum atau memalukan murid berlebihan berat badan di khalayak ramai; memberi jadual senaman melampau yang berisiko strok haba/kecederaan otot.
+
+---
+
 # BAHAGIAN 3: KATA KUNCI PEMARKAHAN TINGGI (*HIGH-SCORING KEYWORDS*) & ETIKA TEMU DUGA
 
 ### Kata Kunci Emas Panel MARA (Gunakan Secara Semulajadi Dalam Jawapan):

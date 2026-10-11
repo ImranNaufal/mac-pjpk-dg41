@@ -84,16 +84,16 @@ console.log('Ujian 3: Pemasa Temu Duga Kumpulan 30 Minit (Klausa 4.2)');
 assert.strictEqual(interviewModule.INTERVIEW_DURATION_SEC, 1800, 'Tempoh temu duga mesti tepat 30 minit (1800 saat)');
 console.log('✔ Konfigurasi pemasa 30 minit Lampiran A Klausa 4.2 disahkan.');
 
-// 4. Ujian Integriti Bank 28 Soalan Temu Duga DG41
-console.log('Ujian 4: Integriti Bank 28 Soalan Temu Duga DG41');
+// 4. Ujian Integriti Bank 35 Soalan Temu Duga DG41
+console.log('Ujian 4: Integriti Bank 35 Soalan Temu Duga DG41');
 const questions = interviewModule.INTERVIEW_QUESTIONS;
 assert(Array.isArray(questions), 'INTERVIEW_QUESTIONS mesti berbentuk array');
-assert.strictEqual(questions.length, 28, 'Mesti ada tepat 28 soalan dalam bank soalan temu duga');
+assert.strictEqual(questions.length, 35, 'Mesti ada tepat 35 soalan dalam bank soalan temu duga');
 
-const categoryCounts = { mara: 0, mrsm: 0, pjpk: 0, star: 0 };
+const categoryCounts = { mara: 0, mrsm: 0, pjpk: 0, star: 0, spot: 0 };
 questions.forEach(q => {
-  assert(q.id >= 1 && q.id <= 28, `ID soalan mesti antara 1 dan 28 (dijumpai: ${q.id})`);
-  assert(q.category && ['mara', 'mrsm', 'pjpk', 'star'].includes(q.category), `Kategori tidak sah: ${q.category}`);
+  assert(q.id >= 1 && q.id <= 35, `ID soalan mesti antara 1 dan 35 (dijumpai: ${q.id})`);
+  assert(q.category && ['mara', 'mrsm', 'pjpk', 'star', 'spot'].includes(q.category), `Kategori tidak sah: ${q.category}`);
   categoryCounts[q.category]++;
 
   // Sahkan struktur STAR
@@ -114,7 +114,8 @@ assert.strictEqual(categoryCounts.mara, 7, 'Kategori "mara" mesti mengandungi te
 assert.strictEqual(categoryCounts.mrsm, 7, 'Kategori "mrsm" mesti mengandungi tepat 7 soalan');
 assert.strictEqual(categoryCounts.pjpk, 7, 'Kategori "pjpk" mesti mengandungi tepat 7 soalan');
 assert.strictEqual(categoryCounts.star, 7, 'Kategori "star" mesti mengandungi tepat 7 soalan');
-console.log('✔ Kesemua 28 soalan merentasi 4 kategori rasmi (7 setiap kategori) dengan format STAR disahkan lengkap.');
+assert.strictEqual(categoryCounts.spot, 7, 'Kategori "spot" mesti mengandungi tepat 7 soalan');
+console.log('✔ Kesemua 35 soalan merentasi 5 kategori rasmi (7 setiap kategori) dengan format STAR disahkan lengkap.');
 
 // 5. Ujian Eksport Fungsi Interaktif Bank Soalan
 console.log('Ujian 5: Eksport Fungsi Interaktif Bank Soalan');

@@ -832,6 +832,178 @@ const MACInterview = (function () {
         'Menceritakan program sukan tanpa menyatakan hasil atau impak yang boleh diukur (no measurable result)',
         'Hanya menekankan peranan diri sendiri tanpa mengiktiraf pembudayaan komuniti yang mampan'
       ]
+    },
+    // ------------------------------------------------------------------------
+    // KATEGORI 5: SPOT EMAS PANEL, KEUSAHAWANAN & SOALAN BAHASA INGGERIS (SOALAN 29 – 35)
+    // ------------------------------------------------------------------------
+    {
+      id: 29,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Bahasa Inggeris) "Why should MARA hire you as a Physical Education teacher instead of other candidates, and how does Physical Education support students aiming for Ivy League and top global universities?"',
+      focusArea: 'Bilingual Proficiency, Global Mindset & Holistic Student Excellence',
+      starAnswer: {
+        situation: 'Top MRSM students aspire to gain admission into Ivy League, Russell Group, and world-class universities where admission officers evaluate holistic character beyond straight A results.',
+        task: 'To prove to the panel that as a PE educator, I possess the vision and bilingual capability to build students leadership, grit, and unique athletic portfolio for top-tier international scholarships.',
+        action: '1. In English-medium environments (especially for MRSM IGCSE and IB-MYP programs), I cultivate mental resilience, tactical strategic thinking, and emotional regulation under pressure. 2. I guide students to document their sports leadership roles, sports science research projects, and community fitness initiatives for their personal statements and admission interviews. 3. I demonstrate that physical endurance directly boosts cognitive stamina during long study hours.',
+        result: 'Producing charismatic MARA scholars who not only ace global examinations but also demonstrate robust health, executive leadership, and confidence on the international stage.'
+      },
+      keywords: [
+        'Holistic Character Beyond Straight A\'s',
+        'Ivy League & Top University Profile',
+        'Cognitive Stamina & Brain Plasticity',
+        'Sports Leadership Portfolio',
+        'Bilingual Communication Proficiency',
+        'Global Mindset & Mental Resilience'
+      ],
+      pitfalls: [
+        'Gagap atau menolak menjawab dalam Bahasa Inggeris apabila disoal panel',
+        'Menganggap subjek PJ sekadar berseronok di padang tanpa nilai tambah akademik global'
+      ]
+    },
+    {
+      id: 30,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Bahasa Inggeris) "How do you cultivate sportsmanship and eradicate toxic seniority or bullying culture among boarding school students through sports?"',
+      focusArea: 'Sports Ethics, Anti-Bullying Culture & Positive Seniority',
+      starAnswer: {
+        situation: 'In full boarding schools, intense hostel sports rivalries can sometimes breed toxic seniority, intimidation, or informal bullying if not vigilantly managed by sports teachers.',
+        task: 'To strictly enforce MARA\'s zero-tolerance \'You Touch, You Go\' anti-bullying policy and turn the sports field into a safe sanctuary of mutual respect and camaraderie.',
+        action: '1. I establish unequivocal field rules: on the pitch, seniority carries zero privileges; respect is earned purely through discipline and sportsmanship. 2. I implement a cross-batch buddy system where Form 4 and Form 5 seniors mentor Form 1 and Form 2 juniors in athletic skills rather than dominating them. 3. During post-match debriefings, I openly applaud fair play and immediately intervene at the slightest sign of unsporting taunts, ensuring that the locker room remains safe and respectful.',
+        result: 'Cultivating a healthy maktab brotherhood and sisterhood anchored in shared athletic dedication, empathy, and absolute eradication of bullying behavior.'
+      },
+      keywords: [
+        'Zero-Tolerance \'You Touch, You Go\'',
+        'Fair Play & Mutual Respect',
+        'Cross-Batch Mentorship (Senior-Junior Buddy)',
+        'Eradicating Toxic Seniority & Initiation',
+        'Safe Maktab & Locker Room Environment'
+      ],
+      pitfalls: [
+        'Menyokong atau membiarkan budaya buli/ragging atas alasan "tradisi senioriti asrama"',
+        'Gagal menekankan dasar rasmi MARA \'You Touch, You Go\''
+      ]
+    },
+    {
+      id: 31,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Elevator Pitch 60 Saat) "Sila perkenalkan diri anda dalam masa 60 saat dan yakinkan panel mengapakah anda aset bernilai tinggi untuk dilantik sebagai Pegawai Perkhidmatan Pendidikan MARA DG9."',
+      focusArea: 'Pengenalan Diri Berimpak Tinggi, USP Calon & Komitmen 24 Jam',
+      starAnswer: {
+        situation: 'Panel penilai mendengar puluhan calon setiap hari; pengenalan diri yang berjela-jela menceritakan latar belakang sekolah rendah akan membosankan panel.',
+        task: 'Menyampaikan identiti profesional, kelayakan teras, kepakaran sukan spesifik, dan nilai tambah yang boleh disumbangkan kepada MRSM secara padat, yakin, dan bertenaga.',
+        action: 'Assalamualaikum dan salam sejahtera Ahli Panel. Saya [Nama], graduan [Ijazah Sarjana Muda PJPK/Sains Sukan] dengan kepakaran kejurulatihan dalam sukan [Sukan Utama] serta pemegang pentauliahan Pertolongan Cemas CPR. Semasa latihan mengajar, saya berjaya melonjakkan kadar celik kecergasan murid sebanyak 22% dan membimbing pasukan sekolah ke peringkat suku akhir MSSD. Kekuatan terbesar saya adalah kesediaan 100% untuk ekosistem asrama penuh 24 jam: bersedia menggalas tugas hakiki di padang, penasihat Homeroom yang prihatin, dan Warden Asrama yang berintegriti tinggi. Saya komited ditempatkan di mana-mana 58 buah MRSM di seluruh Malaysia demi menjulang amanah Bumiputera.',
+        result: 'Panel mendapat gambaran serta-merta bahawa calon mempunyai pakej lengkap: berkelayakan, berstamina tinggi, mempunyai jiwa pendidik asrama, dan fleksibel.'
+      },
+      keywords: [
+        'Nama & Kelayakan Ijazah Khusus',
+        'Lesen Kejurulatihan & CPR Certified',
+        'Bukti Pencapaian Terukur (MSSD/SEGAK)',
+        'Kesediaan Ekosistem 24 Jam Asrama/Warden',
+        'Fleksibiliti Penempatan 58 Buah MRSM'
+      ],
+      pitfalls: [
+        'Menceritakan sejarah hidup lampau yang tidak relevan dengan jawatan guru',
+        'Bercakap melebihi 60 saat atau nada suara perlahan dan tidak bersemangat'
+      ]
+    },
+    {
+      id: 32,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Keusahawanan MARA) Slogan MARA ialah \'Keusahawanan dan Pendidikan Global\'. Bagaimanakah anda sebagai guru PJPK membudayakan nilai keusahawanan dalam kalangan pelajar MRSM melalui sukan?',
+      focusArea: 'Keusahawanan Sukan (Sports Entrepreneurship), Pengurusan Kewangan & Inovasi',
+      starAnswer: {
+        situation: 'Ramai beranggapan sukan hanya aktiviti fizikal, sedangkan industri sukan global adalah pemacu ekonomi bernilai berbilion ringgit yang selaras dengan mandat keusahawanan MARA.',
+        task: 'Membuktikan bagaimana aktiviti PJPK dan kokurikulum sukan boleh dijadikan inkubator melatih minda keusahawanan murid maktab.',
+        action: '1. Mengasaskan \'Karnival Sukan & Ekspo Keusahawanan Maktab\' di mana pelajar homeroom menguruskan penajaan (sponsorship), mereka bentuk dan menjual jersi rasmi rumah sukan, serta mengendalikan gerai nutrisi sukan sihat. 2. Mendidik murid tentang pengurusan belanjawan acara sukan, perakaunan kos peralatan, dan analisis pulangan pelaburan (ROI). 3. Menerapkan inovasi produk sukan (cth: mereka cipta bahan bantu sukan murah daripada bahan kitar semula untuk projek reka cipta keusahawanan).',
+        result: 'Murid bukan sahaja cergas fizikal, malah celik literasi kewangan, memiliki kemahiran rundingan perniagaan, dan berfikiran keusahawanan sebelum melangkah ke universiti.'
+      },
+      keywords: [
+        'Karnival Sukan & Ekspo Keusahawanan',
+        'Penajaan Sukan (Sponsorship)',
+        'Pengurusan Belanjawan Acara & ROI',
+        'Literasi Kewangan & Rundingan Niaga',
+        'Inovasi Produk & Peralatan Sukan'
+      ],
+      pitfalls: [
+        'Menjawab bahawa guru PJPK tiada kaitan dengan mandat keusahawanan MARA',
+        'Hanya mencadangkan jualan air mineral di tepi padang tanpa unsur pembelajaran pengurusan profesional'
+      ]
+    },
+    {
+      id: 33,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Integriti Guru & SEGAK) Terdapat kebimbangan mengenai manipulasi data Ujian SEGAK demi mencantikkan gred maktab. Bagaimanakah anda menjamin ketelusan dan integriti mutlak dalam pelaksanaan Ujian SEGAK?',
+      focusArea: 'Integriti Penjawat Awam, Audit Data Kecergasan & Ketelusan SEGAK',
+      starAnswer: {
+        situation: 'Tekanan untuk mencapai sasaran KPI maktab kadangkala membuka ruang kepada pemalsuan rekod ujian fizikal jika tiada pengawasan berintegriti.',
+        task: 'Menegakkan doktrin amanah MARA dengan memastikan setiap data Ujian SEGAK murid direkod secara tepat, sahih, dan telus tanpa kompromi.',
+        action: '1. Mengamalkan kaedah pentaksiran bertiga: murid pelaku, murid pencatat semakan silang (peer assessment), dan guru pengesah di setiap stesen ujian. 2. Menggunakan borang skor fizikal rasmi Lampiran E dengan tandatangan murid serta-merta selepas ujian selesai bagi mengelakkan manipulasi kemudian. 3. Melakukan audit rawak bersama Ketua Bidang atau PK Kokurikulum. 4. Menegaskan kepada murid bahawa kejujuran markah adalah asas sains sukan: data yang rendah memberi peluang untuk intervensi preskripsi senaman F.I.T.T yang tepat.',
+        result: 'Data SEGAK maktab dijamin 100% sahih, murid membesar dengan integriti tinggi, dan murid yang kurang cergas mendapat bantuan intervensi fizikal yang sebenar.'
+      },
+      keywords: [
+        'Pentaksiran Semakan Silang (Peer Assessment)',
+        'Borang Tandatangan Serta-Merta Murid',
+        'Audit Rawak Bersama Pentadbir',
+        'Preskripsi Intervensi F.I.T.T Berasaskan Data Sebenar',
+        'Integriti Mutlak Penjawat Awam'
+      ],
+      pitfalls: [
+        'Mengabaikan integriti demi menjaga KPI maktab',
+        'Tidak mempunyai mekanisme semakan silang di stesen ujian'
+      ]
+    },
+    {
+      id: 34,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Dilema Warden Jam 2:30 Pagi) Sebagai Warden Asrama, anda perlu menghantar seorang murid yang mengalami sakit perut akut disyaki apendisitis ke hospital pada jam 2:30 pagi. Pada jam 7:30 pagi, anda mempunyai jadual mengajar amali PJ di padang. Apakah tindakan profesional anda?',
+      focusArea: 'Protokol Kecemasan Asrama, Pelan Kontingensi PdPc & Ketahanan Warden',
+      starAnswer: {
+        situation: 'Tanggungjawab kebajikan murid waktu malam bertembung dengan kewajipan hakiki pengajaran di bilik darjah pada awal pagi berikutnya.',
+        task: 'Menyelamatkan nyawa murid asrama mengikut SOP perubatan maktab di samping memastikan murid kelas amali pagi tidak terabai dan keselamatan padang terjamin.',
+        action: '1. Jam 2:30 pagi: Bertindak pantas menghubungi Penyelia Asrama/Pemandu Maktab, membawa murid ke Jabatan Kecemasan Hospital, memaklumkan Pengetua/PK HEM, serta menghubungi ibu bapa murid dengan tenang. 2. Memastikan murid diserahkan kepada pegawai perubatan dan ditemani oleh staf bertugas giliran kedua/penyelia asrama di hospital. 3. Jam 6:00 pagi: Mengaktifkan Pelan Kontingensi PdPc dengan memaklumkan Ketua Panitia PJPK dan Guru Penolong Kanan 1. 4. Menukar jadual amali padang lasak kepada sesi teori Pendidikan Kesihatan (PEERS) di dewan berhawa dingin atau meminta bantuan relief rakan panitia, memastikan objektif PdPc murid tetap tercapai tanpa mengabaikan aspek keselamatan guru yang keletihan.',
+        result: 'Nyawa murid asrama terselamat melalui rawatan segera, ibu bapa berasa tenang dengan ketelusan maktab, dan sesi PdPc pagi berjalan teratur tanpa kompromi keselamatan di padang.'
+      },
+      keywords: [
+        'SOP Kecemasan Asrama & Hospital',
+        'Komunikasi Pantas PK HEM & Ibu Bapa',
+        'Pengaktifan Pelan Kontingensi PdPc',
+        'Kerjasama Pasukan Panitia PJPK',
+        'Mengelak Risiko Kemalangan Padang Akibat Kelesuan'
+      ],
+      pitfalls: [
+        'Meninggalkan murid di hospital sendirian tanpa pengganti',
+        'Memaksa diri mengajar aktiviti padang lasak dalam keadaan mengantuk/lesu yang mengundang bahaya murid'
+      ]
+    },
+    {
+      id: 35,
+      category: 'spot',
+      categoryLabel: 'Spot Emas & Bahasa Inggeris',
+      question: '(Isu Obesiti & Gaya Hidup Sedentari Asrama) Pelajar asrama MRSM makan 5 kali sehari mengikut jadual dewan makan (sarapan, rehat, makan tengah hari, minum petang, makan malam/supper). Bagaimana anda merangka intervensi saintifik bagi menangani isu berat badan berlebihan dan gaya hidup sedentari di maktab?',
+      focusArea: 'Preskripsi F.I.T.T Obesiti, Kerjasama Dewan Makan & Pembudayaan Kecergasan Maktab',
+      starAnswer: {
+        situation: 'Pengambilan kalori yang tinggi daripada jadual makan asrama 5 kali sehari tanpa imbangan perbelanjaan tenaga (energy expenditure) yang cukup menyebabkan peratusan murid berlebihan berat badan (BMI > 25) meningkat.',
+        task: 'Merangka program intervensi kecergasan holistik berasaskan sains sukan yang berkesan, selamat, dan tidak memalukan murid (non-stigmatizing).',
+        action: '1. Melancarkan Program \'MRSM Fit & Lean Challenge\' menggunakan pendekatan F.I.T.T (Kekerapan: 3-4 kali seminggu; Intensiti: 60-70% Denyutan Jantung Maksimum; Masa: 45 minit senaman aerobik & latihan litar; Jenis: Berenang, berjoging petang, kalistenik santai). 2. Bekerjasama dengan Jawatankuasa Makanan Maktab untuk menyemak menu dewan makan: memperbanyakkan sayur-sayuran dan ulam-ulaman, serta mengurangkan gula dalam minuman kordial. 3. Mengintegrasikan teknologi jejak langkah (pedometer/smartwatch) antara bilik asrama dengan sistem ganjaran merit homeroom. 4. Memberi pendidikan nutrisi melalui silibus Pendidikan Kesihatan tentang keseimbangan tenaga (calorie in vs calorie out).',
+        result: 'Kadar murid obesiti maktab menurun secara berfasa dalam tempoh 6 bulan, skor kardiorespiratori SEGAK meningkat, dan murid asrama membudayakan gaya hidup aktif secara sukarela.'
+      },
+      keywords: [
+        'Preskripsi F.I.T.T Berasaskan Sains Sukan',
+        'Program Fit & Lean Tanpa Stigma',
+        'Kerjasama Jawatankuasa Dewan Makan',
+        'Keseimbangan Tenaga (Calorie In vs Out)',
+        'Gamifikasi Jejak Langkah Asrama'
+      ],
+      pitfalls: [
+        'Menghukum atau memalukan murid berlebihan berat badan di khalayak ramai',
+        'Memberi jadual senaman melampau yang berisiko strok haba/kecederaan otot'
+      ]
     }
   ];
 
@@ -1258,6 +1430,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
       if (q.category === 'mrsm') badgeColorClass = 'badge-navy';
       if (q.category === 'pjpk') badgeColorClass = 'badge-emerald';
       if (q.category === 'star') badgeColorClass = 'badge-purple';
+      if (q.category === 'spot') badgeColorClass = 'badge-gold';
 
       // Kata kunci pills
       const keywordPills = (q.keywords || []).map(k => `<span class="keyword-pill">${escapeHtml(k)}</span>`).join('');
@@ -1568,7 +1741,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
         </div>
 
         <!-- ===================================================================
-             BAHAGIAN 5: BANK 28 SOALAN TEMU DUGA DG41 & JAWAPAN FORMAT S.T.A.R
+             BAHAGIAN 5: BANK 35 SOALAN TEMU DUGA DG41 & JAWAPAN FORMAT S.T.A.R
              =================================================================== -->
         <div class="card qbank-section-card" id="qbank-container">
           <div class="card-header border-mara d-flex justify-between items-center">
@@ -1576,7 +1749,7 @@ Kata Kunci: ${q.keywords.join(', ')}`;
               <h3 class="card-heading">BANK 28 SOALAN TEMU DUGA DG41 &amp; PANDUAN JAWAPAN S.T.A.R</h3>
               <p class="text-sm text-secondary mt-1">Lengkap dengan Formula S.T.A.R, Kata Kunci Wajib &amp; Tips Mengelak Perangkap Panel</p>
             </div>
-            <span class="badge badge-mara" id="qbank-count-badge">28 Soalan Tersedia</span>
+            <span class="badge badge-mara" id="qbank-count-badge">35 Soalan Tersedia</span>
           </div>
 
           <div class="card-body">
@@ -1599,11 +1772,12 @@ Kata Kunci: ${q.keywords.join(', ')}`;
               </div>
 
               <div class="q-filter-chips mt-2">
-                <button type="button" class="q-filter-pill active" data-category="all" onclick="MACInterview.setCategoryFilter('all')">Semua (28)</button>
+                <button type="button" class="q-filter-pill active" data-category="all" onclick="MACInterview.setCategoryFilter('all')">Semua (35)</button>
                 <button type="button" class="q-filter-pill" data-category="mara" onclick="MACInterview.setCategoryFilter('mara')">🏛️ Akta &amp; MARA (7)</button>
                 <button type="button" class="q-filter-pill" data-category="mrsm" onclick="MACInterview.setCategoryFilter('mrsm')">🏫 Budaya MRSM (7)</button>
                 <button type="button" class="q-filter-pill" data-category="pjpk" onclick="MACInterview.setCategoryFilter('pjpk')">🏅 PJPK &amp; SOP Sukan (7)</button>
                 <button type="button" class="q-filter-pill" data-category="star" onclick="MACInterview.setCategoryFilter('star')">⭐ Senario STAR (7)</button>
+                <button type="button" class="q-filter-pill" data-category="spot" onclick="MACInterview.setCategoryFilter('spot')">🇬🇧 Spot Emas &amp; English (7)</button>
               </div>
 
               <div class="d-flex justify-between items-center mt-2">

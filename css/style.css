@@ -3275,6 +3275,11 @@ code, pre {
   color: #FFFFFF;
 }
 
+.badge-gold {
+  background-color: #D97706;
+  color: #FFFFFF;
+}
+
 .badge-emerald-subtle {
   background-color: #D1FAE5;
   color: #065F46;
